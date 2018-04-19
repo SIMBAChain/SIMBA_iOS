@@ -10,7 +10,20 @@ import UIKit
 
 class ViewController: UIViewController
 {
-
+    var SIMBADataArray = [SIMBAData]()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        //DefaultAPI.getDwarves calls the DefaultAPI.swift and runs the getDwarves function which executes the getDwarvesWithRequestBuilder function which accesses the basePath for the GET command.
+        DefaultAPI.getSIMBAData { (SIMBAData, error) in
+            if let SIMBAData = SIMBAData{
+                print("\n\n\n")
+                print(SIMBAData.last!.encodeToJSON())
+                print("\n\n\n")
+            }
+            self.SIMBADataArray = SIMBAData!
+        }
+    }
     override func viewDidLoad()
     {
         super.viewDidLoad()
