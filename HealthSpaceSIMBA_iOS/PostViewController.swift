@@ -1,5 +1,5 @@
 //
-//  postViewController.swift
+//  PostViewController.swift
 //  HealthSpaceSIMBA_iOS
 //
 //  Created by Steven Peregrine on 4/23/18.
