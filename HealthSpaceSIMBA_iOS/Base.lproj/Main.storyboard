@@ -183,7 +183,7 @@
         <!--Post View Controller-->
         <scene sceneID="m8I-GE-qJP">
             <objects>
-                <viewController id="Xl8-tU-fe0" customClass="postViewController" customModule="HealthSpaceSIMBA_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Xl8-tU-fe0" customClass="PostViewController" customModule="HealthSpaceSIMBA_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HuX-hB-ipb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -247,6 +247,7 @@
                                 <rect key="frame" x="112" y="247" width="247" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qTI-WU-R3X">
