@@ -28,7 +28,7 @@
 		C9540DBD208527B6001D77AF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9540DB02085279E001D77AF /* Alamofire.framework */; };
 		C9540DBE208527B6001D77AF /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C9540DB02085279E001D77AF /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C9A80A86208E0AC90036BC43 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A80A85208E0AC90036BC43 /* PostViewController.swift */; };
-		C9A80A90208E1BB10036BC43 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A80A8F208E1BB10036BC43 /* DetailView.swift */; };
+		C9A80A90208E1BB10036BC43 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A80A8F208E1BB10036BC43 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,7 +127,7 @@
 		C9540D4A20851C3C001D77AF /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		C9540DA42085279E001D77AF /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		C9A80A85208E0AC90036BC43 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
-		C9A80A8F208E1BB10036BC43 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		C9A80A8F208E1BB10036BC43 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +167,7 @@
 				5081544D207BB9BE0001B7BC /* ViewController.swift */,
 				50E83CFF2088D723004A4A4B /* AuditTableViewController.swift */,
 				C9A80A85208E0AC90036BC43 /* PostViewController.swift */,
-				C9A80A8F208E1BB10036BC43 /* DetailView.swift */,
+				C9A80A8F208E1BB10036BC43 /* DetailViewController.swift */,
 				5081544F207BB9BE0001B7BC /* Main.storyboard */,
 				50815452207BB9C40001B7BC /* Assets.xcassets */,
 				50815454207BB9C40001B7BC /* LaunchScreen.storyboard */,
@@ -366,7 +366,7 @@
 				50E83D002088D723004A4A4B /* AuditTableViewController.swift in Sources */,
 				C9540D4C20851C3C001D77AF /* AlamofireImplementations.swift in Sources */,
 				C9540D5520851C3C001D77AF /* JSONEncodableEncoding.swift in Sources */,
-				C9A80A90208E1BB10036BC43 /* DetailView.swift in Sources */,
+				C9A80A90208E1BB10036BC43 /* DetailViewController.swift in Sources */,
 				C9540D5620851C3C001D77AF /* APIs.swift in Sources */,
 				C9540D7B20851C3C001D77AF /* Extensions.swift in Sources */,
 				5081544C207BB9BE0001B7BC /* AppDelegate.swift in Sources */,
