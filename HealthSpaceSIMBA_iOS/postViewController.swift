@@ -8,8 +8,14 @@
 
 import Foundation
 import UIKit
-class postViewController: UIViewController
+class PostViewController: UIViewController
 {
+    
+    
+    
+    
+    
+    
     @IBAction func cancelViewController()
     {
     dismiss(animated: true)
