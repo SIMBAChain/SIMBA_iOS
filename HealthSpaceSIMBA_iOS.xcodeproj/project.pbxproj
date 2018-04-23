@@ -15,6 +15,7 @@
 		50E83CFC2088CB3B004A4A4B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E83CFB2088CB3B004A4A4B /* Model.swift */; };
 		50E83CFE2088CB54004A4A4B /* DefaultAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E83CFD2088CB54004A4A4B /* DefaultAPI.swift */; };
 		50E83D002088D723004A4A4B /* AuditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E83CFF2088D723004A4A4B /* AuditTableViewController.swift */; };
+		9BB836E7208B740D00F4FCED /* ToDoFile in Resources */ = {isa = PBXBuildFile; fileRef = 9BB836E6208B740D00F4FCED /* ToDoFile */; };
 		C9540D4B20851C3C001D77AF /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9540D1520851C3C001D77AF /* APIHelper.swift */; };
 		C9540D4C20851C3C001D77AF /* AlamofireImplementations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9540D1620851C3C001D77AF /* AlamofireImplementations.swift */; };
 		C9540D5420851C3C001D77AF /* CodableHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9540D1F20851C3C001D77AF /* CodableHelper.swift */; };
@@ -112,6 +113,7 @@
 		50E83CFB2088CB3B004A4A4B /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		50E83CFD2088CB54004A4A4B /* DefaultAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAPI.swift; sourceTree = "<group>"; };
 		50E83CFF2088D723004A4A4B /* AuditTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditTableViewController.swift; sourceTree = "<group>"; };
+		9BB836E6208B740D00F4FCED /* ToDoFile */ = {isa = PBXFileReference; lastKnownFileType = text; name = ToDoFile; path = HealthSpaceSIMBA_iOS/ToDoFile; sourceTree = SOURCE_ROOT; };
 		C9540D1520851C3C001D77AF /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		C9540D1620851C3C001D77AF /* AlamofireImplementations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireImplementations.swift; sourceTree = "<group>"; };
 		C9540D1F20851C3C001D77AF /* CodableHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableHelper.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				50815452207BB9C40001B7BC /* Assets.xcassets */,
 				50815454207BB9C40001B7BC /* LaunchScreen.storyboard */,
 				50815457207BB9C40001B7BC /* Info.plist */,
+				9BB836E6208B740D00F4FCED /* ToDoFile */,
 			);
 			path = HealthSpaceSIMBA_iOS;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 			files = (
 				50815456207BB9C40001B7BC /* LaunchScreen.storyboard in Resources */,
 				50815453207BB9C40001B7BC /* Assets.xcassets in Resources */,
+				9BB836E7208B740D00F4FCED /* ToDoFile in Resources */,
 				50815451207BB9BE0001B7BC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

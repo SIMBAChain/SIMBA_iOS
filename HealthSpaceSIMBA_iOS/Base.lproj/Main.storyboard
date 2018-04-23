@@ -135,6 +135,7 @@
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
                                 <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="showAccountPicker" destination="BYZ-38-t0r" eventType="editingDidBegin" id="I4e-V5-GEW"/>
@@ -142,7 +143,7 @@
                                 </connections>
                             </textField>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mBr-LZ-YWR" userLabel="accountPicker">
-                                <rect key="frame" x="191" y="65" width="168" height="162"/>
+                                <rect key="frame" x="0.0" y="65" width="375" height="204"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                         </subviews>

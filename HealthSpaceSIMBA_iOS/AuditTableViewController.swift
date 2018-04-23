@@ -11,6 +11,8 @@ import UIKit
 class AuditTableViewController: UITableViewController {
     
     var SIMBADataArray = [SIMBAData]()
+    var hashLastTen = [SIMBAData]().suffix(10)
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -23,14 +25,17 @@ class AuditTableViewController: UITableViewController {
             }
             
             self.SIMBADataArray = SIMBAData!
+            self.hashLastTen = SIMBAData!.suffix(10)
+            print("HASH 10: \(self.hashLastTen[78].hashId!)")
             self.tableView.reloadData()
         }
-        
-        
     }
-    
+
+//---------------------
+//-----TABLEVIEW
+//---------------------
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return SIMBADataArray.count
+        return hashLastTen.count
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -38,8 +43,8 @@ class AuditTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let currentSIMBAData = SIMBADataArray[indexPath.row]
+        let ten = SIMBADataArray.count - 10
+        let currentSIMBAData = hashLastTen[indexPath.row + ten]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "SIMBADataCell") as! SIMBADataCell
         cell.auditNoLabel.text  = " Audit No. \(String(describing: currentSIMBAData.hashId!))"
