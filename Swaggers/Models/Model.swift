@@ -8,26 +8,6 @@
 
 import Foundation
 
-
-/** a short sturdy creature fond of drink and industry! */
-/*open class Dwarf: JSONEncodable {
- public var name: String?
- public var age: String?
- public var id: String?
- 
- public init() {}
- 
- // MARK: JSONEncodable
- func encodeToJSON() -> Any {
- var nillableDictionary = [String:Any?]()
- nillableDictionary["name"] = self.name
- nillableDictionary["age"] = self.age
- nillableDictionary["id"] = self.id
- let dictionary: [String:Any] = APIHelper.rejectNil(nillableDictionary) ?? [:]
- return dictionary
- }
- }*/
-
 open class SIMBAData: JSONEncodable {
     public var hashId : Int32?
     public var accountId: String?

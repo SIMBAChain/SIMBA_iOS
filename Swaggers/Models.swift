@@ -159,6 +159,7 @@ class Decoders {
             instance.accountId = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["auditor"] as AnyObject?)
             
             print(temp["timestamp"]!)
+            print(instance.hashId!)
             return instance
         }
     }()
