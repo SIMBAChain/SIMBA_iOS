@@ -12,6 +12,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 {
     @IBOutlet weak var accountTextField: UITextField!
     @IBOutlet var accountPicker: UIPickerView!
+    @IBOutlet var selectButton: UIButton!
     var accountPickerData = ["","Account1","Account2","Account3","Account4","Account5","Account6","Account7","Account8","Account9","Account10"]
     
     var SIMBADataArray = [SIMBAData]()
@@ -59,22 +60,21 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         accountTextField.text = accountPickerData[row]
     }
     @IBAction func selectaccount() {
-        if accountTextField.text == ""
-        {
-           showAccountPicker()
-        }
+      hideAccountPicker()
     }
     @IBAction func showAccountPicker(){
      accountPicker.isHidden = false
+     selectButton.isHidden = false
     }
     @IBAction func hideAccountPicker(){
         accountPicker.isHidden = true
+        selectButton.isHidden = true
     }
     //resign responders
     @IBAction func resignResponders()
     {
         accountTextField.resignFirstResponder()
-        hideAccountPicker()
+        
         }
 }
 

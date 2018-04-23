@@ -26,6 +26,7 @@
 		C9540D7E20851C3C001D77AF /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9540D4A20851C3C001D77AF /* Configuration.swift */; };
 		C9540DBD208527B6001D77AF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9540DB02085279E001D77AF /* Alamofire.framework */; };
 		C9540DBE208527B6001D77AF /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C9540DB02085279E001D77AF /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C9A80A86208E0AC90036BC43 /* postViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A80A85208E0AC90036BC43 /* postViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		C9540D4920851C3C001D77AF /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		C9540D4A20851C3C001D77AF /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		C9540DA42085279E001D77AF /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
+		C9A80A85208E0AC90036BC43 /* postViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				5081544B207BB9BE0001B7BC /* AppDelegate.swift */,
 				5081544D207BB9BE0001B7BC /* ViewController.swift */,
 				50E83CFF2088D723004A4A4B /* AuditTableViewController.swift */,
+				C9A80A85208E0AC90036BC43 /* postViewController.swift */,
 				5081544F207BB9BE0001B7BC /* Main.storyboard */,
 				50815452207BB9C40001B7BC /* Assets.xcassets */,
 				50815454207BB9C40001B7BC /* LaunchScreen.storyboard */,
@@ -349,6 +352,7 @@
 			files = (
 				50E83CFE2088CB54004A4A4B /* DefaultAPI.swift in Sources */,
 				C9540D4B20851C3C001D77AF /* APIHelper.swift in Sources */,
+				C9A80A86208E0AC90036BC43 /* postViewController.swift in Sources */,
 				5081544E207BB9BE0001B7BC /* ViewController.swift in Sources */,
 				C9540D5420851C3C001D77AF /* CodableHelper.swift in Sources */,
 				50E83CFC2088CB3B004A4A4B /* Model.swift in Sources */,

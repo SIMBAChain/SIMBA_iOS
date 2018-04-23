@@ -53,7 +53,10 @@ class AuditTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 105
     }
-    
+    @IBAction func cancelViewController()
+    {
+        dismiss(animated: true)
+    }
 }
 
 class SIMBADataCell: UITableViewCell {
