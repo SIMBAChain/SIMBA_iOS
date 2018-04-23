@@ -23,4 +23,38 @@ class DetailViewController: UIViewController
     @IBOutlet  var CorrectButton: UIButton!
     @IBOutlet  var IncorrectButton: UIButton!
     
+    var auditNumber: Int32! = 0
+    
+    func configureView()
+    {
+        // Update the user interface for the detail item.
+        if let detail = detailItem
+        {
+            auditNumber = Int32(detail.description)!
+            
+            print(auditNumber!)
+        }
+    }
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        configureView()
+    }
+    
+    var detailItem: Int32?
+    {
+        didSet {
+            // Update the view.
+            configureView()
+        }
+    }
+    
+    func getData()
+    {
+        
+    }
+}
+    
 }
