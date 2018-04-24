@@ -31,6 +31,21 @@ class AuditTableViewController: UITableViewController {
         }
     }
 
+    // MARK: Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let ten = SIMBADataArray.count - 10
+        if segue.identifier == "showDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let object = hashLastTen[indexPath.row + ten].hashId!
+                
+                let controller = segue.destination as! DetailViewController
+                controller.detailItem = object
+                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+                controller.navigationItem.leftItemsSupplementBackButton = true
+            }
+        }
+    }
+    
 //---------------------
 //-----TABLEVIEW
 //---------------------
