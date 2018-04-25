@@ -153,13 +153,18 @@ class Decoders {
             
             var temp : [String : Any] = Decoders.decode(clazz: [String: Any].self, source: sourceDictionary["asset"] as AnyObject)
             instance.assets = temp
-            instance.hashId = Decoders.decode(clazz: Int32.self, source: (sourceDictionary["hashId"] as AnyObject?)!)
-            //instance.timestamp = temp["timestamp"]! as? String
-            //instance.hashId = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["hashId"] as AnyObject?)
-            instance.accountId = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["auditor"] as AnyObject?)
             
-            print(temp["timestamp"]!)
-            print(instance.hashId!)
+            instance.hashId    = Decoders.decode(clazz: Int32.self, source: (sourceDictionary["hashId"] as AnyObject?)!)
+            instance.accountId = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["auditor"] as AnyObject?)
+            instance.hash      = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["hash"] as AnyObject?)
+            instance.timestamp     = temp["timestamp"]! as? String
+            instance.location      = temp["location"] as? String
+            instance.personName    = temp["personName"] as? String
+            //instance.description =
+            //instance.status      =
+            //instance.comments    =
+            instance.verified = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["verified"] as AnyObject?)
+
             return instance
         }
     }()

@@ -12,7 +12,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Most Recent Audits-->
         <scene sceneID="Sth-tX-Du3">
             <objects>
                 <tableViewController id="X3i-yB-WQX" customClass="AuditTableViewController" customModule="HealthSpaceSIMBA_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -49,7 +49,7 @@
                                 <connections>
                                     <outlet property="auditNoLabel" destination="dy9-9a-yoP" id="ZnB-2u-FJJ"/>
                                     <outlet property="posterIDLabel" destination="nke-Fr-LZ6" id="ikx-3x-bUb"/>
-                                    <segue destination="stP-UK-UvA" kind="show" id="IMI-It-L9h"/>
+                                    <segue destination="stP-UK-UvA" kind="show" identifier="showDetail" id="IMI-It-L9h"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -58,10 +58,10 @@
                             <outlet property="delegate" destination="X3i-yB-WQX" id="FrG-TW-WWv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Yfp-gz-9V6">
+                    <navigationItem key="navigationItem" title="Most Recent Audits" id="Yfp-gz-9V6">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="JFs-5e-GFW">
                             <connections>
-                                <action selector="cancelViewController" destination="X3i-yB-WQX" id="OiI-Om-ywJ"/>
+                                <action selector="cancelViewController" destination="X3i-yB-WQX" id="ZcG-Ao-wgg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -305,18 +305,19 @@
                         <viewLayoutGuide key="safeArea" id="JVc-hN-Hts"/>
                     </view>
                     <connections>
-                        <outlet property="Comments" destination="eJt-42-G67" id="MnT-uN-WmC"/>
-                        <outlet property="CorrectButton" destination="VnV-w7-Zqy" id="2yc-2l-VTg"/>
-                        <outlet property="Desc" destination="eas-40-7Cn" id="f7y-Ur-H5D"/>
-                        <outlet property="FirstAudit" destination="Adm-ta-13I" id="L1g-OQ-zfn"/>
                         <outlet property="IPFS" destination="ejR-DY-8dj" id="lMH-Ml-uLN"/>
-                        <outlet property="IncorrectButton" destination="dr3-uF-KUd" id="qDE-Ee-cYE"/>
-                        <outlet property="Location" destination="X98-Er-BfP" id="7GW-ug-XT3"/>
-                        <outlet property="Name" destination="ZO5-wR-5eA" id="9xZ-gN-2BG"/>
-                        <outlet property="SecondAudit" destination="ny5-oQ-a8r" id="WZV-Vi-L5p"/>
-                        <outlet property="Status" destination="4a5-fc-Bfg" id="Itw-Vx-FKM"/>
-                        <outlet property="TimeStamp" destination="7SO-bO-phO" id="DgX-fS-N5B"/>
-                        <outlet property="VerStatus" destination="qJv-Od-4IX" id="ZAO-vB-jdH"/>
+                        <outlet property="auditNo" destination="tBf-43-EKe" id="Nao-7b-WLk"/>
+                        <outlet property="comments" destination="eJt-42-G67" id="VAr-T3-blI"/>
+                        <outlet property="correctButton" destination="VnV-w7-Zqy" id="0Sw-AS-YIh"/>
+                        <outlet property="desc" destination="eas-40-7Cn" id="tT7-EP-D5v"/>
+                        <outlet property="firstAudit" destination="Adm-ta-13I" id="J62-y0-Klk"/>
+                        <outlet property="location" destination="X98-Er-BfP" id="jB6-R7-4fy"/>
+                        <outlet property="name" destination="ZO5-wR-5eA" id="AH5-7U-jAf"/>
+                        <outlet property="posterID" destination="oOa-Ou-b4H" id="QnN-6v-5RZ"/>
+                        <outlet property="secondAudit" destination="ny5-oQ-a8r" id="QWu-E2-4KF"/>
+                        <outlet property="status" destination="4a5-fc-Bfg" id="TZN-Fz-dtr"/>
+                        <outlet property="timeStamp" destination="7SO-bO-phO" id="YR4-tt-mei"/>
+                        <outlet property="verStatus" destination="qJv-Od-4IX" id="Yzb-mf-ifN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="km8-v0-Pie" userLabel="First Responder" sceneMemberID="firstResponder"/>

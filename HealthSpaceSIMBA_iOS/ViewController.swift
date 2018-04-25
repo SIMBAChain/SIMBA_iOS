@@ -15,7 +15,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet var selectButton: UIButton!
     var accountPickerData = ["","Account1","Account2","Account3","Account4","Account5","Account6","Account7","Account8","Account9","Account10"]
     
-    var SIMBADataArray = [SIMBAData]()
+    /*var SIMBADataArray = [SIMBAData]()
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -28,7 +28,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             }
             self.SIMBADataArray = SIMBAData!
         }
-    }
+    }*/
     override func viewDidLoad()
     {
         super.viewDidLoad()
