@@ -54,6 +54,17 @@ class PostViewController: UIViewController
         status.resignFirstResponder()
         comments.resignFirstResponder()
     }
+    @IBAction func post()
+    {
+        let postAlert = UIAlertController(title: "Post", message: "By clicking Post, I hereby declare that the above statement is true to the best of my knowledge and belief.", preferredStyle: .alert)
+        
+        postAlert.addAction(UIAlertAction(title: "Post", style: .default, handler: { action in
+            print("post it")
+        }))
+        postAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(postAlert, animated: true)
+    }
     @IBAction func cancelViewController()
     {
     dismiss(animated: true)
