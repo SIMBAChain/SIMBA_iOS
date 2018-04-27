@@ -24,6 +24,7 @@ class DetailViewController: UIViewController
     @IBOutlet  var secondAudit: UITextField!
     @IBOutlet  var correctButton: UIButton!
     @IBOutlet  var incorrectButton: UIButton!
+    @IBOutlet  var scroller: UIScrollView!
     
     var auditNumber: Int32! = 0
     var SIMBADataArray = [SIMBAData]()
@@ -49,6 +50,7 @@ class DetailViewController: UIViewController
             self.SIMBADataArray = SIMBAData!
             print("Array num = \(self.SIMBADataArray.count)")
             self.getData()
+          
         }
     }
     override func viewDidLoad()
@@ -57,6 +59,19 @@ class DetailViewController: UIViewController
         // Do any additional setup after loading the view, typically from a nib.
         configureView()
         print(auditNumber!)
+        print(self.view.frame.height)
+        if self.view.frame.height < 736
+        {
+            if self.view.frame.height > 568
+            {
+                scroller.contentSize = CGSize(width: self.view.frame.width, height: 736 )
+            }
+            else
+            {
+                scroller.contentSize = CGSize(width: self.view.frame.width, height: 832 )
+            }
+        }
+        
     }
     
     var detailItem: Int32?
@@ -78,6 +93,16 @@ class DetailViewController: UIViewController
         name.text      = "\(String(describing: SIMBADataArray[hashIndex].personName!))"
         verStatus.text =  "\(String(describing: SIMBADataArray[hashIndex].verified!))"
         
+        if "\(String(describing: SIMBADataArray[hashIndex].verified!))" == "true"
+        {
+            incorrectButton.isHidden = true
+            correctButton.isHidden = true
+        }
+        else
+        {
+            incorrectButton.isHidden = false
+            correctButton.isHidden = false
+        }
         //name.text      = "\(assets["personName"]!))"
     }
 }

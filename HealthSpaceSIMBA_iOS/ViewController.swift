@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Alamofire
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
 {
     @IBOutlet weak var accountTextField: UITextField!
@@ -29,6 +29,34 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             self.SIMBADataArray = SIMBAData!
         }
     }*/
+    //check internet
+     override func viewDidAppear(_ animated: Bool)
+    {
+        super.viewDidAppear(true)
+        checkInternetConnection()
+    }
+    func checkInternetConnection()
+    {
+        if isConnectedToInternet()
+        {
+            print("connected to internet")
+        }
+        else
+        {
+            let alert = UIAlertController(title: "ERROR:", message: "Check internet connection.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                self.checkInternetConnection()
+            }))
+            
+            self.present(alert, animated: true)
+            print("not connected to internet")
+        }
+    }
+    func isConnectedToInternet() ->Bool {
+        return NetworkReachabilityManager()!.isReachable
+    }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -36,8 +64,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         self.accountPicker.dataSource = self
         self.accountPicker.delegate = self
         hideAccountPicker()
+        
     }
-
+  
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
@@ -60,9 +90,17 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         accountTextField.text = accountPickerData[row]
     }
     @IBAction func selectaccount() {
+        checkInternetConnection()
+        if !isConnectedToInternet()
+        {print("not connected to internet")
+            return}
       hideAccountPicker()
     }
     @IBAction func showAccountPicker(){
+        checkInternetConnection()
+        if !isConnectedToInternet()
+        {print("not connected to internet")
+            return}
      accountPicker.isHidden = false
      selectButton.isHidden = false
     }
