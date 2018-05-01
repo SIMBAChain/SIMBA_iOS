@@ -50,7 +50,7 @@ class DetailViewController: UIViewController
             self.SIMBADataArray = SIMBAData!
             print("Array num = \(self.SIMBADataArray.count)")
             self.getData()
-          
+            self.sortItemsArray()
         }
     }
     override func viewDidLoad()
@@ -85,12 +85,20 @@ class DetailViewController: UIViewController
     func getData()
     {
         let hashIndex : Int = Int(auditNumber) - 1
+        var assets : [String : Any] = SIMBADataArray[hashIndex].assets!
+        
+        let items = assets["items"] as? [[String:Any]]
+        //print(SIMBADataArray[hashIndex].verifications!)
+        
         auditNo.text   = "\(String(describing: SIMBADataArray[hashIndex].hashId!))"
         posterID.text  = "\(String(describing: SIMBADataArray[hashIndex].accountId!))"
         IPFS.text      = "\(String(describing: SIMBADataArray[hashIndex].hash))"
         timeStamp.text = "\(String(describing: SIMBADataArray[hashIndex].timestamp!))"
         location.text  = "\(String(describing: SIMBADataArray[hashIndex].location!))"
         name.text      = "\(String(describing: SIMBADataArray[hashIndex].personName!))"
+        desc.text      = "\(String(describing: items![0]["description"]!))"
+        status.text    = "\(String(describing: items![0]["status"]!))"
+        comments.text  = "\(String(describing: items![0]["comments"]!))"
         verStatus.text =  "\(String(describing: SIMBADataArray[hashIndex].verified!))"
         
         if "\(String(describing: SIMBADataArray[hashIndex].verified!))" == "true"
@@ -104,6 +112,16 @@ class DetailViewController: UIViewController
             correctButton.isHidden = false
         }
         //name.text      = "\(assets["personName"]!))"
+    }
+    
+    func sortItemsArray()
+    {
+        let hashIndex : Int = Int(auditNumber) - 1
+        
+        var assets : [String : Any] = SIMBADataArray[hashIndex].assets!
+        if let items = assets["items"] as? [[String:Any]], !assets.isEmpty {
+            print(items[0]["description"]!) // the value is an optional.
+        }
     }
 }
     
