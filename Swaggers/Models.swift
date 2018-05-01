@@ -151,20 +151,18 @@ class Decoders {
             //--this is where the items are grabed from the backend--
             //-------------------------------------------------------
             
-            var temp : [String : Any] = Decoders.decode(clazz: [String: Any].self, source: sourceDictionary["asset"] as AnyObject)
-            instance.assets = temp
+            var assets        : [String : Any] = Decoders.decode(clazz: [String: Any].self, source: sourceDictionary["asset"] as AnyObject)
+            //var verifications : [String : Any] = Decoders.decode(clazz: [String: Any].self, source: sourceDictionary["verifications"] as AnyObject)
             
-            instance.hashId    = Decoders.decode(clazz: Int32.self, source: (sourceDictionary["hashId"] as AnyObject?)!)
-            instance.accountId = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["auditor"] as AnyObject?)
-            instance.hash      = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["hash"] as AnyObject?)
-            instance.timestamp     = temp["timestamp"]! as? String
-            instance.location      = temp["location"] as? String
-            instance.personName    = temp["personName"] as? String
-            //instance.description =
-            //instance.status      =
-            //instance.comments    =
-            instance.verified = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["verified"] as AnyObject?)
-
+            instance.assets        = assets
+            instance.hashId        = Decoders.decode(clazz: Int32.self, source: (sourceDictionary["hashId"] as AnyObject?)!)
+            instance.accountId     = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["auditor"] as AnyObject?)
+            instance.hash          = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["hash"] as AnyObject?)
+            instance.timestamp     = assets["timestamp"]! as? String
+            instance.location      = assets["location"] as? String
+            instance.personName    = assets["personName"] as? String
+            instance.verified      = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["verified"] as AnyObject?)
+            //instance.verifications = verifications
             return instance
         }
     }()
@@ -172,4 +170,6 @@ class Decoders {
     static fileprivate func initialize() {
         _ = Decoders.__once
     }
+    
+    
 }
