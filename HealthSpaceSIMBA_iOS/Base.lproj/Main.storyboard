@@ -361,37 +361,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bgF-xK-PQw">
-                                <rect key="frame" x="0.0" y="65" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="resignButton">
-                                    <color key="titleColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="resignResponders" destination="BYZ-38-t0r" eventType="touchUpInside" id="4PC-4I-eq2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="69u-eO-Of2">
-                                <rect key="frame" x="211" y="373" width="106" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="69u-eO-Of2">
+                                <rect key="frame" x="211" y="370" width="106" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Audit"/>
                                 <connections>
                                     <segue destination="cgE-lF-BNO" kind="modal" id="SvS-rd-JbC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Y7H-cb-2LJ">
-                                <rect key="frame" x="96" y="373" width="106" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Y7H-cb-2LJ">
+                                <rect key="frame" x="96" y="370" width="106" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="30"/>
                                 <state key="normal" title="Post"/>
                                 <connections>
                                     <segue destination="Xl8-tU-fe0" kind="modal" id="0pc-yz-yME"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HealthSpace" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="746-Pn-Vsm">
-                                <rect key="frame" x="18" y="301" width="378" height="76"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="HealthSpace" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="746-Pn-Vsm">
+                                <rect key="frame" x="18" y="300" width="378" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -443,6 +433,9 @@
                     <connections>
                         <outlet property="accountPicker" destination="mBr-LZ-YWR" id="x4H-j6-4Ed"/>
                         <outlet property="accountTextField" destination="sH2-GP-iIn" id="Zm3-aY-Tlc"/>
+                        <outlet property="auditButton" destination="69u-eO-Of2" id="ekj-cu-Kgq"/>
+                        <outlet property="healthSpaceLabel" destination="746-Pn-Vsm" id="J6n-eA-vp4"/>
+                        <outlet property="postButton" destination="Y7H-cb-2LJ" id="DXX-ca-PfM"/>
                         <outlet property="selectButton" destination="rdm-OG-zgY" id="QKi-38-Nmh"/>
                     </connections>
                 </viewController>

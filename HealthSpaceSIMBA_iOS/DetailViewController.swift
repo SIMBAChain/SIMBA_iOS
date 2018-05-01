@@ -40,6 +40,17 @@ class DetailViewController: UIViewController
     
     override func viewDidAppear(_ animated: Bool)
     {
+        print(self.view.frame.width)
+        print(self.view.frame.height)
+        if UIDevice.current.orientation.isPortrait
+        {
+            portraitMode()
+        }
+        else
+        {
+            landscapeMode()
+        }
+        
         DefaultAPI.getSIMBAData { (SIMBAData, error) in
             if let SIMBAData = SIMBAData{
                 print("\n\n\n")
@@ -59,21 +70,52 @@ class DetailViewController: UIViewController
         // Do any additional setup after loading the view, typically from a nib.
         configureView()
         print(auditNumber!)
-        print(self.view.frame.height)
+        
+    }
+    func portraitMode()
+    {
         if self.view.frame.height < 736
         {
             if self.view.frame.height > 568
             {
-                scroller.contentSize = CGSize(width: self.view.frame.width, height: 736 )
+                scroller.contentSize = CGSize(width: self.view.frame.width, height: 1000 )
             }
             else
             {
-                scroller.contentSize = CGSize(width: self.view.frame.width, height: 832 )
+                scroller.contentSize = CGSize(width: self.view.frame.width, height: 1100 )
             }
         }
-        
+        else
+        {
+            scroller.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+300)
+        }
     }
-    
+    func landscapeMode()
+    {
+        //568,736,832
+        if self.view.frame.width < 736
+        {
+            if self.view.frame.width > 568
+            {
+                scroller.contentSize = CGSize(width: 1000, height: self.view.frame.width )
+            }
+            else
+            {
+                scroller.contentSize = CGSize(width: 1100, height: self.view.frame.width )
+            }
+        }
+        else
+        {
+            scroller.contentSize = CGSize(width: self.view.frame.height, height: self.view.frame.width+300)
+        }
+    }
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        if UIDevice.current.orientation.isPortrait
+        {
+            print("scrollportrait")
+           portraitMode()
+        }
+    }
     var detailItem: Int32?
     {
         didSet {
