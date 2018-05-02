@@ -23,6 +23,8 @@ open class SIMBAData: JSONEncodable {
     public var status: String?
     public var comments: String?
     public var verified: String?
+    public var verifications : [String : Any]?
+
     //public var attributesItems: [String] = [] //array of strings
     
     
@@ -43,6 +45,7 @@ open class SIMBAData: JSONEncodable {
         nillableDictionary["status"] = self.status
         nillableDictionary["comments"] = self.comments
         nillableDictionary["verified"] = self.verified
+        nillableDictionary["verifications"] = self.verifications
         
         let dictionary: [String:Any] = APIHelper.rejectNil(nillableDictionary) ?? [:]
         return dictionary

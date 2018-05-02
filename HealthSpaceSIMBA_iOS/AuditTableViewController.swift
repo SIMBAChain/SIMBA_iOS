@@ -7,15 +7,39 @@
 //
 
 import UIKit
-
+import Alamofire
 class AuditTableViewController: UITableViewController {
     
     var SIMBADataArray = [SIMBAData]()
     var hashLastTen = [SIMBAData]().suffix(10)
-    
+    //check internet
+    func checkInternetConnection()
+    {
+        if isConnectedToInternet()
+        {
+            print("connected to internet")
+        }
+        else
+        {
+            let alert = UIAlertController(title: "ERROR:", message: "Check internet connection.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                self.dismiss(animated: true)
+            }))
+            
+            self.present(alert, animated: true)
+            
+        }
+    }
+    func isConnectedToInternet() ->Bool {
+        return NetworkReachabilityManager()!.isReachable
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+         checkInternetConnection()
+        if !isConnectedToInternet()
+        {print("not connected to internet")
+            return}
         //DefaultAPI.getDwarves calls the DefaultAPI.swift and runs the getDwarves function which executes the getDwarvesWithRequestBuilder function which accesses the basePath for the GET command.
         DefaultAPI.getSIMBAData { (SIMBAData, error) in
             if let SIMBAData = SIMBAData{
@@ -30,6 +54,10 @@ class AuditTableViewController: UITableViewController {
 
     // MARK: Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        checkInternetConnection()
+        if !isConnectedToInternet()
+        {print("not connected to internet")
+            return}
         let ten = SIMBADataArray.count - 10
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
