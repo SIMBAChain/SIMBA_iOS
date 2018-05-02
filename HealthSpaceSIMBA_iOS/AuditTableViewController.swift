@@ -61,7 +61,6 @@ class AuditTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SIMBADataCell") as! SIMBADataCell
         cell.auditNoLabel.text  = " Audit No. \(String(describing: currentSIMBAData.hashId!))"
         cell.posterIDLabel.text = "Poster No. \(currentSIMBAData.accountId!)"
-        //cell.nameLabel.text = "name: \(currentDwarf.hash ?? "")"
         
         return cell
         

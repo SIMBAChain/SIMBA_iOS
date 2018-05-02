@@ -72,7 +72,7 @@ class DetailViewController: UIViewController
         let hashIndex : Int = Int(auditNumber) - 1
         auditNo.text   = "\(String(describing: SIMBADataArray[hashIndex].hashId!))"
         posterID.text  = "\(String(describing: SIMBADataArray[hashIndex].accountId!))"
-        IPFS.text      = "\(String(describing: SIMBADataArray[hashIndex].hash))"
+        IPFS.text      = "\(String(describing: SIMBADataArray[hashIndex].hash!))"
         timeStamp.text = "\(String(describing: SIMBADataArray[hashIndex].timestamp!))"
         location.text  = "\(String(describing: SIMBADataArray[hashIndex].location!))"
         name.text      = "\(String(describing: SIMBADataArray[hashIndex].personName!))"

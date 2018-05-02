@@ -12,7 +12,8 @@ open class SIMBAData: JSONEncodable {
     public var hashId : Int32?
     public var accountId: String?
     public var hash: String?
-    public var assets : [String : Any]?
+    public var assets : [String : AnyObject]?
+    public var items : [String : AnyObject]?
     public var timestamp: String?
     public var location: String?
     public var personName: String?
@@ -34,6 +35,7 @@ open class SIMBAData: JSONEncodable {
         nillableDictionary["accountId"] = self.accountId
         nillableDictionary["hash"] = self.hash
         nillableDictionary["asset"] = self.assets
+        nillableDictionary["items"] = self.items
         nillableDictionary["timestamp"] = self.timestamp
         nillableDictionary["location"] = self.location
         nillableDictionary["personName"] = self.personName
