@@ -22,7 +22,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     var auditButtonY: CGFloat!
     var healthSpaceLabelX: CGFloat!
     var healthSpaceLabelY: CGFloat!
-
+     var portrait: Bool!
     
     var accountPickerData = ["","Account1","Account2","Account3","Account4","Account5","Account6","Account7","Account8","Account9","Account10"]
     
@@ -43,7 +43,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     //adapt gui for landscape and portrait
     
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+  /*  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
        
         print("Width")
         print(self.view.frame.width)
@@ -52,16 +52,18 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         print(self.view.frame.height)
         if UIDevice.current.orientation.isLandscape {
             print("Landscape")
+            print(portrait)
             postButton.frame.origin.y = 200
             auditButton.frame.origin.y = 200
             healthSpaceLabel.frame.origin.y = 130
         } else {
             print("Portrait")
+            print(portrait)
              postButton.frame.origin.y = postButtonY
               auditButton.frame.origin.y = auditButtonY
                healthSpaceLabel.frame.origin.y = healthSpaceLabelY
         }
-    }
+    } */
 
   
      override func viewDidAppear(_ animated: Bool)

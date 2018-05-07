@@ -74,48 +74,50 @@ class DetailViewController: UIViewController
     }
     func portraitMode()
     {
+        print("auditportrait")
         if self.view.frame.height < 736
         {
             if self.view.frame.height > 568
             {
-                scroller.contentSize = CGSize(width: self.view.frame.width, height: 1000 )
+                print("7 format")
+                scroller.contentSize = CGSize(width: self.view.frame.width, height: 1100 )
             }
             else
             {
+                print("5s format")
                 scroller.contentSize = CGSize(width: self.view.frame.width, height: 1100 )
             }
         }
         else
         {
+            print("8+ and X")
             scroller.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+300)
         }
     }
     func landscapeMode()
     {
+        print("auditlandscape")
         //568,736,832
         if self.view.frame.width < 736
         {
             if self.view.frame.width > 568
             {
-                scroller.contentSize = CGSize(width: 1000, height: self.view.frame.width )
+                 print("7 format")
+                scroller.contentSize = CGSize(width: self.view.frame.height, height: 1100 )
             }
             else
             {
-                scroller.contentSize = CGSize(width: 1100, height: self.view.frame.width )
+                 print("5s format")
+                scroller.contentSize = CGSize(width: self.view.frame.height, height: 1100 )
             }
         }
         else
         {
+            print("8+ and X")
             scroller.contentSize = CGSize(width: self.view.frame.height, height: self.view.frame.width+300)
         }
     }
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        if UIDevice.current.orientation.isPortrait
-        {
-            print("scrollportrait")
-           portraitMode()
-        }
-    }
+ 
     var detailItem: Int32?
     {
         didSet {

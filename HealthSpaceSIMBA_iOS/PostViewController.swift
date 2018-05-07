@@ -16,6 +16,21 @@ class PostViewController: UIViewController
     @IBOutlet var desc: UITextView!
     @IBOutlet var status: UITextField!
     @IBOutlet var comments: UITextView!
+    @IBOutlet  var scroller: UIScrollView!
+   
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        if UIDevice.current.orientation.isLandscape {
+            print("PostLandScape")
+        landscapeMode()
+          
+        } else {
+            print("PostPortrait")
+       
+            portraitMode()
+        }
+    }
     
     //check internet
     func checkInternetConnection()
@@ -39,12 +54,59 @@ class PostViewController: UIViewController
     func isConnectedToInternet() ->Bool {
         return NetworkReachabilityManager()!.isReachable
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         checkInternetConnection()
         if !isConnectedToInternet()
         {print("not connected to internet")
             return}
+        if UIDevice.current.orientation.isPortrait
+        {
+            portraitMode()
+        }
+        else
+        {
+            landscapeMode()
+        }
+    }
+   
+    func portraitMode()
+    {
+         if self.view.frame.width < 736
+        {
+            if self.view.frame.width > 568
+            {
+                scroller.contentSize = CGSize(width: 0, height: 0 )
+            }
+            else
+            {
+                scroller.contentSize = CGSize(width:0 , height: 0 )
+            }
+        }
+         else
+         {
+            scroller.contentSize = CGSize(width: 0, height: 0 )
+        }
+    }
+    func landscapeMode()
+    {
+        //568,736,832
+        if self.view.frame.width < 736
+        {
+            if self.view.frame.width > 568
+            {
+                scroller.contentSize = CGSize(width: 200, height: 470)
+            }
+            else
+            {
+                scroller.contentSize = CGSize(width: 200, height: 520)
+            }
+        }
+        else
+        {
+            scroller.contentSize = CGSize(width: 200, height: 500)
+        }
     }
     @IBAction func resignFirstResponders()
     {
