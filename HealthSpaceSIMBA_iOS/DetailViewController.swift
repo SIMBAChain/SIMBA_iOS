@@ -28,13 +28,18 @@ class DetailViewController: UIViewController
     
     var auditNumber: Int32! = 0
     var SIMBADataArray = [SIMBAData]()
-    
+    var SIMBAVerificationDataArray = [SIMBAVerificationData]()
+
+    let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
+
     func configureView()
     {
+        
         // Update the user interface for the detail item.
         if let detail = detailItem
         {
             auditNumber = Int32(detail.description)!
+            appDelegate?.saveAuditNumber(auditNum: auditNumber)
         }
     }
     
@@ -59,9 +64,21 @@ class DetailViewController: UIViewController
             }
             
             self.SIMBADataArray = SIMBAData!
-            print("Array num = \(self.SIMBADataArray.count)")
+            //print("Array num = \(self.SIMBADataArray.count)")
             self.getData()
-            self.sortItemsArray()
+            
+        }
+        VerificationAPI.getSIMBAVerifiactionData { (SIMBAVerificationData, error) in
+            if let SIMBAVerificationData = SIMBAVerificationData{
+                print("\n\n\n")
+                print(SIMBAVerificationData.first!.encodeToJSON())
+                print("\n\n\n")
+            }
+            
+            self.SIMBAVerificationDataArray = SIMBAVerificationData!
+            //print("Array num = \(self.SIMBADataArray.count)")
+            self.getVerificationData()
+            
         }
     }
     override func viewDidLoad()
@@ -130,21 +147,22 @@ class DetailViewController: UIViewController
     {
         let hashIndex : Int = Int(auditNumber) - 1
         var assets : [String : Any] = SIMBADataArray[hashIndex].assets!
-        
         let items = assets["items"] as? [[String:Any]]
+        
         //print(SIMBADataArray[hashIndex].verifications!)
         
-        auditNo.text   = "\(String(describing: SIMBADataArray[hashIndex].hashId!))"
-        posterID.text  = "\(String(describing: SIMBADataArray[hashIndex].accountId!))"
-        IPFS.text      = "\(String(describing: SIMBADataArray[hashIndex].hash))"
-        timeStamp.text = "\(String(describing: SIMBADataArray[hashIndex].timestamp!))"
-        location.text  = "\(String(describing: SIMBADataArray[hashIndex].location!))"
-        name.text      = "\(String(describing: SIMBADataArray[hashIndex].personName!))"
-        desc.text      = "\(String(describing: items![0]["description"]!))"
-        status.text    = "\(String(describing: items![0]["status"]!))"
-        comments.text  = "\(String(describing: items![0]["comments"]!))"
-        verStatus.text =  "\(String(describing: SIMBADataArray[hashIndex].verified!))"
+        auditNo.text    = "\(String(describing: SIMBADataArray[hashIndex].hashId!))"
+        posterID.text   = "\(String(describing: SIMBADataArray[hashIndex].accountId!))"
+        IPFS.text       = "\(String(describing: SIMBADataArray[hashIndex].hash!))"
+        timeStamp.text  = "\(String(describing: SIMBADataArray[hashIndex].timestamp!))"
+        location.text   = "\(String(describing: SIMBADataArray[hashIndex].location!))"
+        name.text       = "\(String(describing: SIMBADataArray[hashIndex].personName!))"
+        desc.text       = "\(String(describing: items![0]["description"]!))"
+        status.text     = "\(String(describing: items![0]["status"]!))"
+        comments.text   = "\(String(describing: items![0]["comments"]!))"
+        verStatus.text  = "\(String(describing: SIMBADataArray[hashIndex].verified!))"
         
+                
         if "\(String(describing: SIMBADataArray[hashIndex].verified!))" == "true"
         {
             incorrectButton.isHidden = true
@@ -158,13 +176,25 @@ class DetailViewController: UIViewController
         //name.text      = "\(assets["personName"]!))"
     }
     
-    func sortItemsArray()
-    {
-        let hashIndex : Int = Int(auditNumber) - 1
-        
-        var assets : [String : Any] = SIMBADataArray[hashIndex].assets!
-        if let items = assets["items"] as? [[String:Any]], !assets.isEmpty {
-            print(items[0]["description"]!) // the value is an optional.
+    func getVerificationData()
+    {        
+        if (SIMBAVerificationDataArray[0].verification == 0)
+        {
+            firstAudit.text = "false"
+        }
+        else
+        {
+            firstAudit.text = "true"
+
+        }
+        if (SIMBAVerificationDataArray[1].verification == 0)
+        {
+            secondAudit.text = "false"
+        }
+        else
+        {
+            secondAudit.text = "true"
+            
         }
     }
 }
