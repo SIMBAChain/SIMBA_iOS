@@ -7,32 +7,20 @@
 //
 
 import Alamofire
+import UIKit
 
 open class DefaultAPI: APIBase {
+
     /**
-     All dwarves
      
      - parameter completion: completion handler to receive the data and the error objects
      */
     open class func getSIMBAData(completion: @escaping ((_ data: [SIMBAData]?,_ error: Error?) -> Void)) {
-        getSIMBADataWithRequestBuilder().execute { (response, error) -> Void in
+            getSIMBADataWithRequestBuilder().execute { (response, error) -> Void in
             completion(response?.body, error);
         }
     }
-    
-    
-    /**
-     All dwarves
-     - GET /dwarf
-     - Gets all dwarves
-     - examples: [{contentType=application/json, example=[ {
-     "name" : "aeiou",
-     "id" : "aeiou",
-     "age" : "aeiou"
-     } ]}]
-     
-     - returns: RequestBuilder<[Dwarf]>
-     */
+
     open class func getSIMBADataWithRequestBuilder() -> RequestBuilder<[SIMBAData]> {
         let path = "/audit"
         let URLString = SwaggerClientAPI.basePath + path
@@ -49,7 +37,7 @@ open class DefaultAPI: APIBase {
     }
     
     /**
-     Post a new Dwarf
+     Post a transaction
      
      - parameter payload: (body) A single JSON object containing the dwarf definition
      - parameter completion: completion handler to receive the data and the error objects
@@ -59,7 +47,6 @@ open class DefaultAPI: APIBase {
             completion(error);
         }
     }
-    
     
     /**
      Post a new Dwarf

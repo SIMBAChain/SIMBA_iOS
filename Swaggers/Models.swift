@@ -140,11 +140,12 @@ class Decoders {
             fatalError("formatter failed to parse \(source)")
         }
         
-        // Decoder for [Dwarf]
+        // Decoder for [SIMBAData]
         Decoders.addDecoder(clazz: [SIMBAData].self) { (source: AnyObject) -> [SIMBAData] in
             return Decoders.decode(clazz: [SIMBAData].self, source: source)
         }
-        // Decoder for Dwarf
+
+        // Decoder for SIMBAData
         Decoders.addDecoder(clazz: SIMBAData.self) { (source: AnyObject) -> SIMBAData in
             let sourceDictionary = source as! [AnyHashable: Any]
             let instance = SIMBAData()
@@ -152,10 +153,9 @@ class Decoders {
             //--this is where the items are grabed from the backend--
             //-------------------------------------------------------
             
-            var assets        : [String : Any] = Decoders.decode(clazz: [String: Any].self, source: sourceDictionary["asset"] as AnyObject)
-            //var verifications : [String : Any] = Decoders.decode(clazz: [String: Any].self, source: sourceDictionary["verifications"] as AnyObject)
-            
-            instance.assets        = assets
+            var assets        : [String : Any] = Decoders.decode(clazz: [String : Any].self, source: sourceDictionary["asset"] as AnyObject)
+
+            instance.assets        = assets as [String : AnyObject]
             instance.hashId        = Decoders.decode(clazz: Int32.self, source: (sourceDictionary["hashId"] as AnyObject?)!)
             instance.accountId     = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["auditor"] as AnyObject?)
             instance.hash          = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["hash"] as AnyObject?)
@@ -163,11 +163,32 @@ class Decoders {
             instance.location      = assets["location"] as? String
             instance.personName    = assets["personName"] as? String
             instance.verified      = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["verified"] as AnyObject?)
-            //instance.verifications = verifications
+            return instance
+        }
+    
+        // Decoder for [SIMBAVerificationData]
+        Decoders.addDecoder(clazz: [SIMBAVerificationData].self) { (source: AnyObject) -> [SIMBAVerificationData] in
+            return Decoders.decode(clazz: [SIMBAVerificationData].self, source: source)
+        }
+        // Decoder for SIMBAVerificationData
+        Decoders.addDecoder(clazz: SIMBAVerificationData.self) { (source: AnyObject) -> SIMBAVerificationData in
+            let sourceDictionary = source as! [AnyHashable: Any]
+            let instance = SIMBAVerificationData()
+            //-------------------------------------------------------
+            //--this is where the items are grabed from the backend--
+            //-------------------------------------------------------
+            
+            instance.id = Decoders.decode(clazz: Int32.self, source: (sourceDictionary["id"] as AnyObject?)!)
+            instance.txnId = Decoders.decode(clazz: String.self, source: (sourceDictionary["txnId"] as AnyObject?)!)
+            instance.auditId = Decoders.decode(clazz: Int32.self, source: (sourceDictionary["auditId"] as AnyObject?)!)
+            instance.auditor = Decoders.decode(clazz: String.self, source: (sourceDictionary["auditor"] as AnyObject?)!)
+            instance.verification = Decoders.decode(clazz: Int.self, source: (sourceDictionary["verification"] as AnyObject?)!)
+            instance.createdAt = Decoders.decode(clazz: String.self, source: (sourceDictionary["createdAt"] as AnyObject?)!)
+            instance.updatedAt = Decoders.decode(clazz: String.self, source: (sourceDictionary["updatedAt"] as AnyObject?)!)
+            
             return instance
         }
     }()
-
     static fileprivate func initialize() {
         _ = Decoders.__once
     }
