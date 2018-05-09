@@ -25,11 +25,13 @@ class DetailViewController: UIViewController
     @IBOutlet  var correctButton: UIButton!
     @IBOutlet  var incorrectButton: UIButton!
     @IBOutlet  var scroller: UIScrollView!
-    
+    let mainVC = ViewController()
     var auditNumber: Int32! = 0
     var SIMBADataArray = [SIMBAData]()
     var SIMBAVerificationDataArray = [SIMBAVerificationData]()
-
+    var accountSelected: String! = ""
+    var accountName: String! = ""
+    
     let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
 
     func configureView()
@@ -45,8 +47,11 @@ class DetailViewController: UIViewController
     
     override func viewDidAppear(_ animated: Bool)
     {
-        print(self.view.frame.width)
-        print(self.view.frame.height)
+    
+            print("+---+\n+---+\n+---+\nACCOUNT:" + accountSelected)
+        
+       // print(self.view.frame.width)
+        //print(self.view.frame.height)
         if UIDevice.current.orientation.isPortrait
         {
             portraitMode()
@@ -170,15 +175,16 @@ class DetailViewController: UIViewController
         comments.text   = "\(String(describing: items![0]["comments"]!))"
         verStatus.text  = "\(String(describing: SIMBADataArray[hashIndex].verified!))"
         
-        if "\(String(describing: SIMBADataArray[hashIndex].verified!))" == "true"
-        {
-            incorrectButton.isHidden = true
-            correctButton.isHidden = true
-        }
-        else
+                
+        if firstAudit.text == "" || secondAudit.text == ""
         {
             incorrectButton.isHidden = false
             correctButton.isHidden = false
+        }
+        else
+        {
+            incorrectButton.isHidden = true
+            correctButton.isHidden = true
         }
     }
     

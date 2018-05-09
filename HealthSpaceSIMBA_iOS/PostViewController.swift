@@ -17,7 +17,9 @@ class PostViewController: UIViewController
     @IBOutlet var status: UITextField!
     @IBOutlet var comments: UITextView!
     @IBOutlet  var scroller: UIScrollView!
-   
+    @IBOutlet var account: UITextField!
+    var accountSelected: String! = ""
+    var accountName: String! = ""
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         
@@ -61,6 +63,11 @@ class PostViewController: UIViewController
         if !isConnectedToInternet()
         {print("not connected to internet")
             return}
+        if accountSelected == ""
+        {
+            return
+        }
+        account.text = accountName
         if UIDevice.current.orientation.isPortrait
         {
             portraitMode()
