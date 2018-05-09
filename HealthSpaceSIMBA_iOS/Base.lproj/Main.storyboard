@@ -279,6 +279,9 @@
                                         <state key="normal" title="Incorrect">
                                             <color key="titleColor" red="1" green="0.1071927577632954" blue="0.061318643542638718" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btnPressed:" destination="stP-UK-UvA" eventType="touchUpInside" id="qLz-eL-Gch"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VnV-w7-Zqy">
                                         <rect key="frame" x="265" y="468" width="65" height="36"/>
@@ -287,6 +290,9 @@
                                         <state key="normal" title="Correct">
                                             <color key="titleColor" red="0.0" green="1" blue="0.035871585688039165" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btnPressed:" destination="stP-UK-UvA" eventType="touchUpInside" id="qYi-8w-Cb1"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Verification Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FbD-ig-hyu" userLabel="VerStatus Label">
                                         <rect key="frame" x="39" y="543" width="140" height="21"/>

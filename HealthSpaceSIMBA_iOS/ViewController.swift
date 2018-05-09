@@ -134,8 +134,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBAction func showAccountPicker(){
         checkInternetConnection()
         if !isConnectedToInternet()
-        {print("not connected to internet")
-            return}
+        {
+            print("not connected to internet")
+            return
+        }
      accountPicker.isHidden = false
      selectButton.isHidden = false
     }
@@ -166,7 +168,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBAction func resignResponders()
     {
         accountTextField.resignFirstResponder()
-        
-        }
+    }
 }
 

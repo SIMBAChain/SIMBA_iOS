@@ -57,7 +57,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     {
         VerificationAPI.getSIMBAVerifiactionData { (SIMBAVerifiactionData, error) in
             if let SIMBAVerifyData = SIMBAVerifiactionData{
-                print(SIMBAVerifyData.first!.encodeToJSON())
+                if SIMBAVerifyData.isEmpty{
+                    print("nil")
+                }
+                //print(SIMBAVerifyData.first!.encodeToJSON())
             }
             print("\nHERE\n")
 

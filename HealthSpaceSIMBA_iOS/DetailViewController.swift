@@ -75,9 +75,14 @@ class DetailViewController: UIViewController
         }
         VerificationAPI.getSIMBAVerifiactionData { (SIMBAVerificationData, error) in
             if let SIMBAVerificationData = SIMBAVerificationData{
-                print("\n\n\n")
-                print(SIMBAVerificationData.first!.encodeToJSON())
-                print("\n\n\n")
+                if SIMBAVerificationData.isEmpty{
+                    print("nil")
+                }
+                else{
+                    print("\n\n\n")
+                    print(SIMBAVerificationData.first!.encodeToJSON())
+                    print("\n\n\n")
+                }
             }
             
             self.SIMBAVerificationDataArray = SIMBAVerificationData!
@@ -94,6 +99,8 @@ class DetailViewController: UIViewController
         print(auditNumber!)
         
     }
+    
+    //MARK: Check Orientation
     func portraitMode()
     {
         print("auditportrait")
@@ -148,6 +155,7 @@ class DetailViewController: UIViewController
         }
     }
     
+    //MARK: Grab & Display Data
     func getData()
     {
         let hashIndex : Int = Int(auditNumber) - 1
@@ -178,28 +186,72 @@ class DetailViewController: UIViewController
             incorrectButton.isHidden = true
             correctButton.isHidden = true
         }
-        //name.text      = "\(assets["personName"]!))"
     }
     
     func getVerificationData()
-    {        
-        if (SIMBAVerificationDataArray[0].verification == 0)
+    {
+        if SIMBAVerificationDataArray.count == 2
         {
-            firstAudit.text = "false"
+            if (SIMBAVerificationDataArray[0].verification == 0)
+            {
+                firstAudit.text = "false"
+            }
+            else
+            {
+                firstAudit.text = "true"
+                
+            }
+            if (SIMBAVerificationDataArray[1].verification == 0)
+            {
+                secondAudit.text = "false"
+            }
+            else
+            {
+                secondAudit.text = "true"
+                
+            }
+        }
+        else if SIMBAVerificationDataArray.count == 1
+        {
+            if (SIMBAVerificationDataArray[0].verification == 0)
+            {
+                firstAudit.text = "false"
+            }
+            else
+            {
+                firstAudit.text = "true"
+                
+            }
         }
         else
         {
-            firstAudit.text = "true"
-
-        }
-        if (SIMBAVerificationDataArray[1].verification == 0)
-        {
-            secondAudit.text = "false"
-        }
-        else
-        {
-            secondAudit.text = "true"
             
+        }
+    }
+    
+    //MARK: POST Verification
+    
+    func postVerify(verifyBtn : String, accountId : String)
+    {
+        print("PostVerify: \(verifyBtn) \(accountId)")
+        let verify = Verify()
+        verify.accountId = accountId
+        verify.verification = verifyBtn
+        
+        VerificationAPI.postVerificationSIMBAData(payload: verify, completion: {_ in })
+    }
+    
+    //MARK: Buttons
+    @IBAction func btnPressed(_ sender: UIButton)
+    {
+        print("pressed: \(sender.currentTitle!)")
+        if sender.currentTitle! == "Correct"
+        {
+            postVerify(verifyBtn: "true", accountId: "0xb1db8a003114ee270207e8812a009f108b41f625")
+        }
+        if sender.currentTitle! == "Incorrect"
+        {
+            postVerify(verifyBtn: "false", accountId: "0xb1db8a003114ee270207e8812a009f108b41f625")
         }
     }
 }
