@@ -15,6 +15,7 @@
 		50E83CFC2088CB3B004A4A4B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E83CFB2088CB3B004A4A4B /* Model.swift */; };
 		50E83CFE2088CB54004A4A4B /* DefaultAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E83CFD2088CB54004A4A4B /* DefaultAPI.swift */; };
 		50E83D002088D723004A4A4B /* AuditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E83CFF2088D723004A4A4B /* AuditTableViewController.swift */; };
+		9B8735C620A1EDF300BD40CA /* VerifyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8735C520A1EDF300BD40CA /* VerifyModel.swift */; };
 		9BB3412520A0C77D00779CD3 /* VerificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3412420A0C77D00779CD3 /* VerificationModel.swift */; };
 		9BB3412E20A0C7D100779CD3 /* VerificationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3412D20A0C7D100779CD3 /* VerificationAPI.swift */; };
 		9BB836E7208B740D00F4FCED /* ToDoFile in Resources */ = {isa = PBXBuildFile; fileRef = 9BB836E6208B740D00F4FCED /* ToDoFile */; };
@@ -117,6 +118,7 @@
 		50E83CFB2088CB3B004A4A4B /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		50E83CFD2088CB54004A4A4B /* DefaultAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAPI.swift; sourceTree = "<group>"; };
 		50E83CFF2088D723004A4A4B /* AuditTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditTableViewController.swift; sourceTree = "<group>"; };
+		9B8735C520A1EDF300BD40CA /* VerifyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyModel.swift; sourceTree = "<group>"; };
 		9BB3412420A0C77D00779CD3 /* VerificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationModel.swift; sourceTree = "<group>"; };
 		9BB3412D20A0C7D100779CD3 /* VerificationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationAPI.swift; sourceTree = "<group>"; };
 		9BB836E6208B740D00F4FCED /* ToDoFile */ = {isa = PBXFileReference; lastKnownFileType = text; name = ToDoFile; path = HealthSpaceSIMBA_iOS/ToDoFile; sourceTree = SOURCE_ROOT; };
@@ -213,6 +215,7 @@
 			children = (
 				50E83CFB2088CB3B004A4A4B /* Model.swift */,
 				9BB3412420A0C77D00779CD3 /* VerificationModel.swift */,
+				9B8735C520A1EDF300BD40CA /* VerifyModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50E83CFE2088CB54004A4A4B /* DefaultAPI.swift in Sources */,
+				9B8735C620A1EDF300BD40CA /* VerifyModel.swift in Sources */,
 				C9540D4B20851C3C001D77AF /* APIHelper.swift in Sources */,
 				9BB3412520A0C77D00779CD3 /* VerificationModel.swift in Sources */,
 				C9A80A86208E0AC90036BC43 /* PostViewController.swift in Sources */,

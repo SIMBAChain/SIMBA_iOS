@@ -22,53 +22,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     var auditButtonY: CGFloat!
     var healthSpaceLabelX: CGFloat!
     var healthSpaceLabelY: CGFloat!
-     var portrait: Bool!
+    var portrait: Bool!
     
     var accountPickerData = ["","Account1","Account2","Account3","Account4","Account5","Account6","Account7","Account8","Account9","Account10"]
-    
-    /*var SIMBADataArray = [SIMBAData]()
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        //DefaultAPI.getDwarves calls the DefaultAPI.swift and runs the getDwarves function which executes the getDwarvesWithRequestBuilder function which accesses the basePath for the GET command.
-        DefaultAPI.getSIMBAData { (SIMBAData, error) in
-            if let SIMBAData = SIMBAData{
-                print("\n\n\n")
-                print(SIMBAData.last!.encodeToJSON())
-                print("\n\n\n")
-            }
-            self.SIMBADataArray = SIMBAData!
-        }
-    }*/
-    //adapt gui for landscape and portrait
-    
-    
-  /*  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-       
-        print("Width")
-        print(self.view.frame.width)
-        
-        print("Height")
-        print(self.view.frame.height)
-        if UIDevice.current.orientation.isLandscape {
-            print("Landscape")
-            print(portrait)
-            postButton.frame.origin.y = 200
-            auditButton.frame.origin.y = 200
-            healthSpaceLabel.frame.origin.y = 130
-        } else {
-            print("Portrait")
-            print(portrait)
-             postButton.frame.origin.y = postButtonY
-              auditButton.frame.origin.y = auditButtonY
-               healthSpaceLabel.frame.origin.y = healthSpaceLabelY
-        }
-    } */
-
   
      override func viewDidAppear(_ animated: Bool)
     {
-        
         postButtonY = postButton.frame.origin.y
         auditButtonY = auditButton.frame.origin.y
         healthSpaceLabelY = healthSpaceLabel.frame.origin.y
@@ -148,8 +107,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBAction func showAccountPicker(){
         checkInternetConnection()
         if !isConnectedToInternet()
-        {print("not connected to internet")
-            return}
+        {
+            print("not connected to internet")
+            return
+        }
      accountPicker.isHidden = false
      selectButton.isHidden = false
     }
@@ -161,7 +122,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBAction func resignResponders()
     {
         accountTextField.resignFirstResponder()
-        
-        }
+    }
 }
 
