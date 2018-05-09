@@ -12,6 +12,11 @@ class AuditTableViewController: UITableViewController {
     
     var SIMBADataArray = [SIMBAData]()
     var hashLastTen = [SIMBAData]().suffix(10)
+    
+    var accountSelected: String! = ""
+    var accountName: String! = ""
+    
+   
     //check internet
     func checkInternetConnection()
     {
@@ -40,6 +45,7 @@ class AuditTableViewController: UITableViewController {
         if !isConnectedToInternet()
         {print("not connected to internet")
             return}
+        print("========Account========" + accountSelected)
         //DefaultAPI.getDwarves calls the DefaultAPI.swift and runs the getDwarves function which executes the getDwarvesWithRequestBuilder function which accesses the basePath for the GET command.
         DefaultAPI.getSIMBAData { (SIMBAData, error) in
             if let SIMBAData = SIMBAData{
@@ -58,6 +64,14 @@ class AuditTableViewController: UITableViewController {
         if !isConnectedToInternet()
         {print("not connected to internet")
             return}
+        
+        if segue.destination is DetailViewController
+        {
+            let vc = segue.destination as? DetailViewController
+            vc?.accountSelected = accountSelected
+            vc?.accountName = accountName
+        }
+        
         let ten = SIMBADataArray.count - 10
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
