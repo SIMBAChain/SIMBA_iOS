@@ -25,6 +25,10 @@ class DetailViewController: UIViewController
     @IBOutlet  var correctButton: UIButton!
     @IBOutlet  var incorrectButton: UIButton!
     @IBOutlet  var scroller: UIScrollView!
+    
+    var posterIDStr : String!
+    var auditor1    : String!
+    
     let mainVC = ViewController()
     var auditNumber: Int32! = 0
     var SIMBADataArray = [SIMBAData]()
@@ -48,7 +52,7 @@ class DetailViewController: UIViewController
     override func viewDidAppear(_ animated: Bool)
     {
     
-            print("+---+\n+---+\n+---+\nACCOUNT:" + accountSelected)
+        //print("+---+\n+---+\n+---+\nACCOUNT:" + accountSelected)
         
        // print(self.view.frame.width)
         //print(self.view.frame.height)
@@ -175,6 +179,8 @@ class DetailViewController: UIViewController
         comments.text   = "\(String(describing: items![0]["comments"]!))"
         verStatus.text  = "\(String(describing: SIMBADataArray[hashIndex].verified!))"
         
+        posterIDStr = "\(String(describing: SIMBADataArray[hashIndex].accountId!))"
+
                 
         if firstAudit.text == "" || secondAudit.text == ""
         {
@@ -213,6 +219,9 @@ class DetailViewController: UIViewController
         }
         else if SIMBAVerificationDataArray.count == 1
         {
+            auditor1 = SIMBAVerificationDataArray[0].auditor
+            print("HERE!!!! \(auditor1!)")
+            
             if (SIMBAVerificationDataArray[0].verification == 0)
             {
                 firstAudit.text = "false"
@@ -244,14 +253,49 @@ class DetailViewController: UIViewController
     //MARK: Buttons
     @IBAction func btnPressed(_ sender: UIButton)
     {
-        print("pressed: \(sender.currentTitle!)")
-        if sender.currentTitle! == "Correct"
+        print("pressed: \(sender.currentTitle!)\n\n")
+        if SIMBAVerificationDataArray.count == 1
         {
-            postVerify(verifyBtn: "true", accountId: "0xb1db8a003114ee270207e8812a009f108b41f625")
+            if accountSelected == posterIDStr
+            {
+                print("Same Poster & auditor")
+                sameAccountAlert(str: "poster")
+            }
+            if auditor1 == accountSelected
+            {
+                print("Same auditor as first auditor")
+                sameAccountAlert(str: "auditor1")
+            }
+            else
+            {
+                print("Different")
+                postVerification(btnSelected: sender.currentTitle!)
+            }
         }
-        if sender.currentTitle! == "Incorrect"
+    }
+    
+    func postVerification(btnSelected: String)
+    {
+        print("\n\(btnSelected)")
+        if btnSelected == "Correct"
         {
-            postVerify(verifyBtn: "false", accountId: "0xb1db8a003114ee270207e8812a009f108b41f625")
+            postVerify(verifyBtn: "true", accountId: accountSelected!)
+        }
+        if btnSelected == "Incorrect"
+        {
+            postVerify(verifyBtn: "false", accountId: accountSelected!)
+        }
+    }
+    
+    func sameAccountAlert(str: String)
+    {
+        if str == "poster"
+        {
+            //Add alert here for same Poster & auditor
+        }
+        if str == "auditor1"
+        {
+            //Add alert here for same auditor as first auditor
         }
     }
 }

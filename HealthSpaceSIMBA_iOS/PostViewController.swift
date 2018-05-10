@@ -21,20 +21,28 @@ class PostViewController: UIViewController
     var accountSelected: String! = ""
     var accountName: String! = ""
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        
-        if UIDevice.current.orientation.isLandscape {
-            print("PostLandScape")
-        landscapeMode()
-          
-        } else {
-            print("PostPortrait")
-       
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkInternetConnection()
+        if !isConnectedToInternet()
+        {print("not connected to internet")
+            return}
+        if accountSelected == ""
+        {
+            return
+        }
+        account.text = accountName
+        if UIDevice.current.orientation.isPortrait
+        {
             portraitMode()
+        }
+        else
+        {
+            landscapeMode()
         }
     }
     
-    //check internet
+    //MARK: check internet
     func checkInternetConnection()
     {
         if isConnectedToInternet()
@@ -56,28 +64,22 @@ class PostViewController: UIViewController
     func isConnectedToInternet() ->Bool {
         return NetworkReachabilityManager()!.isReachable
     }
+   
+    //MARK: Checking Orientation
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        checkInternetConnection()
-        if !isConnectedToInternet()
-        {print("not connected to internet")
-            return}
-        if accountSelected == ""
-        {
-            return
-        }
-        account.text = accountName
-        if UIDevice.current.orientation.isPortrait
-        {
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        if UIDevice.current.orientation.isLandscape {
+            print("PostLandScape")
+            landscapeMode()
+            
+        } else {
+            print("PostPortrait")
+            
             portraitMode()
         }
-        else
-        {
-            landscapeMode()
-        }
     }
-   
+    
     func portraitMode()
     {
          if self.view.frame.width < 736
@@ -115,6 +117,9 @@ class PostViewController: UIViewController
             scroller.contentSize = CGSize(width: 200, height: 500)
         }
     }
+    
+    //MARK: IBActions
+
     @IBAction func resignFirstResponders()
     {
         location.resignFirstResponder()
@@ -123,7 +128,9 @@ class PostViewController: UIViewController
         status.resignFirstResponder()
         comments.resignFirstResponder()
     }
-    @IBAction func post()
+    
+    //Post
+    @IBAction func postPressed()
     {
         let postAlert = UIAlertController(title: "Post", message: "By clicking Post, I hereby declare that the above statement is true to the best of my knowledge and belief.", preferredStyle: .alert)
         
@@ -134,8 +141,16 @@ class PostViewController: UIViewController
         
         self.present(postAlert, animated: true)
     }
+    
     @IBAction func cancelViewController()
     {
-    dismiss(animated: true)
+        dismiss(animated: true)
+    }
+    
+    //MARK: Post Data
+    
+    func postData()
+    {
+        
     }
 }
