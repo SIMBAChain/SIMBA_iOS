@@ -522,7 +522,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Post"/>
                                 <connections>
-                                    <action selector="post" destination="Xl8-tU-fe0" eventType="touchUpInside" id="wPT-P2-x0E"/>
+                                    <action selector="postPressed" destination="Xl8-tU-fe0" eventType="touchUpInside" id="Qmg-UD-RO0"/>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Qqh-q8-z3M">
