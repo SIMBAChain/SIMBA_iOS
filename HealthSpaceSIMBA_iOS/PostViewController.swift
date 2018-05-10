@@ -63,9 +63,15 @@ class PostViewController: UIViewController
         if !isConnectedToInternet()
         {print("not connected to internet")
             return}
-        if accountSelected == ""
+        if accountName == ""
         {
-            return
+            let accountAlert = UIAlertController(title: "ERROR:", message: "Please Select an Account", preferredStyle: .alert)
+            
+            accountAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                self.dismiss(animated: true)
+            }))
+            
+            self.present(accountAlert, animated: true)
         }
         account.text = accountName
         if UIDevice.current.orientation.isPortrait

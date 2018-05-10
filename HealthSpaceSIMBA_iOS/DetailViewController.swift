@@ -25,6 +25,7 @@ class DetailViewController: UIViewController
     @IBOutlet  var correctButton: UIButton!
     @IBOutlet  var incorrectButton: UIButton!
     @IBOutlet  var scroller: UIScrollView!
+    @IBOutlet  var accountField : UITextField!
     let mainVC = ViewController()
     var auditNumber: Int32! = 0
     var SIMBADataArray = [SIMBAData]()
@@ -49,7 +50,7 @@ class DetailViewController: UIViewController
     {
     
             print("+---+\n+---+\n+---+\nACCOUNT:" + accountSelected)
-        
+        accountField.text = accountName
        // print(self.view.frame.width)
         //print(self.view.frame.height)
         if UIDevice.current.orientation.isPortrait
