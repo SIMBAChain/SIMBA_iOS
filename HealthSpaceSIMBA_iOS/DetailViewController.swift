@@ -26,6 +26,11 @@ class DetailViewController: UIViewController
     @IBOutlet  var incorrectButton: UIButton!
     @IBOutlet  var scroller: UIScrollView!
     @IBOutlet  var accountField : UITextField!
+    
+    
+    
+    
+    
     let mainVC = ViewController()
     var auditNumber: Int32! = 0
     var SIMBADataArray = [SIMBAData]()
