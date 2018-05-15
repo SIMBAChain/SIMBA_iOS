@@ -93,16 +93,17 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="7SO-bO-phO" userLabel="TimeStamp">
-                                        <rect key="frame" x="145" y="122" width="260" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="7SO-bO-phO" userLabel="TimeStamp">
+                                        <rect key="frame" x="144" y="122" width="261" height="30"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" notEnabled="YES"/>
-                                        </accessibility>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="touchUpInside" id="MxB-yk-EJl"/>
+                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="editingDidBegin" id="dY8-8Q-OBw"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="IPFS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pvQ-bu-u7z" userLabel="IPFS Label">
                                         <rect key="frame" x="102" y="89" width="35" height="21"/>
@@ -111,27 +112,28 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="ejR-DY-8dj" userLabel="IPFS">
-                                        <rect key="frame" x="145" y="84" width="260" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="ejR-DY-8dj" userLabel="IPFS">
+                                        <rect key="frame" x="144" y="84" width="261" height="30"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" notEnabled="YES"/>
-                                        </accessibility>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="touchUpInside" id="GrB-lB-GGu"/>
+                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="editingDidBegin" id="bai-Kv-Yib"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="KBc-Gc-9JU" userLabel="AuditNum">
-                                        <rect key="frame" x="145" y="8" width="260" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="KBc-Gc-9JU" userLabel="AuditNum">
+                                        <rect key="frame" x="144" y="8" width="261" height="30"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" notEnabled="YES"/>
-                                        </accessibility>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="editingDidBegin" id="Cfg-X9-r9F"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fkE-cG-ev3" userLabel="Name Label">
                                         <rect key="frame" x="92" y="203" width="45" height="20"/>
@@ -175,41 +177,44 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="95U-Cf-zPk" userLabel="PosterID">
-                                        <rect key="frame" x="145" y="46" width="260" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="95U-Cf-zPk" userLabel="PosterID">
+                                        <rect key="frame" x="144" y="46" width="261" height="30"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" notEnabled="YES"/>
-                                        </accessibility>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="touchUpInside" id="EBA-dw-Mmd"/>
+                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="editingDidBegin" id="KIM-dZ-qEb"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="X98-Er-BfP" userLabel="Location">
-                                        <rect key="frame" x="145" y="160" width="260" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="X98-Er-BfP" userLabel="Location">
+                                        <rect key="frame" x="144" y="160" width="261" height="30"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" notEnabled="YES"/>
-                                        </accessibility>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="editingDidBegin" id="38q-xu-2GQ"/>
+                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="touchUpInside" id="4yf-zX-vbc"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="ZO5-wR-5eA" userLabel="Name">
-                                        <rect key="frame" x="145" y="198" width="260" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="ZO5-wR-5eA" userLabel="Name">
+                                        <rect key="frame" x="144" y="198" width="261" height="30"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" notEnabled="YES"/>
-                                        </accessibility>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="editingDidBegin" id="Gm2-UA-L23"/>
+                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="touchUpInside" id="pSN-SF-fvE"/>
+                                        </connections>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" keyboardDismissMode="onDrag" id="eas-40-7Cn" userLabel="Description">
-                                        <rect key="frame" x="145" y="236" width="260" height="80"/>
+                                        <rect key="frame" x="144" y="236" width="261" height="80"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration">
@@ -218,19 +223,20 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="4a5-fc-Bfg" userLabel="Status">
-                                        <rect key="frame" x="145" y="324" width="260" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="4a5-fc-Bfg" userLabel="Status">
+                                        <rect key="frame" x="144" y="324" width="261" height="30"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" notEnabled="YES"/>
-                                        </accessibility>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="editingDidBegin" id="0cU-6b-OPJ"/>
+                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="touchUpInside" id="Ijt-Dn-YB3"/>
+                                        </connections>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" id="eJt-42-G67" userLabel="Comments">
-                                        <rect key="frame" x="145" y="362" width="260" height="80"/>
+                                        <rect key="frame" x="144" y="362" width="261" height="80"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration">
@@ -240,7 +246,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="qJv-Od-4IX" userLabel="VerStatus">
-                                        <rect key="frame" x="187" y="538" width="210" height="30"/>
+                                        <rect key="frame" x="191" y="511" width="202" height="30"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration">
@@ -249,9 +255,12 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="editingDidBegin" id="Vmt-7e-CC3"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="Adm-ta-13I" userLabel="FirstAudit">
-                                        <rect key="frame" x="187" y="576" width="210" height="30"/>
+                                        <rect key="frame" x="191" y="549" width="202" height="30"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration">
@@ -260,9 +269,12 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="editingDidBegin" id="JDN-lg-NT2"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="ny5-oQ-a8r" userLabel="SecondAudit">
-                                        <rect key="frame" x="187" y="614" width="210" height="30"/>
+                                        <rect key="frame" x="191" y="587" width="202" height="30"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration">
@@ -271,6 +283,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="editingDidBegin" id="kPa-y0-7Ex"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dr3-uF-KUd">
                                         <rect key="frame" x="85" y="468" width="78" height="36"/>
@@ -284,7 +299,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VnV-w7-Zqy">
-                                        <rect key="frame" x="265" y="468" width="65" height="36"/>
+                                        <rect key="frame" x="262" y="468" width="71" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Correct">
@@ -295,21 +310,21 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Verification Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FbD-ig-hyu" userLabel="VerStatus Label">
-                                        <rect key="frame" x="39" y="543" width="140" height="21"/>
+                                        <rect key="frame" x="39" y="516" width="140" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="First Auditor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eZj-4p-7BG" userLabel="FirstAudit Label">
-                                        <rect key="frame" x="85" y="581" width="94" height="21"/>
+                                        <rect key="frame" x="85" y="554" width="94" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Second Auditor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NTY-dD-Pbm" userLabel="SecAudit Label">
-                                        <rect key="frame" x="61" y="619" width="118" height="21"/>
+                                        <rect key="frame" x="61" y="592" width="118" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -317,11 +332,22 @@
                                     </label>
                                 </subviews>
                             </scrollView>
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" id="ki6-p3-LRj">
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="10" id="KWf-Dh-T5c" userLabel="magTextField">
+                                <rect key="frame" x="0.0" y="699" width="414" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="CPo-y2-iSC">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="BQW-3V-9UT" userLabel="Account">
+                        <barButtonItem key="rightBarButtonItem" id="BQW-3V-9UT" userLabel="Account">
                             <textField key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="6MN-FS-Uss">
                                 <rect key="frame" x="234" y="7" width="160" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -333,6 +359,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="IPFS" destination="ejR-DY-8dj" id="lMH-Ml-uLN"/>
+                        <outlet property="accountField" destination="6MN-FS-Uss" id="Zts-8R-X4b"/>
                         <outlet property="auditNo" destination="KBc-Gc-9JU" id="GOl-IE-Wgq"/>
                         <outlet property="comments" destination="eJt-42-G67" id="VAr-T3-blI"/>
                         <outlet property="correctButton" destination="VnV-w7-Zqy" id="0Sw-AS-YIh"/>
@@ -340,6 +367,7 @@
                         <outlet property="firstAudit" destination="Adm-ta-13I" id="J62-y0-Klk"/>
                         <outlet property="incorrectButton" destination="dr3-uF-KUd" id="Fga-OO-bcy"/>
                         <outlet property="location" destination="X98-Er-BfP" id="jB6-R7-4fy"/>
+                        <outlet property="magTextField" destination="KWf-Dh-T5c" id="5ql-Ie-3Sa"/>
                         <outlet property="name" destination="ZO5-wR-5eA" id="AH5-7U-jAf"/>
                         <outlet property="posterID" destination="95U-Cf-zPk" id="HlR-cN-23U"/>
                         <outlet property="scroller" destination="ibD-Fu-iuv" id="aAV-XH-zUN"/>
@@ -489,7 +517,7 @@
                                             </connections>
                                         </barButtonItem>
                                         <textField key="titleView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="12" id="GGY-dT-qp2" userLabel="Account">
-                                            <rect key="frame" x="88" y="7" width="238" height="30"/>
+                                            <rect key="frame" x="194.66666666666666" y="7" width="25" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                             <accessibility key="accessibilityConfiguration">
                                                 <accessibilityTraits key="traits" notEnabled="YES"/>

@@ -21,26 +21,7 @@ class PostViewController: UIViewController
     var accountSelected: String! = ""
     var accountName: String! = ""
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        checkInternetConnection()
-        if !isConnectedToInternet()
-        {print("not connected to internet")
-            return}
-        if accountSelected == ""
-        {
-            return
-        }
-        account.text = accountName
-        if UIDevice.current.orientation.isPortrait
-        {
-            portraitMode()
-        }
-        else
-        {
-            landscapeMode()
-        }
-    }
+
     
     //MARK: check internet
     func checkInternetConnection()
@@ -90,6 +71,15 @@ class PostViewController: UIViewController
         }
         else
         {
+            landscapeMode()
+            
+        }
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        if UIDevice.current.orientation.isLandscape {
+            print("PostLandScape")
             landscapeMode()
             
         } else {

@@ -26,10 +26,11 @@ class DetailViewController: UIViewController
     @IBOutlet  var incorrectButton: UIButton!
     @IBOutlet  var scroller: UIScrollView!
     @IBOutlet  var accountField : UITextField!
+    @IBOutlet  var magTextField: UITextField!
     
-    
-    
-    
+    var posterIDStr : String!
+    var auditor1    : String!
+    var verButtonStatus : Bool!
     
     let mainVC = ViewController()
     var auditNumber: Int32! = 0
@@ -54,8 +55,11 @@ class DetailViewController: UIViewController
     override func viewDidAppear(_ animated: Bool)
     {
     
-            print("+---+\n+---+\n+---+\nACCOUNT:" + accountSelected)
+            
+        self.correctButton.isEnabled = true
+        self.incorrectButton.isEnabled = true
         accountField.text = accountName
+        print("========Account Selected|" + accountSelected + "|========")
        // print(self.view.frame.width)
         //print(self.view.frame.height)
         if UIDevice.current.orientation.isPortrait
@@ -103,53 +107,44 @@ class DetailViewController: UIViewController
         // Do any additional setup after loading the view, typically from a nib.
         configureView()
         print(auditNumber!)
-        
+        correctButton.setTitleColor(UIColor.gray, for: .disabled)
+        incorrectButton.setTitleColor(UIColor.gray, for: .disabled)
     }
     
     //MARK: Check Orientation
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        if UIDevice.current.orientation.isLandscape {
+            print("DetailLandscape")
+            landscapeMode()
+            
+        } else {
+            print("DetailPortrait")
+            
+            portraitMode()
+        }
+    }
     func portraitMode()
     {
-        print("auditportrait")
-        if self.view.frame.height < 736
-        {
-            if self.view.frame.height > 568
-            {
-                print("7 format")
-                scroller.contentSize = CGSize(width: self.view.frame.width, height: 1100 )
-            }
-            else
-            {
-                print("5s format")
-                scroller.contentSize = CGSize(width: self.view.frame.width, height: 1100 )
-            }
-        }
-        else
-        {
-            print("8+ and X")
-            scroller.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+300)
-        }
+        scroller.contentSize = CGSize(width: 0, height: 0 )
     }
     func landscapeMode()
     {
-        print("auditlandscape")
         //568,736,832
         if self.view.frame.width < 736
         {
             if self.view.frame.width > 568
             {
-                 print("7 format")
-                scroller.contentSize = CGSize(width: self.view.frame.height, height: 1100 )
+                scroller.contentSize = CGSize(width: 200, height: 1050)
             }
             else
             {
-                 print("5s format")
-                scroller.contentSize = CGSize(width: self.view.frame.height, height: 1100 )
+                scroller.contentSize = CGSize(width: 200, height: 1100)
             }
         }
         else
         {
-            print("8+ and X")
-            scroller.contentSize = CGSize(width: self.view.frame.height, height: self.view.frame.width+300)
+            scroller.contentSize = CGSize(width: 200, height: 1010)
         }
     }
  
@@ -188,14 +183,21 @@ class DetailViewController: UIViewController
         {
             incorrectButton.isHidden = false
             correctButton.isHidden = false
+           
         }
         else
         {
             incorrectButton.isHidden = true
             correctButton.isHidden = true
+            
         }
     }
-    
+    @IBAction func magnify(_ sender: UITextField)
+    {
+        print("ENHANCE!!!")
+        magTextField.text = sender.text
+        sender.resignFirstResponder()
+    }
     func getVerificationData()
     {
         if SIMBAVerificationDataArray.count == 2
@@ -252,17 +254,21 @@ class DetailViewController: UIViewController
         VerificationAPI.postVerificationSIMBAData(payload: verify, completion: {_ in })
     }
     
+    //Check to see if user is allowed to audit
+ 
+    
     //MARK: Buttons
     @IBAction func btnPressed(_ sender: UIButton)
     {
+        print("account selected: " + accountSelected + "\n posterid:        " + posterIDStr )
         print("pressed: \(sender.currentTitle!)\n\n")
+        if accountSelected == posterIDStr
+        {
+            print("Same Poster & auditor")
+            sameAccountAlert(str: "poster")
+        }
         if SIMBAVerificationDataArray.count == 1
         {
-            if accountSelected == posterIDStr
-            {
-                print("Same Poster & auditor")
-                sameAccountAlert(str: "poster")
-            }
             if auditor1 == accountSelected
             {
                 print("Same auditor as first auditor")
@@ -294,10 +300,26 @@ class DetailViewController: UIViewController
         if str == "poster"
         {
             //Add alert here for same Poster & auditor
+            let accountAlert = UIAlertController(title: "Cannot verify ones own post", message: "Select a different account to continue.", preferredStyle: .alert)
+            
+            accountAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                self.correctButton.isEnabled = false
+                self.incorrectButton.isEnabled = false
+            }))
+            
+            self.present(accountAlert, animated: true)
         }
         if str == "auditor1"
         {
             //Add alert here for same auditor as first auditor
+            let accountAlert = UIAlertController(title: "Cannot verify a post twice", message: "Select a different account to continue.", preferredStyle: .alert)
+            
+            accountAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                self.correctButton.isEnabled = false
+                self.incorrectButton.isEnabled = false
+            }))
+            
+            self.present(accountAlert, animated: true)
         }
     }
 }
