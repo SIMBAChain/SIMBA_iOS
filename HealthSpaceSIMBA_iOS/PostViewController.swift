@@ -18,6 +18,7 @@ class PostViewController: UIViewController
     @IBOutlet var comments: UITextView!
     @IBOutlet  var scroller: UIScrollView!
     @IBOutlet var account: UITextField!
+    
     var accountSelected: String! = ""
     var accountName: String! = ""
     
@@ -160,6 +161,16 @@ class PostViewController: UIViewController
     
     func postData()
     {
+        let SIMBADataPost = SIMBAPostData()
+        var assets  = [String : Any?] ()
+        var items = [String : Any?] ()
+        items["description"] = desc.text!
+        //assets["timestamp"] = timestamp
+        assets["location"] = location.text!
         
+        SIMBADataPost.accountId = account.text!
+        SIMBADataPost.assets = assets
+        
+        PostTranscationAPI.postSIMBAData(payload: SIMBADataPost, completion: {_ in })
     }
 }

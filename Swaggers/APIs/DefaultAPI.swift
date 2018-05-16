@@ -11,8 +11,7 @@ import UIKit
 
 open class DefaultAPI: APIBase {
 
-    /**
-     
+    /*
      - parameter completion: completion handler to receive the data and the error objects
      */
     open class func getSIMBAData(completion: @escaping ((_ data: [SIMBAData]?,_ error: Error?) -> Void)) {
@@ -58,7 +57,7 @@ open class DefaultAPI: APIBase {
      - returns: RequestBuilder<Void>
      */
     open class func postSIMBADataWithRequestBuilder(payload: SIMBAData) -> RequestBuilder<Void> {
-        let path = "/dwarf"//change to audit when ready to test POSTs
+        let path = "/audit"//change to audit when ready to test POSTs
         let URLString = SwaggerClientAPI.basePath + path
         let parameters = payload.encodeToJSON() as? [String:AnyObject]
         
