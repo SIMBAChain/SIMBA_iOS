@@ -22,26 +22,7 @@ class PostViewController: UIViewController
     var accountSelected: String! = ""
     var accountName: String! = ""
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        checkInternetConnection()
-        if !isConnectedToInternet()
-        {print("not connected to internet")
-            return}
-        if accountSelected == ""
-        {
-            return
-        }
-        account.text = accountName
-        if UIDevice.current.orientation.isPortrait
-        {
-            portraitMode()
-        }
-        else
-        {
-            landscapeMode()
-        }
-    }
+
     
     //MARK: check internet
     func checkInternetConnection()
@@ -67,6 +48,34 @@ class PostViewController: UIViewController
     }
    
     //MARK: Checking Orientation
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkInternetConnection()
+        if !isConnectedToInternet()
+        {print("not connected to internet")
+            return}
+        if accountName == ""
+        {
+            let accountAlert = UIAlertController(title: "ERROR:", message: "Please Select an Account", preferredStyle: .alert)
+            
+            accountAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                self.dismiss(animated: true)
+            }))
+            
+            self.present(accountAlert, animated: true)
+        }
+        account.text = accountName
+        if UIDevice.current.orientation.isPortrait
+        {
+            portraitMode()
+        }
+        else
+        {
+            landscapeMode()
+            
+        }
+    }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         

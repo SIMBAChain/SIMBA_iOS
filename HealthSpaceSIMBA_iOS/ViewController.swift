@@ -140,10 +140,14 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }
      accountPicker.isHidden = false
      selectButton.isHidden = false
+        postButton.isEnabled = false
+        auditButton.isEnabled = false
     }
     @IBAction func hideAccountPicker(){
         accountPicker.isHidden = true
         selectButton.isHidden = true
+        postButton.isEnabled = true
+        auditButton.isEnabled = true
     }
     //pass account info to the post view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)

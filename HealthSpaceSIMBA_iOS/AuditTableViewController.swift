@@ -45,6 +45,16 @@ class AuditTableViewController: UITableViewController {
         if !isConnectedToInternet()
         {print("not connected to internet")
             return}
+        if accountName == ""
+        {
+            let accountAlert = UIAlertController(title: "ERROR:", message: "Please Select an Account", preferredStyle: .alert)
+            
+            accountAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                self.dismiss(animated: true)
+            }))
+            
+            self.present(accountAlert, animated: true)
+        }
         print("========Account========" + accountSelected)
         //DefaultAPI.getDwarves calls the DefaultAPI.swift and runs the getDwarves function which executes the getDwarvesWithRequestBuilder function which accesses the basePath for the GET command.
         DefaultAPI.getSIMBAData { (SIMBAData, error) in
