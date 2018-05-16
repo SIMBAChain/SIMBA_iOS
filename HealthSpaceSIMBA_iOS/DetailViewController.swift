@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+
 class DetailViewController: UIViewController
 {
     @IBOutlet  var auditNo: UITextField!
@@ -26,15 +27,16 @@ class DetailViewController: UIViewController
     @IBOutlet  var incorrectButton: UIButton!
     @IBOutlet  var scroller: UIScrollView!
     
+    var accountSelected : String!
+    var accountName : String!
     var posterIDStr : String!
     var auditor1    : String!
     
-    let mainVC = ViewController()
     var auditNumber: Int32! = 0
+    
+    let mainVC = ViewController()
     var SIMBADataArray = [SIMBAData]()
     var SIMBAVerificationDataArray = [SIMBAVerificationData]()
-    var accountSelected: String! = ""
-    var accountName: String! = ""
     
     let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
 
