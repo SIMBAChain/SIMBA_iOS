@@ -11,6 +11,7 @@ import UIKit
 
 class DetailViewController: UIViewController
 {
+    //Outlets
     @IBOutlet  var auditNo: UITextField!
     @IBOutlet  var posterID: UITextField!
     @IBOutlet  var IPFS: UITextField!
@@ -29,14 +30,13 @@ class DetailViewController: UIViewController
     @IBOutlet  var accountField : UITextField!
     @IBOutlet  var magTextField: UITextField!
     
+    //variables
     var accountSelected : String!
     var accountName : String!
     var posterIDStr : String!
     var auditor1    : String!
     var verButtonStatus : Bool!
-    
     var auditNumber: Int32! = 0
-    
     let mainVC = ViewController()
     var SIMBADataArray = [SIMBAData]()
     var SIMBAVerificationDataArray = [SIMBAVerificationData]()
@@ -75,11 +75,14 @@ class DetailViewController: UIViewController
         
         DefaultAPI.getSIMBAData { (SIMBAData, error) in
             if let SIMBAData = SIMBAData{
-                print("\n\n\n")
+                print("\n\n\n SIMBA DATA !!!!!!!!")
                 print(SIMBAData.first!.encodeToJSON())
                 print("\n\n\n")
             }
-            
+            else{
+                self.dismiss(animated: true)
+                return
+            }
             self.SIMBADataArray = SIMBAData!
             //print("Array num = \(self.SIMBADataArray.count)")
             self.getData()

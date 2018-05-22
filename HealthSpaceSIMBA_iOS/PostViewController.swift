@@ -146,6 +146,7 @@ class PostViewController: UIViewController
         
         postAlert.addAction(UIAlertAction(title: "Post", style: .default, handler: { action in
             print("post it")
+            self.postData()
         }))
         postAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
@@ -161,16 +162,27 @@ class PostViewController: UIViewController
     
     func postData()
     {
-        let SIMBADataPost = SIMBAPostData()
-        var assets  = [String : Any?] ()
-        var items = [String : Any?] ()
-        items["description"] = desc.text!
-        //assets["timestamp"] = timestamp
-        assets["location"] = location.text!
+        let SIMBAPostData = SIMBADataPost()
+      
+        let assets : [String : Any] = SIMBAPostData.asset as Any as! [String : Any]
+    //    let items  : [String : Any] = SIMBAPostData.items as Any as! [String : Any]
         
-        SIMBADataPost.accountId = account.text!
-        SIMBADataPost.assets = assets
+    SIMBAPostData.timestamp = "PlaceHolderTime 5/22/18"
+      SIMBAPostData.location = location.text
+      SIMBAPostData.personName = name.text
+   //   SIMBAPostData.asset["attributes"] = SIMBAPostData.attributes
+   //  SIMBAPostData.asset["artifacts"] = SIMBAPostData.artifacts
+       SIMBAPostData.desc = String(desc.text)
+       SIMBAPostData.status  = status.text
+        SIMBAPostData.comments = String(comments.text)
+    //    SIMBAPostData.items["attributes"] = SIMBAPostData.itemAttributes
+        //assets["items"] = items
+        print("start posting")
         
-        PostTranscationAPI.postSIMBAData(payload: SIMBADataPost, completion: {_ in })
+        SIMBAPostData.accountId = accountSelected!
+        SIMBAPostData.asset = assets
+        print(assets)
+        PostTranscationAPI.postSIMBAData(payload: SIMBAPostData, completion: {_ in })
+    
     }
 }
