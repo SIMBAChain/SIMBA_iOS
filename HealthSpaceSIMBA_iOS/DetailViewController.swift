@@ -73,7 +73,16 @@ class DetailViewController: UIViewController
             landscapeMode()
         }
         
-        DefaultAPI.getSIMBAData { (SIMBAData, error) in
+        /*DefaultAPI.getSIMBAData { (SIMBAData, error) in
+            if let SIMBAData = SIMBAData{
+                print("\n\n\n")
+                print(SIMBAData.first!.encodeToJSON())
+                print("\n\n\n")
+            }
+            
+            self.SIMBADataArray = SIMBAData!
+ */
+        PostTranscationAPI.getSIMBAData { (SIMBAData, error) in
             if let SIMBAData = SIMBAData{
                 print("\n\n\n")
                 print(SIMBAData.first!.encodeToJSON())

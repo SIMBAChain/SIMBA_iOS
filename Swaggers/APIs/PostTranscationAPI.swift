@@ -11,9 +11,34 @@ import UIKit
 
 open class PostTranscationAPI: APIBase {
 
+    /*
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func getSIMBAData(completion: @escaping ((_ data: [SIMBAData]?,_ error: Error?) -> Void)) {
+        getSIMBADataWithRequestBuilder().execute { (response, error) -> Void in
+            completion(response?.body, error);
+        }
+    }
+    
+    open class func getSIMBADataWithRequestBuilder() -> RequestBuilder<[SIMBAData]> {
+        let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
+        let auditNum = appDelegate!.auditNo
+        let path = "/audit/\(auditNum)"
+        let URLString = SwaggerClientAPI.basePath + path
+        
+        let nillableParameters: [String:Any?] = [:]
+        
+        let parameters = APIHelper.rejectNil(nillableParameters)
+        
+        let convertedParameters = APIHelper.convertBoolToString(parameters)
+        
+        let requestBuilder: RequestBuilder<[SIMBAData]>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
+        
+        return requestBuilder.init(method: "GET", URLString: URLString, parameters: convertedParameters, isBody: true)
+    }
+    
     /**
      Post a transaction
-     
      - parameter payload: (body) A single JSON object containing the dwarf definition
      - parameter completion: completion handler to receive the data and the error objects
      */

@@ -56,7 +56,7 @@ class AuditTableViewController: UITableViewController {
             self.present(accountAlert, animated: true)
         }
         print("========Account========" + accountSelected)
-        //DefaultAPI.getDwarves calls the DefaultAPI.swift and runs the getDwarves function which executes the getDwarvesWithRequestBuilder function which accesses the basePath for the GET command.
+        
         DefaultAPI.getSIMBAData { (SIMBAData, error) in
             if let SIMBAData = SIMBAData{
                 print(SIMBAData.first!.encodeToJSON())
