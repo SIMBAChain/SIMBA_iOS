@@ -16,7 +16,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet var postButton: UIButton!
     @IBOutlet var auditButton: UIButton!
     @IBOutlet var healthSpaceLabel: UILabel!
-   
+    
+   //input data into arrays for picking accounts
     var accountPickerData = ["Account1: ******f625","Account2: ******1457","Account3: ******2370","Account4: ******4205","Account5: ******6e37","Account6: ******7180","Account7: ******c453","Account8: ******dd25","Account9: ******08bc","Account10: ******5b05"]
     var accountID = ["0xb1db8a003114ee270207e8812a009f108b41f625","0x9ccd1bb0d58a9ce5db012ff74967edb371a91457","0x0a69fcf74245459a1883485a4e4f23bb3b552370","0x442fd3df4845b53afa13eae0051429b912bb4205","0x818ce4fb076ef541457f22b955af6bfa046c6e37","0x2ba1d9aba1f0b1b12ad1b48a9c7cf327f1d17180","0xad267928e21fe2bdd09417b20b6b8b0fa767c453","0x4324ca587090d5d77942531cc18adde45836dd25","0x647102ec4e63f571971e75ba4c5493a636af08bc","0xd8e00bdfc99738a223db7821281d52de59c25b05"]
     var activeID: String!
@@ -82,11 +83,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         self.accountPicker.dataSource = self
         self.accountPicker.delegate = self
         hideAccountPicker()
-        
-        
-        
     }
-  
+    
     
     override func didReceiveMemoryWarning()
     {
@@ -94,7 +92,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         // Dispose of any resources that can be recreated.
     }
 
-//picker
+    
+//picker----------------------------
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -113,6 +112,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
        
         accountTextField.text = accountPickerData[row]
     }
+    
+    //triggered when select account button is pressed
     @IBAction func selectaccount() {
         checkInternetConnection()
         if !isConnectedToInternet()
@@ -123,7 +124,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             accountTextField.text = accountPickerData[0]
             activeID = accountID[0]
         }
-       
+       //alerts user to their new user id
         let accountAlert = UIAlertController(title: "Your current Ethereum testing ID:", message: activeID, preferredStyle: .alert)
         
         accountAlert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
@@ -131,6 +132,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         self.present(accountAlert, animated: true)
       hideAccountPicker()
     }
+ 
     @IBAction func showAccountPicker(){
         checkInternetConnection()
         if !isConnectedToInternet()

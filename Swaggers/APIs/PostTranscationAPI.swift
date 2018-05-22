@@ -42,23 +42,23 @@ open class PostTranscationAPI: APIBase {
      - parameter payload: (body) A single JSON object containing the dwarf definition
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func postSIMBAData(payload: SIMBAPostData, completion: @escaping ((_ error: Error?) -> Void)) {
+    open class func postSIMBAData(payload: SIMBADataPost, completion: @escaping ((_ error: Error?) -> Void)) {
         postSIMBADataWithRequestBuilder(payload: payload).execute { (response, error) -> Void in
             completion(error);
         }
     }
     
     /**
-     Post a new SIMBAData
-     - POST /audit
+     Post a new Dwarf
+     - POST /dwarf
      - endpoint for posting a newly created dwarf to the server
      
      - parameter payload: (body) A single JSON object containing the dwarf definition
      
      - returns: RequestBuilder<Void>
      */
-    open class func postSIMBADataWithRequestBuilder(payload: SIMBAPostData) -> RequestBuilder<Void> {
-        let path = "/audit"//change to audit when ready to test POSTs
+    open class func postSIMBADataWithRequestBuilder(payload: SIMBADataPost) -> RequestBuilder<Void> {
+        let path = "/audit" //change to audit when ready to test POSTs
         let URLString = SwaggerClientAPI.basePath + path
         let parameters = payload.encodeToJSON() as? [String:AnyObject]
         
@@ -66,6 +66,8 @@ open class PostTranscationAPI: APIBase {
         
         let requestBuilder: RequestBuilder<Void>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
         
+        print("post API")
+        print(parameters as Any)
         return requestBuilder.init(method: "POST", URLString: URLString, parameters: convertedParameters, isBody: true)
     }
     
