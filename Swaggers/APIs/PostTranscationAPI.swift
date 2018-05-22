@@ -21,9 +21,9 @@ open class PostTranscationAPI: APIBase {
     }
     
     open class func getSIMBADataWithRequestBuilder() -> RequestBuilder<[SIMBAData]> {
-        let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
-        let auditNum = appDelegate!.auditNo
-        let path = "/audit/\(auditNum)"
+         let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
+        let auditID = appDelegate?.auditNo
+        let path = "/audit/{\(String(describing: auditID))}"
         let URLString = SwaggerClientAPI.basePath + path
         
         let nillableParameters: [String:Any?] = [:]
@@ -48,15 +48,6 @@ open class PostTranscationAPI: APIBase {
         }
     }
     
-    /**
-     Post a new Dwarf
-     - POST /dwarf
-     - endpoint for posting a newly created dwarf to the server
-     
-     - parameter payload: (body) A single JSON object containing the dwarf definition
-     
-     - returns: RequestBuilder<Void>
-     */
     open class func postSIMBADataWithRequestBuilder(payload: SIMBADataPost) -> RequestBuilder<Void> {
         let path = "/audit" //change to audit when ready to test POSTs
         let URLString = SwaggerClientAPI.basePath + path

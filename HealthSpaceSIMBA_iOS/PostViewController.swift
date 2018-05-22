@@ -164,24 +164,22 @@ class PostViewController: UIViewController
     {
         let SIMBAPostData = SIMBADataPost()
       
-        let assets : [String : Any] = SIMBAPostData.asset as Any as! [String : Any]
-    //    let items  : [String : Any] = SIMBAPostData.items as Any as! [String : Any]
+        //let assets : [String : Any] = SIMBAPostData.asset as Any as! [String : Any]
+        //let items  : [String : Any] = SIMBAPostData.items as Any as! [String : Any]
         
-    SIMBAPostData.timestamp = "PlaceHolderTime 5/22/18"
-      SIMBAPostData.location = location.text
-      SIMBAPostData.personName = name.text
+        SIMBAPostData.timestamp = "PlaceHolderTime 5/22/18"
+        SIMBAPostData.location = location.text!
+        SIMBAPostData.personName = name.text!
    //   SIMBAPostData.asset["attributes"] = SIMBAPostData.attributes
-   //  SIMBAPostData.asset["artifacts"] = SIMBAPostData.artifacts
-       SIMBAPostData.desc = String(desc.text)
-       SIMBAPostData.status  = status.text
-        SIMBAPostData.comments = String(comments.text)
-    //    SIMBAPostData.items["attributes"] = SIMBAPostData.itemAttributes
+   //   SIMBAPostData.asset["artifacts"] = SIMBAPostData.artifacts
+        SIMBAPostData.desc = desc.text!
+        SIMBAPostData.status  = status.text!
+        SIMBAPostData.comments = comments.text!
+    //  SIMBAPostData.items["attributes"] = SIMBAPostData.itemAttributes
         //assets["items"] = items
-        print("start posting")
-        
+
         SIMBAPostData.accountId = accountSelected!
-        SIMBAPostData.asset = assets
-        print(assets)
+        //SIMBAPostData.asset = assets
         PostTranscationAPI.postSIMBAData(payload: SIMBAPostData, completion: {_ in })
     
     }
