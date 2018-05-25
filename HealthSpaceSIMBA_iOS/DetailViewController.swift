@@ -82,15 +82,11 @@ class DetailViewController: UIViewController
             
             self.SIMBADataArray = SIMBAData!
  */
-        PostTranscationAPI.getSIMBAData { (SIMBAData, error) in
+        DefaultAPI.getSIMBAData { (SIMBAData, error) in
             if let SIMBAData = SIMBAData{
                 print("\n\n\n SIMBA DATA !!!!!!!!")
                 print(SIMBAData.first!.encodeToJSON())
                 print("\n\n\n")
-            }
-            else{
-                self.dismiss(animated: true)
-                return
             }
             self.SIMBADataArray = SIMBAData!
             //print("Array num = \(self.SIMBADataArray.count)")

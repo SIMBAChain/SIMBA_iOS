@@ -21,9 +21,9 @@ class PostViewController: UIViewController
     
     var accountSelected: String! = ""
     var accountName: String! = ""
-    
-
-    
+    let daysInWeek = ["","Sun","Mon","Tues","Wed","Thurs","Fri","Sat"]
+    let monthsInYear = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+    var timeStamp = "Nan"
     //MARK: check internet
     func checkInternetConnection()
     {
@@ -50,6 +50,28 @@ class PostViewController: UIViewController
     //MARK: Checking Orientation
     
     override func viewDidAppear(_ animated: Bool) {
+        //date and time
+        let dayOfWeek = NSCalendar.current.component(.weekday, from: Date())
+        let month = NSCalendar.current.component(.month, from: Date())
+        let day = NSCalendar.current.component(.day, from: Date())
+        let year = NSCalendar.current.component(.year, from: Date())
+        let hour = NSCalendar.current.component(.hour, from: Date())
+        let minute = NSCalendar.current.component(.minute, from: Date())
+        let second = NSCalendar.current.component(.second, from: Date())
+        let time = " " + String(hour) + ":" + String(minute) + ":" + String(second)
+        let aDate = " " + String(monthsInYear[month]) + " " + String(day) + " " + String(year)
+        let aTimeZone = TimeZone.current.secondsFromGMT()
+        var timeZoneStr = "nil"
+        if abs(aTimeZone) - aTimeZone == 0
+        {
+            timeZoneStr = " GMT+0" + String(aTimeZone/36)
+        }
+        else
+        {
+             timeZoneStr = " GMT-0" + String(abs(aTimeZone)/36)
+        }
+         timeStamp = String(daysInWeek[dayOfWeek]) + aDate + time + timeZoneStr
+        //print(String(daysInWeek[dayOfWeek]) + aDate + time + timeZoneStr)
         super.viewDidAppear(animated)
         checkInternetConnection()
         if !isConnectedToInternet()
@@ -146,6 +168,7 @@ class PostViewController: UIViewController
         
         postAlert.addAction(UIAlertAction(title: "Post", style: .default, handler: { action in
             print("post it")
+            self.checkInternetConnection()
             self.postData()
         }))
         postAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -167,7 +190,7 @@ class PostViewController: UIViewController
         //let assets : [String : Any] = SIMBAPostData.asset as Any as! [String : Any]
         //let items  : [String : Any] = SIMBAPostData.items as Any as! [String : Any]
         
-        SIMBAPostData.timestamp = "PlaceHolderTime 5/22/18"
+        SIMBAPostData.timestamp = timeStamp
         SIMBAPostData.location = location.text!
         SIMBAPostData.personName = name.text!
    //   SIMBAPostData.asset["attributes"] = SIMBAPostData.attributes
@@ -181,6 +204,6 @@ class PostViewController: UIViewController
         SIMBAPostData.accountId = accountSelected!
         //SIMBAPostData.asset = assets
         PostTranscationAPI.postSIMBAData(payload: SIMBAPostData, completion: {_ in })
-    
+
     }
 }
