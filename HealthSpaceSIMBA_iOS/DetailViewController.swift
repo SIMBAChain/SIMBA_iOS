@@ -28,8 +28,10 @@ class DetailViewController: UIViewController
     @IBOutlet  var incorrectButton: UIButton!
     @IBOutlet  var scroller: UIScrollView!
     @IBOutlet  var accountField : UITextField!
-    @IBOutlet  var magTextField: UITextField!
+    @IBOutlet  var magField: UITextView!
+   
     
+    var magView: UIStoryboardSegue!
     //variables
     var accountSelected : String!
     var accountName : String!
@@ -73,15 +75,7 @@ class DetailViewController: UIViewController
             landscapeMode()
         }
         
-        /*DefaultAPI.getSIMBAData { (SIMBAData, error) in
-            if let SIMBAData = SIMBAData{
-                print("\n\n\n")
-                print(SIMBAData.first!.encodeToJSON())
-                print("\n\n\n")
-            }
-            
-            self.SIMBADataArray = SIMBAData!
- */
+   
         DefaultAPI.getSIMBAData { (SIMBAData, error) in
             if let SIMBAData = SIMBAData{
                 print("\n\n\n SIMBA DATA !!!!!!!!")
@@ -136,7 +130,23 @@ class DetailViewController: UIViewController
     }
     func portraitMode()
     {
-        scroller.contentSize = CGSize(width: 0, height: 0 )
+        //568,736,832
+        if self.view.frame.height < 736
+        {
+            if self.view.frame.height > 568
+            {
+                scroller.contentSize = CGSize(width: 0, height: 750)
+            }
+            else
+            {
+                //5s
+                scroller.contentSize = CGSize(width: 0, height: 850)
+            }
+        }
+        else
+        {
+            scroller.contentSize = CGSize(width: 0, height: 0)
+        }
     }
     func landscapeMode()
     {
@@ -204,10 +214,29 @@ class DetailViewController: UIViewController
     }
     @IBAction func magnify(_ sender: UITextField)
     {
-        print("ENHANCE!!!")
-        magTextField.text = sender.text
+        let magAlert = UIAlertController(title: sender.accessibilityLabel, message: sender.text, preferredStyle: .alert)
+        
+        magAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        self.present(magAlert, animated: true)
         sender.resignFirstResponder()
     }
+    //touch gesture for text views
+    @IBAction  func touchDescription(_ gestureRecognizer : UITapGestureRecognizer)
+    {
+        if gestureRecognizer.state == .ended
+        {
+        let magAlert = UIAlertController(title: "Description", message: desc.text, preferredStyle: .alert)
+        magAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        self.present(magAlert, animated: true)
+        }}
+    @IBAction  func touchComments(_ gestureRecognizer : UITapGestureRecognizer)
+    {
+        if gestureRecognizer.state == .ended
+        {
+            let magAlert = UIAlertController(title: "Comments", message: comments.text, preferredStyle: .alert)
+            magAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(magAlert, animated: true)
+        }}
     func getVerificationData()
     {
         if SIMBAVerificationDataArray.count == 2

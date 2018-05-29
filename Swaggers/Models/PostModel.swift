@@ -31,15 +31,8 @@ open class SIMBADataPost: JSONEncodable {
         asset["location"] = self.location
         asset["personName"] = self.personName
         items.append(["description" :desc!, "status" :status, "comments" :comments])
-        //asset["attributes"] = self.attributes
-        //asset["artifacts"] = self.artifacts
-        //items["description"] = self.desc!
-        //items["status"] = self.status
-        //items["comments"] = self.comments
-        //items["attributes"] = self.itemAttributes
         asset["items"] = items
      
-        
         var nillableDictionary = [String : Any?] ()
         nillableDictionary["accountId"] = self.accountId
         nillableDictionary["asset"] = self.asset
