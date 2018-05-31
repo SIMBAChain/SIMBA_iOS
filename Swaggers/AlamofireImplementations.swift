@@ -160,6 +160,7 @@ open class AlamofireRequestBuilder<T>: RequestBuilder<T> {
                     completion(nil, ErrorResponse.Error(response.response?.statusCode ?? 500, response.data, response.result.error!))
                     return
                 }
+
                 
                 if () is T {
                     completion(Response(response: response.response!, body: (() as! T)), nil)

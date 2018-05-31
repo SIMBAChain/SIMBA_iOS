@@ -5,7 +5,7 @@
 //
 
 import Foundation
-
+import UIKit
 protocol JSONEncodable {
     func encodeToJSON() -> Any
 }
@@ -14,7 +14,7 @@ public enum ErrorResponse : Error {
     case Error(Int, Data?, Error)
 }
 
-open class Response<T> {
+open class Response<T>  {
     open let statusCode: Int
     open let header: [String: String]
     open let body: T?
@@ -31,8 +31,25 @@ open class Response<T> {
         for (key, value) in rawHeader {
             header[key as! String] = value as? String
         }
+        //posted alert
+        func topViewController() -> UIViewController? {
+            guard var topViewController = UIApplication.shared.keyWindow?.rootViewController else { return nil }
+            while topViewController.presentedViewController != nil {
+                topViewController = topViewController.presentedViewController!
+            }
+            return topViewController
+        }
+        
+        let responseAlert = UIAlertController(title: "It has been posted!", message: "", preferredStyle: .alert)
+        
+        responseAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        if response.statusCode == 200
+        {
+        topViewController()?.present(responseAlert, animated: true)
+        }
         self.init(statusCode: response.statusCode, header: header, body: body)
     }
+  
 }
 
 private var once = Int()

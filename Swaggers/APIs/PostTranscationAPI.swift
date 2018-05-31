@@ -45,6 +45,7 @@ open class PostTranscationAPI: APIBase {
     open class func postSIMBAData(payload: SIMBADataPost, completion: @escaping ((_ error: Error?) -> Void)) {
         postSIMBADataWithRequestBuilder(payload: payload).execute { (response, error) -> Void in
             completion(error);
+            
         }
     }
     
@@ -56,10 +57,11 @@ open class PostTranscationAPI: APIBase {
         let convertedParameters = APIHelper.convertBoolToString(parameters)
         
         let requestBuilder: RequestBuilder<Void>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
-        
+       
         print("post API")
         print(parameters as Any)
         return requestBuilder.init(method: "POST", URLString: URLString, parameters: convertedParameters, isBody: true)
+        
     }
     
 }

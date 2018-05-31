@@ -204,6 +204,8 @@ class PostViewController: UIViewController
         SIMBAPostData.accountId = accountSelected!
         //SIMBAPostData.asset = assets
         PostTranscationAPI.postSIMBAData(payload: SIMBAPostData, completion: {_ in })
-
+        
+       
+        
     }
 }

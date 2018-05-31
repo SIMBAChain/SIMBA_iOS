@@ -385,12 +385,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="km8-v0-Pie" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="pk9-dq-Aoo">
+                <tapGestureRecognizer id="pk9-dq-Aoo" userLabel="TapDescription">
                     <connections>
                         <action selector="touchDescription:" destination="stP-UK-UvA" id="jg7-QE-drC"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="5Qg-d7-gYN">
+                <tapGestureRecognizer id="5Qg-d7-gYN" userLabel="TapComments">
                     <connections>
                         <action selector="touchComments:" destination="stP-UK-UvA" id="U18-rQ-GRO"/>
                     </connections>
