@@ -1,6 +1,6 @@
 //
 //  DetailView.swift
-//  HealthSpaceSIMBA_iOS
+//  SIMBA_iOS
 //
 //  Created by Steven Peregrine on 4/23/18.
 //  Copyright © 2018 ITAMCO. All rights reserved.

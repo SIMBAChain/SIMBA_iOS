@@ -1,6 +1,6 @@
 //
 //  AuditTableViewController.swift
-//  HealthSpaceSIMBA_iOS
+//  SIMBA_iOS
 //
 //  Created by Joel Neidig on 4/19/18.
 //  Copyright © 2018 ITAMCO. All rights reserved.

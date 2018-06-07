@@ -12,14 +12,14 @@
         <!--Most Recent Audits-->
         <scene sceneID="Sth-tX-Du3">
             <objects>
-                <tableViewController id="X3i-yB-WQX" customClass="AuditTableViewController" customModule="HealthSpaceSIMBA_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="X3i-yB-WQX" customClass="AuditTableViewController" customModule="SIMBA_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="znk-iV-qJt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SIMBADataCell" rowHeight="78" id="CnC-jD-9UO" customClass="SIMBADataCell" customModule="HealthSpaceSIMBA_iOS" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SIMBADataCell" rowHeight="78" id="CnC-jD-9UO" customClass="SIMBADataCell" customModule="SIMBA_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="78"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CnC-jD-9UO" id="IzN-iJ-bvK">
@@ -70,7 +70,7 @@
         <!--Detail View Controller-->
         <scene sceneID="Q3Y-KY-7PM">
             <objects>
-                <viewController id="stP-UK-UvA" customClass="DetailViewController" customModule="HealthSpaceSIMBA_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="stP-UK-UvA" customClass="DetailViewController" customModule="SIMBA_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uoi-Tv-e4B">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,6 +79,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Background.jpg" id="eP6-ag-hpw">
+                                        <rect key="frame" x="0.0" y="-64" width="414" height="736"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CR3-U2-y6G" userLabel="Location Label">
                                         <rect key="frame" x="71" y="165" width="66" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -417,36 +421,37 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HealthSpaceSIMBA_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SIMBA_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Background.jpg" id="pf3-dR-3yU">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="742"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="69u-eO-Of2">
-                                <rect key="frame" x="211" y="386" width="106" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="288" y="394" width="106" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Audit"/>
+                                <state key="normal" title="Audit">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="cgE-lF-BNO" kind="modal" id="SvS-rd-JbC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Y7H-cb-2LJ">
-                                <rect key="frame" x="96" y="386" width="106" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="20" y="394" width="106" height="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="30"/>
-                                <state key="normal" title="Post"/>
+                                <state key="normal" title="Post">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="Xl8-tU-fe0" kind="modal" id="0pc-yz-yME"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="HealthSpace" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="746-Pn-Vsm">
-                                <rect key="frame" x="18" y="300" width="378" height="76"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <navigationBar contentMode="scaleToFill" id="n9p-oX-dMV">
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -461,10 +466,12 @@
                                     <action selector="showAccountPicker" destination="BYZ-38-t0r" eventType="touchUpInside" id="tnR-CF-Vhb"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rdm-OG-zgY">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rdm-OG-zgY">
                                 <rect key="frame" x="354" y="27" width="44" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Select"/>
+                                <state key="normal" title="Select">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="selectaccount" destination="BYZ-38-t0r" eventType="touchUpInside" id="lCZ-HV-O1A"/>
                                 </connections>
@@ -486,6 +493,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="SIMBA_logo-h-w2.png" id="HVv-Sr-RC7">
+                                <rect key="frame" x="20" y="258" width="378" height="128"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
@@ -496,7 +507,6 @@
                         <outlet property="accountPicker" destination="mBr-LZ-YWR" id="x4H-j6-4Ed"/>
                         <outlet property="accountTextField" destination="sH2-GP-iIn" id="Zm3-aY-Tlc"/>
                         <outlet property="auditButton" destination="69u-eO-Of2" id="ekj-cu-Kgq"/>
-                        <outlet property="healthSpaceLabel" destination="746-Pn-Vsm" id="J6n-eA-vp4"/>
                         <outlet property="postButton" destination="Y7H-cb-2LJ" id="DXX-ca-PfM"/>
                         <outlet property="selectButton" destination="rdm-OG-zgY" id="QKi-38-Nmh"/>
                     </connections>
@@ -508,11 +518,15 @@
         <!--Post View Controller-->
         <scene sceneID="m8I-GE-qJP">
             <objects>
-                <viewController id="Xl8-tU-fe0" customClass="PostViewController" customModule="HealthSpaceSIMBA_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Xl8-tU-fe0" customClass="PostViewController" customModule="SIMBA_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HuX-hB-ipb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Background.jpg" id="h7h-df-CRP">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LLc-Q6-zpY">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -544,20 +558,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This is the posting form for HealthSpace" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NiB-FT-6sd">
-                                <rect key="frame" x="35" y="111" width="344" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="HealthSpace Records" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4uE-gs-L5R">
-                                <rect key="frame" x="35" y="64" width="344" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wol-X1-Ixp">
                                 <rect key="frame" x="141" y="140" width="132" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -646,6 +646,10 @@
                                     </textView>
                                 </subviews>
                             </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="SIMBA_logo-h-w2.png" id="dCW-8P-Qba">
+                                <rect key="frame" x="0.0" y="70" width="414" height="78"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
@@ -664,4 +668,8 @@
             <point key="canvasLocation" x="-1245" y="977"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Background.jpg" width="1892" height="3660"/>
+        <image name="SIMBA_logo-h-w2.png" width="1208" height="281"/>
+    </resources>
 </document>
