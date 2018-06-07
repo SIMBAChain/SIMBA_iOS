@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:HealthSpaceSIMBA_iOS.xcodeproj">
+      location = "self:/Users/stevenperegrine/Desktop/Projects/SIMBA_iOS/SIMBA_iOS.xcodeproj">
    </FileRef>
 </Workspace>

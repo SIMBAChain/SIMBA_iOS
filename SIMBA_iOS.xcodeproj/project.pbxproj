@@ -34,6 +34,8 @@
 		C9540DBE208527B6001D77AF /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C9540DB02085279E001D77AF /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C9A80A86208E0AC90036BC43 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A80A85208E0AC90036BC43 /* PostViewController.swift */; };
 		C9A80A90208E1BB10036BC43 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A80A8F208E1BB10036BC43 /* DetailViewController.swift */; };
+		C9E6120B20C9962B0085FD6E /* SIMBA_logo-h-w2.png in Resources */ = {isa = PBXBuildFile; fileRef = C9E6120A20C9962B0085FD6E /* SIMBA_logo-h-w2.png */; };
+		C9E6120D20C9963B0085FD6E /* Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9E6120C20C9963B0085FD6E /* Background.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,7 +112,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		50815448207BB9BE0001B7BC /* HealthSpaceSIMBA_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthSpaceSIMBA_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50815448207BB9BE0001B7BC /* SIMBA_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SIMBA_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5081544B207BB9BE0001B7BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5081544D207BB9BE0001B7BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		50815450207BB9BE0001B7BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -125,7 +127,7 @@
 		9B8735C520A1EDF300BD40CA /* VerifyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyModel.swift; sourceTree = "<group>"; };
 		9BB3412420A0C77D00779CD3 /* VerificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationModel.swift; sourceTree = "<group>"; };
 		9BB3412D20A0C7D100779CD3 /* VerificationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationAPI.swift; sourceTree = "<group>"; };
-		9BB836E6208B740D00F4FCED /* ToDoFile */ = {isa = PBXFileReference; lastKnownFileType = text; name = ToDoFile; path = HealthSpaceSIMBA_iOS/ToDoFile; sourceTree = SOURCE_ROOT; };
+		9BB836E6208B740D00F4FCED /* ToDoFile */ = {isa = PBXFileReference; lastKnownFileType = text; name = ToDoFile; path = SIMBA_iOS/ToDoFile; sourceTree = SOURCE_ROOT; };
 		C9540D1520851C3C001D77AF /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		C9540D1620851C3C001D77AF /* AlamofireImplementations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireImplementations.swift; sourceTree = "<group>"; };
 		C9540D1F20851C3C001D77AF /* CodableHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableHelper.swift; sourceTree = "<group>"; };
@@ -138,6 +140,8 @@
 		C9540DA42085279E001D77AF /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		C9A80A85208E0AC90036BC43 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		C9A80A8F208E1BB10036BC43 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C9E6120A20C9962B0085FD6E /* SIMBA_logo-h-w2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SIMBA_logo-h-w2.png"; path = "../../../../SIMBA_logo-h-w2.png"; sourceTree = "<group>"; };
+		C9E6120C20C9963B0085FD6E /* Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Background.jpg; path = ../../../../Background.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				C9540DA42085279E001D77AF /* Alamofire.xcodeproj */,
-				5081544A207BB9BE0001B7BC /* HealthSpaceSIMBA_iOS */,
+				5081544A207BB9BE0001B7BC /* SIMBA_iOS */,
 				50815449207BB9BE0001B7BC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -164,14 +168,15 @@
 		50815449207BB9BE0001B7BC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				50815448207BB9BE0001B7BC /* HealthSpaceSIMBA_iOS.app */,
+				50815448207BB9BE0001B7BC /* SIMBA_iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5081544A207BB9BE0001B7BC /* HealthSpaceSIMBA_iOS */ = {
+		5081544A207BB9BE0001B7BC /* SIMBA_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				C9E6120220C9961D0085FD6E /* Assets */,
 				C9540D1420851C3C001D77AF /* Swaggers */,
 				5081544B207BB9BE0001B7BC /* AppDelegate.swift */,
 				5081544D207BB9BE0001B7BC /* ViewController.swift */,
@@ -184,7 +189,7 @@
 				50815457207BB9C40001B7BC /* Info.plist */,
 				9BB836E6208B740D00F4FCED /* ToDoFile */,
 			);
-			path = HealthSpaceSIMBA_iOS;
+			path = SIMBA_iOS;
 			sourceTree = "<group>";
 		};
 		C9540D1420851C3C001D77AF /* Swaggers */ = {
@@ -240,12 +245,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		C9E6120220C9961D0085FD6E /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C9E6120C20C9963B0085FD6E /* Background.jpg */,
+				C9E6120A20C9962B0085FD6E /* SIMBA_logo-h-w2.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		50815447207BB9BE0001B7BC /* HealthSpaceSIMBA_iOS */ = {
+		50815447207BB9BE0001B7BC /* SIMBA_iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5081545A207BB9C40001B7BC /* Build configuration list for PBXNativeTarget "HealthSpaceSIMBA_iOS" */;
+			buildConfigurationList = 5081545A207BB9C40001B7BC /* Build configuration list for PBXNativeTarget "SIMBA_iOS" */;
 			buildPhases = (
 				50815444207BB9BE0001B7BC /* Sources */,
 				50815445207BB9BE0001B7BC /* Frameworks */,
@@ -257,9 +271,9 @@
 			dependencies = (
 				C9540DC0208527B6001D77AF /* PBXTargetDependency */,
 			);
-			name = HealthSpaceSIMBA_iOS;
-			productName = HealthSpaceSIMBA_iOS;
-			productReference = 50815448207BB9BE0001B7BC /* HealthSpaceSIMBA_iOS.app */;
+			name = SIMBA_iOS;
+			productName = SIMBA_iOS;
+			productReference = 50815448207BB9BE0001B7BC /* SIMBA_iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -277,7 +291,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 50815443207BB9BE0001B7BC /* Build configuration list for PBXProject "HealthSpaceSIMBA_iOS" */;
+			buildConfigurationList = 50815443207BB9BE0001B7BC /* Build configuration list for PBXProject "SIMBA_iOS" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -296,7 +310,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				50815447207BB9BE0001B7BC /* HealthSpaceSIMBA_iOS */,
+				50815447207BB9BE0001B7BC /* SIMBA_iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -359,9 +373,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				50815456207BB9C40001B7BC /* LaunchScreen.storyboard in Resources */,
+				C9E6120B20C9962B0085FD6E /* SIMBA_logo-h-w2.png in Resources */,
 				50815453207BB9C40001B7BC /* Assets.xcassets in Resources */,
 				9BB836E7208B740D00F4FCED /* ToDoFile in Resources */,
 				50815451207BB9BE0001B7BC /* Main.storyboard in Resources */,
+				C9E6120D20C9963B0085FD6E /* Background.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,7 +563,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QPG5LX748F;
-				INFOPLIST_FILE = HealthSpaceSIMBA_iOS/Info.plist;
+				INFOPLIST_FILE = SIMBA_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -567,7 +583,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QPG5LX748F;
-				INFOPLIST_FILE = HealthSpaceSIMBA_iOS/Info.plist;
+				INFOPLIST_FILE = SIMBA_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -583,7 +599,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		50815443207BB9BE0001B7BC /* Build configuration list for PBXProject "HealthSpaceSIMBA_iOS" */ = {
+		50815443207BB9BE0001B7BC /* Build configuration list for PBXProject "SIMBA_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				50815458207BB9C40001B7BC /* Debug */,
@@ -592,7 +608,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5081545A207BB9C40001B7BC /* Build configuration list for PBXNativeTarget "HealthSpaceSIMBA_iOS" */ = {
+		5081545A207BB9C40001B7BC /* Build configuration list for PBXNativeTarget "SIMBA_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5081545B207BB9C40001B7BC /* Debug */,
