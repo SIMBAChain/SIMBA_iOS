@@ -14,8 +14,7 @@ open class SIMBADataPost: JSONEncodable {
     var timestamp : String!
     var location : String!
     var personName : String!
-    var itemsArray : Array<Any>!
-    var items = [[String : Any?]] ()
+    var items = [[String : Any]] ()
     var desc : String!
     var status : String!
     var comments : String!
@@ -33,7 +32,7 @@ open class SIMBADataPost: JSONEncodable {
         items.append(["description" :desc!, "status" :status, "comments" :comments])
         asset["items"] = items
      
-        var nillableDictionary = [String : Any?] ()
+        var nillableDictionary = [String : Any] ()
         nillableDictionary["accountId"] = self.accountId
         nillableDictionary["asset"] = self.asset
         

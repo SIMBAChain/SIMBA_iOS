@@ -40,7 +40,7 @@ class DetailViewController: UIViewController
     var verButtonStatus : Bool!
     var auditNumber: Int32! = 0
     let mainVC = ViewController()
-    var SIMBADataArray = [SIMBAData]()
+  //  var SIMBADataArray = [SIMBAData]()
     var SIMBAVerificationDataArray = [SIMBAVerificationData]()
     
     let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
@@ -58,7 +58,7 @@ class DetailViewController: UIViewController
     
     override func viewDidAppear(_ animated: Bool)
     {
-    
+    print("view did appear")
             
         self.correctButton.isEnabled = true
         self.incorrectButton.isEnabled = true
@@ -76,17 +76,19 @@ class DetailViewController: UIViewController
         }
         
    
-        DefaultAPI.getSIMBAData { (SIMBAData, error) in
-            if let SIMBAData = SIMBAData{
-                print("\n\n\n SIMBA DATA !!!!!!!!")
-                print(SIMBAData.first!.encodeToJSON())
+        PostTranscationAPI.getSIMBAData { (SIMBADataPost, error) in
+           if let SIMBADataPost = SIMBADataPost{
+            let SIMBADataPost = SIMBADataPost
+            print("\n\n\n SIMBA DATA !!!!!!!!")
+            print(SIMBADataPost.first!.encodeToJSON())
                 print("\n\n\n")
-            }
-            self.SIMBADataArray = SIMBAData!
+           }
+           
             //print("Array num = \(self.SIMBADataArray.count)")
-            self.getData()
-            
+           // self.getData()---------------------------------------------------
+             //self.SIMBADataArray = SIMBAData!
         }
+    
         VerificationAPI.getSIMBAVerifiactionData { (SIMBAVerificationData, error) in
             if let SIMBAVerificationData = SIMBAVerificationData{
                 if SIMBAVerificationData.isEmpty{
@@ -113,6 +115,7 @@ class DetailViewController: UIViewController
         print(auditNumber!)
         correctButton.setTitleColor(UIColor.gray, for: .disabled)
         incorrectButton.setTitleColor(UIColor.gray, for: .disabled)
+
     }
     
     //MARK: Check Orientation
@@ -180,23 +183,24 @@ class DetailViewController: UIViewController
     func getData()
     {
         let hashIndex : Int = Int(auditNumber) - 1
-        var assets : [String : Any] = SIMBADataArray[hashIndex].assets!
-        let items = assets["items"] as? [[String:Any]]
+      //  var assets : [String : Any] = SIMBADataArray[hashIndex].assets!
+    //    SIMBAData.encodeToJSON(SIMBAData)
+   //     let items = assets["items"] as? [[String:Any]]
         
         //print(SIMBADataArray[hashIndex].verifications!)
         
-        auditNo.text    = "\(String(describing: SIMBADataArray[hashIndex].hashId!))"
-        posterID.text   = "\(String(describing: SIMBADataArray[hashIndex].accountId!))"
-        IPFS.text       = "\(String(describing: SIMBADataArray[hashIndex].hash!))"
-        timeStamp.text  = "\(String(describing: SIMBADataArray[hashIndex].timestamp!))"
-        location.text   = "\(String(describing: SIMBADataArray[hashIndex].location!))"
-        name.text       = "\(String(describing: SIMBADataArray[hashIndex].personName!))"
-        desc.text       = "\(String(describing: items![0]["description"]!))"
-        status.text     = "\(String(describing: items![0]["status"]!))"
-        comments.text   = "\(String(describing: items![0]["comments"]!))"
-        verStatus.text  = "\(String(describing: SIMBADataArray[hashIndex].verified!))"
+      //  auditNo.text    = "\(String(describing: SIMBADataArray[hashIndex].hashId!))"
+    //    posterID.text   =
+      //  IPFS.text       = "\(String(describing: SIMBADataArray[hashIndex].hash!))"
+      //  timeStamp.text  = "\(String(describing: SIMBADataArray[hashIndex].timestamp!))"
+     //   location.text   = "\(String(describing: SIMBADataArray[hashIndex].location!))"
+      //  name.text       = "\(String(describing: SIMBADataArray[hashIndex].personName!))"
+    //    desc.text       = "\(String(describing: items![0]["description"]!))"
+     //   status.text     = "\(String(describing: items![0]["status"]!))"
+    //    comments.text   = "\(String(describing: items![0]["comments"]!))"
+    //    verStatus.text  = "\(String(describing: SIMBADataArray[hashIndex].verified!))"
         
-        posterIDStr = "\(String(describing: SIMBADataArray[hashIndex].accountId!))"
+  //      posterIDStr = "\(String(describing: SIMBADataArray[hashIndex].accountId!))"
 
                 
         if firstAudit.text == "" || secondAudit.text == ""
@@ -289,8 +293,11 @@ class DetailViewController: UIViewController
         let verify = Verify()
         verify.accountId = accountId
         verify.verification = verifyBtn
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.viewDidAppear(false)
+        }
         VerificationAPI.postVerificationSIMBAData(payload: verify, completion: {_ in })
+        
     }
     
     //Check to see if user is allowed to audit
@@ -305,6 +312,7 @@ class DetailViewController: UIViewController
         {
             print("Same Poster & auditor")
             sameAccountAlert(str: "poster")
+            return
         }
         if SIMBAVerificationDataArray.count == 1
         {
@@ -316,8 +324,17 @@ class DetailViewController: UIViewController
             else
             {
                 print("Different")
+                
                 postVerification(btnSelected: sender.currentTitle!)
+                
             }
+        }
+        if SIMBAVerificationDataArray.count == 0
+        {
+            
+            print("Different")
+            postVerification(btnSelected: sender.currentTitle!)
+            
         }
     }
     

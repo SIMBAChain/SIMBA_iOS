@@ -40,6 +40,7 @@ class AuditTableViewController: UITableViewController {
         return NetworkReachabilityManager()!.isReachable
     }
     override func viewDidAppear(_ animated: Bool) {
+         print("view did appear")
         super.viewDidAppear(animated)
          checkInternetConnection()
         if !isConnectedToInternet()

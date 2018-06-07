@@ -25,7 +25,8 @@ open class Response<T>  {
         self.body = body
     }
     
-    public convenience init(response: HTTPURLResponse, body: T?) {
+    public convenience init(response: HTTPURLResponse, body: T?)
+    {
         let rawHeader = response.allHeaderFields
         var header = [String:String]()
         for (key, value) in rawHeader {
@@ -42,11 +43,17 @@ open class Response<T>  {
         
         let responseAlert = UIAlertController(title: "It has been posted!", message: "", preferredStyle: .alert)
         
-        responseAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        if response.statusCode == 200
+        responseAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+            topViewController()?.viewDidAppear(false)
+        }))
+        print(topViewController()!)
+        print(PostViewController() as UIViewController)
+        if response.statusCode == 200 && !(topViewController() is UINavigationController)
         {
-        topViewController()?.present(responseAlert, animated: true)
+            topViewController()?.present(responseAlert, animated: true)
+           
         }
+      
         self.init(statusCode: response.statusCode, header: header, body: body)
     }
   
@@ -62,8 +69,14 @@ class Decoders {
     }
     
     static func decode<T>(clazz: [T].Type, source: AnyObject) -> [T] {
+        print("\n\n---DECODE SOURCE---\n")
+        print(source)
+         print(type(of: source))
         let array = source as! [AnyObject]
         return array.map { Decoders.decode(clazz: T.self, source: $0) }
+        
+       
+     
     }
     
     static func decode<T, Key: Hashable>(clazz: [Key:T].Type, source: AnyObject) -> [Key:T] {
@@ -182,7 +195,38 @@ class Decoders {
             instance.verified      = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["verified"] as AnyObject?)
             return instance
         }
-    
+        
+        // Decoder for [SIMBADataPost]
+        Decoders.addDecoder(clazz: [SIMBADataPost].self) { (source: AnyObject) -> [SIMBADataPost] in
+            print("\n\n----------- FIRST SIMBA DATA POST DECODER--------\n")
+            print(type(of: SIMBADataPost.self))
+            print("\n---------------------------------\n\n\n\n\n\n")
+            return Decoders.decode(clazz: [SIMBADataPost].self, source: source)
+        }
+ 
+        // Decoder for SIMBADataPost
+        Decoders.addDecoder(clazz: SIMBADataPost.self) { (source: AnyObject) -> SIMBADataPost in
+            print("\n\n-----------SIMBA DATA POST DECODER--------\n\n")
+            let sourceDictionary = source as! [AnyHashable: Any]
+            let instance = SIMBADataPost()
+            //-------------------------------------------------------
+            //--this is where the items are grabed from the backend--
+            //-------------------------------------------------------
+            
+            var assets        : [String : Any] = Decoders.decode(clazz: [String : Any].self, source: sourceDictionary["asset"] as AnyObject)
+            
+            instance.asset        = assets as [String : AnyObject]
+            //instance.hashId        = Decoders.decode(clazz: Int32.self, source: (sourceDictionary["hashId"] as AnyObject?)!)
+            instance.accountId     = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["auditor"] as AnyObject?)
+         //   instance.hash          = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["hash"] as AnyObject?)
+            instance.timestamp     = assets["timestamp"]! as? String
+            instance.location      = assets["location"] as? String
+            instance.personName    = assets["personName"] as? String
+            instance.items         = (assets["items"] as? [[String : Any]])!
+         //   instance.verified      = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["verified"] as AnyObject?)
+            return instance
+        }
+        
         // Decoder for [SIMBAVerificationData]
         Decoders.addDecoder(clazz: [SIMBAVerificationData].self) { (source: AnyObject) -> [SIMBAVerificationData] in
             return Decoders.decode(clazz: [SIMBAVerificationData].self, source: source)

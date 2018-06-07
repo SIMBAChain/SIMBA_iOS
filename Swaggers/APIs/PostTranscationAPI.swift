@@ -14,25 +14,26 @@ open class PostTranscationAPI: APIBase {
     /*
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func getSIMBAData(completion: @escaping ((_ data: [SIMBAData]?,_ error: Error?) -> Void)) {
+    open class func getSIMBAData(completion: @escaping ((_ data: [SIMBADataPost]?,_ error: Error?) -> Void)) {
         getSIMBADataWithRequestBuilder().execute { (response, error) -> Void in
             completion(response?.body, error);
         }
     }
     
-    open class func getSIMBADataWithRequestBuilder() -> RequestBuilder<[SIMBAData]> {
+    open class func getSIMBADataWithRequestBuilder() -> RequestBuilder<[SIMBADataPost]> {
          let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
         let auditID = appDelegate?.auditNo
-        let path = "/audit/{\(String(describing: auditID))}"
+        let path = "/audit/\(String(describing: auditID!))"
         let URLString = SwaggerClientAPI.basePath + path
-        
+        print(URLString)
+        print("got it!")
         let nillableParameters: [String:Any?] = [:]
         
         let parameters = APIHelper.rejectNil(nillableParameters)
         
         let convertedParameters = APIHelper.convertBoolToString(parameters)
         
-        let requestBuilder: RequestBuilder<[SIMBAData]>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<[SIMBADataPost]>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
         
         return requestBuilder.init(method: "GET", URLString: URLString, parameters: convertedParameters, isBody: true)
     }
@@ -42,10 +43,10 @@ open class PostTranscationAPI: APIBase {
      - parameter payload: (body) A single JSON object containing the dwarf definition
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func postSIMBAData(payload: SIMBADataPost, completion: @escaping ((_ error: Error?) -> Void)) {
+    open class func postSIMBAData(payload: SIMBADataPost, completion: @escaping ((_ statusCode: Int?) -> Void)) {
         postSIMBADataWithRequestBuilder(payload: payload).execute { (response, error) -> Void in
-            completion(error);
-            
+            //completion(error)
+            completion(response?.statusCode)
         }
     }
     
