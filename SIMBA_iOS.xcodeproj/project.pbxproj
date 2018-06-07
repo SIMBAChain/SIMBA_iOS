@@ -34,8 +34,10 @@
 		C9540DBE208527B6001D77AF /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C9540DB02085279E001D77AF /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C9A80A86208E0AC90036BC43 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A80A85208E0AC90036BC43 /* PostViewController.swift */; };
 		C9A80A90208E1BB10036BC43 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A80A8F208E1BB10036BC43 /* DetailViewController.swift */; };
-		C9E6120B20C9962B0085FD6E /* SIMBA_logo-h-w2.png in Resources */ = {isa = PBXBuildFile; fileRef = C9E6120A20C9962B0085FD6E /* SIMBA_logo-h-w2.png */; };
-		C9E6120D20C9963B0085FD6E /* Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9E6120C20C9963B0085FD6E /* Background.jpg */; };
+		C9E6122A20C9CCBC0085FD6E /* SIMBA_logo-h-w2.png in Resources */ = {isa = PBXBuildFile; fileRef = C9E6122920C9CCBB0085FD6E /* SIMBA_logo-h-w2.png */; };
+		C9E6122D20C9CCCE0085FD6E /* backlit-dark-dark-clouds-213803.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9E6122B20C9CCC80085FD6E /* backlit-dark-dark-clouds-213803.jpg */; };
+		C9E6122E20C9CCCE0085FD6E /* altitude-clouds-cold-417173.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9E6122C20C9CCCB0085FD6E /* altitude-clouds-cold-417173.jpg */; };
+		C9E6123020C9CCDA0085FD6E /* adventure-altitude-clear-sky-633198.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9E6122F20C9CCD80085FD6E /* adventure-altitude-clear-sky-633198.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,8 +142,10 @@
 		C9540DA42085279E001D77AF /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		C9A80A85208E0AC90036BC43 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		C9A80A8F208E1BB10036BC43 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		C9E6120A20C9962B0085FD6E /* SIMBA_logo-h-w2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SIMBA_logo-h-w2.png"; path = "../../../../SIMBA_logo-h-w2.png"; sourceTree = "<group>"; };
-		C9E6120C20C9963B0085FD6E /* Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Background.jpg; path = ../../../../Background.jpg; sourceTree = "<group>"; };
+		C9E6122920C9CCBB0085FD6E /* SIMBA_logo-h-w2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SIMBA_logo-h-w2.png"; sourceTree = SOURCE_ROOT; };
+		C9E6122B20C9CCC80085FD6E /* backlit-dark-dark-clouds-213803.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backlit-dark-dark-clouds-213803.jpg"; sourceTree = SOURCE_ROOT; };
+		C9E6122C20C9CCCB0085FD6E /* altitude-clouds-cold-417173.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "altitude-clouds-cold-417173.jpg"; sourceTree = SOURCE_ROOT; };
+		C9E6122F20C9CCD80085FD6E /* adventure-altitude-clear-sky-633198.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "adventure-altitude-clear-sky-633198.jpg"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,10 +252,21 @@
 		C9E6120220C9961D0085FD6E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				C9E6120C20C9963B0085FD6E /* Background.jpg */,
-				C9E6120A20C9962B0085FD6E /* SIMBA_logo-h-w2.png */,
+				C9E6122F20C9CCD80085FD6E /* adventure-altitude-clear-sky-633198.jpg */,
+				C9E6122C20C9CCCB0085FD6E /* altitude-clouds-cold-417173.jpg */,
+				C9E6122B20C9CCC80085FD6E /* backlit-dark-dark-clouds-213803.jpg */,
+				C9E6122920C9CCBB0085FD6E /* SIMBA_logo-h-w2.png */,
+				C9E6120E20C99D140085FD6E /* SimbaBackgrounds */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		C9E6120E20C99D140085FD6E /* SimbaBackgrounds */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SimbaBackgrounds;
+			path = ../../../../SimbaBackgrounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,12 +387,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9E6123020C9CCDA0085FD6E /* adventure-altitude-clear-sky-633198.jpg in Resources */,
 				50815456207BB9C40001B7BC /* LaunchScreen.storyboard in Resources */,
-				C9E6120B20C9962B0085FD6E /* SIMBA_logo-h-w2.png in Resources */,
+				C9E6122A20C9CCBC0085FD6E /* SIMBA_logo-h-w2.png in Resources */,
 				50815453207BB9C40001B7BC /* Assets.xcassets in Resources */,
+				C9E6122E20C9CCCE0085FD6E /* altitude-clouds-cold-417173.jpg in Resources */,
 				9BB836E7208B740D00F4FCED /* ToDoFile in Resources */,
 				50815451207BB9BE0001B7BC /* Main.storyboard in Resources */,
-				C9E6120D20C9963B0085FD6E /* Background.jpg in Resources */,
+				C9E6122D20C9CCCE0085FD6E /* backlit-dark-dark-clouds-213803.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
