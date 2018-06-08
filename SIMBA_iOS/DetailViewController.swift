@@ -11,22 +11,22 @@ import UIKit
 class DetailViewController: UIViewController
 {
     //Outlets
-    @IBOutlet  var auditNo: UITextField!
-    @IBOutlet  var posterID: UITextField!
-    @IBOutlet  var IPFS: UITextField!
-    @IBOutlet  var timeStamp: UITextField!
-    @IBOutlet  var location: UITextField!
-    @IBOutlet  var name: UITextField!
+    @IBOutlet  var auditNo: UITextView!
+    @IBOutlet  var posterID: UITextView!
+    @IBOutlet  var IPFS: UITextView!
+    @IBOutlet  var timeStamp: UITextView!
+    @IBOutlet  var location: UITextView!
+    @IBOutlet  var name: UITextView!
     @IBOutlet  var desc: UITextView!
-    @IBOutlet  var status: UITextField!
+    @IBOutlet  var status: UITextView!
     @IBOutlet  var comments: UITextView!
-    @IBOutlet  var verStatus: UITextField!
-    @IBOutlet  var firstAudit: UITextField!
-    @IBOutlet  var secondAudit: UITextField!
+    @IBOutlet  var verStatus: UITextView!
+    @IBOutlet  var firstAudit: UITextView!
+    @IBOutlet  var secondAudit: UITextView!
     @IBOutlet  var correctButton: UIButton!
     @IBOutlet  var incorrectButton: UIButton!
     @IBOutlet  var scroller: UIScrollView!
-    @IBOutlet  var accountField : UITextField!
+    @IBOutlet  var accountField : UITextView!
     @IBOutlet  var magField: UITextView!
     
     
@@ -211,31 +211,139 @@ class DetailViewController: UIViewController
             
         }
     }
-    @IBAction func magnify(_ sender: UITextField)
+    //magnify
+    //touch AuditNo
+    @IBAction  func touchAuditNo(_ gestureRecognizer : UILongPressGestureRecognizer)
     {
-        let magAlert = UIAlertController(title: sender.accessibilityLabel, message: sender.text, preferredStyle: .alert)
-        
-        magAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-        self.present(magAlert, animated: true)
-        sender.resignFirstResponder()
-    }
-    //touch gesture for text views
-    @IBAction  func touchDescription(_ gestureRecognizer : UITapGestureRecognizer)
-    {
-        if gestureRecognizer.state == .ended
+        if gestureRecognizer.state == .began
         {
+      
+            let magAlert = UIAlertController(title: "Audit Number", message: auditNo.text, preferredStyle: .alert)
+            magAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(magAlert, animated: true)
+        }}
+    
+    //touch Poster ID
+    @IBAction  func touchPosterID(_ gestureRecognizer : UILongPressGestureRecognizer)
+    {
+        if gestureRecognizer.state == .began
+        {
+            
+            let magAlert = UIAlertController(title: "Poster ID", message: posterID.text, preferredStyle: .alert)
+            magAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(magAlert, animated: true)
+        }}
+    
+    //touch IPFS
+    @IBAction  func touchIPFS(_ gestureRecognizer : UILongPressGestureRecognizer)
+    {
+        if gestureRecognizer.state == .began
+        {
+            
+            let magAlert = UIAlertController(title: "IPFS", message: IPFS.text, preferredStyle: .alert)
+            magAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(magAlert, animated: true)
+        }}
+    
+    //touch TimeStamp
+    @IBAction  func touchTimeStamp(_ gestureRecognizer : UILongPressGestureRecognizer)
+    {
+        if gestureRecognizer.state == .began
+        {
+            
+            let magAlert = UIAlertController(title: "Time Stamp", message: timeStamp.text, preferredStyle: .alert)
+            magAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(magAlert, animated: true)
+        }}
+    
+    //touch Location
+    @IBAction  func touchLocation(_ gestureRecognizer : UILongPressGestureRecognizer)
+    {
+        if gestureRecognizer.state == .began
+        {
+            
+            let magAlert = UIAlertController(title: "Location", message: location.text, preferredStyle: .alert)
+            magAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(magAlert, animated: true)
+        }}
+    
+    //touch Name
+    @IBAction  func touchName(_ gestureRecognizer : UILongPressGestureRecognizer)
+    {
+        if gestureRecognizer.state == .began
+        {
+            
+            let magAlert = UIAlertController(title: "Name", message: name.text, preferredStyle: .alert)
+            magAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(magAlert, animated: true)
+        }}
+    
+//touch desc
+    @IBAction  func touchDescription(_ gestureRecognizer : UILongPressGestureRecognizer)
+    {
+        if gestureRecognizer.state == .began
+        {
+           
             let magAlert = UIAlertController(title: "Description", message: desc.text, preferredStyle: .alert)
             magAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
             self.present(magAlert, animated: true)
         }}
-    @IBAction  func touchComments(_ gestureRecognizer : UITapGestureRecognizer)
+    
+    //touch Status
+    @IBAction  func touchStatus(_ gestureRecognizer : UILongPressGestureRecognizer)
     {
-        if gestureRecognizer.state == .ended
+        if gestureRecognizer.state == .began
+        {
+            
+            let magAlert = UIAlertController(title: "Status", message: status.text, preferredStyle: .alert)
+            magAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(magAlert, animated: true)
+        }}
+    
+    //touch comments
+    @IBAction  func touchComments(_ gestureRecognizer : UILongPressGestureRecognizer)
+    {
+        if gestureRecognizer.state == .began
         {
             let magAlert = UIAlertController(title: "Comments", message: comments.text, preferredStyle: .alert)
             magAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
             self.present(magAlert, animated: true)
         }}
+    
+    //touch verStatus
+    @IBAction  func touchVerStatus(_ gestureRecognizer : UILongPressGestureRecognizer)
+    {
+        if gestureRecognizer.state == .began
+        {
+            
+            let magAlert = UIAlertController(title: "Verification Status", message: verStatus.text, preferredStyle: .alert)
+            magAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(magAlert, animated: true)
+        }}
+
+    //touch First Audit
+    @IBAction  func touchFirstAudit(_ gestureRecognizer : UILongPressGestureRecognizer)
+    {
+        if gestureRecognizer.state == .began
+        {
+            
+            let magAlert = UIAlertController(title: "First Auditor", message: firstAudit.text, preferredStyle: .alert)
+            magAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(magAlert, animated: true)
+        }}
+    
+    //touch Second Audit
+    @IBAction  func touchSecondAudit(_ gestureRecognizer : UILongPressGestureRecognizer)
+    {
+        if gestureRecognizer.state == .began
+        {
+            
+            let magAlert = UIAlertController(title: "Second Auditor", message: secondAudit.text, preferredStyle: .alert)
+            magAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(magAlert, animated: true)
+        }}
+
+    
     func getVerificationData()
     {
         if SIMBAVerificationDataArray.count == 2

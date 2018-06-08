@@ -96,19 +96,6 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="7SO-bO-phO" userLabel="TimeStamp">
-                                        <rect key="frame" x="103" y="122" width="265" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <accessibility key="accessibilityConfiguration" label="Time Stamp"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="touchUpInside" id="MxB-yk-EJl"/>
-                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="editingDidBegin" id="dY8-8Q-OBw"/>
-                                        </connections>
-                                    </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="IPFS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pvQ-bu-u7z" userLabel="IPFS Label">
                                         <rect key="frame" x="8" y="89" width="35" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -116,31 +103,6 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="ejR-DY-8dj" userLabel="IPFS">
-                                        <rect key="frame" x="103" y="84" width="265" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <accessibility key="accessibilityConfiguration" label="IPFS"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="touchUpInside" id="GrB-lB-GGu"/>
-                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="editingDidBegin" id="bai-Kv-Yib"/>
-                                        </connections>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="KBc-Gc-9JU" userLabel="AuditNum">
-                                        <rect key="frame" x="103" y="8" width="265" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <accessibility key="accessibilityConfiguration" label="Audit Number"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="editingDidBegin" id="Cfg-X9-r9F"/>
-                                        </connections>
-                                    </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fkE-cG-ev3" userLabel="Name Label">
                                         <rect key="frame" x="8" y="203" width="48" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -176,127 +138,34 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="95U-Cf-zPk" userLabel="PosterID">
-                                        <rect key="frame" x="103" y="46" width="265" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <accessibility key="accessibilityConfiguration" label="Poster ID"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="touchUpInside" id="EBA-dw-Mmd"/>
-                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="editingDidBegin" id="KIM-dZ-qEb"/>
-                                        </connections>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="X98-Er-BfP" userLabel="Location">
-                                        <rect key="frame" x="103" y="160" width="265" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <accessibility key="accessibilityConfiguration" label="Location"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="editingDidBegin" id="38q-xu-2GQ"/>
-                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="touchUpInside" id="4yf-zX-vbc"/>
-                                        </connections>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="ZO5-wR-5eA" userLabel="Name">
-                                        <rect key="frame" x="103" y="198" width="265" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <accessibility key="accessibilityConfiguration" label="Name"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="editingDidBegin" id="Gm2-UA-L23"/>
-                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="touchUpInside" id="pSN-SF-fvE"/>
-                                        </connections>
-                                    </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" keyboardDismissMode="onDrag" editable="NO" id="eas-40-7Cn" userLabel="Description">
                                         <rect key="frame" x="103" y="236" width="265" height="80"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration" label="Descpriction">
-                                            <accessibilityTraits key="traits" none="YES"/>
+                                            <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
+                                        <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="pk9-dq-Aoo" appends="YES" id="pXD-7b-Dmh"/>
+                                            <outletCollection property="gestureRecognizers" destination="pkW-1l-XkB" appends="YES" id="cH9-Ul-OiK"/>
                                         </connections>
                                     </textView>
-                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="4a5-fc-Bfg" userLabel="Status">
-                                        <rect key="frame" x="103" y="324" width="265" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <accessibility key="accessibilityConfiguration" label="Status"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="editingDidBegin" id="0cU-6b-OPJ"/>
-                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="touchUpInside" id="Ijt-Dn-YB3"/>
-                                        </connections>
-                                    </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" id="eJt-42-G67" userLabel="Comments">
                                         <rect key="frame" x="103" y="362" width="265" height="80"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration" label="Comments">
-                                            <accessibilityTraits key="traits" none="YES"/>
+                                            <accessibilityTraits key="traits" notEnabled="YES"/>
                                         </accessibility>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="5Qg-d7-gYN" appends="YES" id="2Tt-GJ-sCX"/>
+                                            <outletCollection property="gestureRecognizers" destination="ZBs-Qj-Yzj" appends="YES" id="DOw-UF-zk7"/>
                                         </connections>
                                     </textView>
-                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="qJv-Od-4IX" userLabel="VerStatus">
-                                        <rect key="frame" x="191" y="511" width="199" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <accessibility key="accessibilityConfiguration" label="Verification Status">
-                                            <accessibilityTraits key="traits" notEnabled="YES"/>
-                                        </accessibility>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="editingDidBegin" id="Vmt-7e-CC3"/>
-                                        </connections>
-                                    </textField>
-                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="Adm-ta-13I" userLabel="FirstAudit">
-                                        <rect key="frame" x="191" y="549" width="199" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <accessibility key="accessibilityConfiguration" label="First Auditor">
-                                            <accessibilityTraits key="traits" notEnabled="YES"/>
-                                        </accessibility>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="editingDidBegin" id="JDN-lg-NT2"/>
-                                        </connections>
-                                    </textField>
-                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="ny5-oQ-a8r" userLabel="SecondAudit">
-                                        <rect key="frame" x="191" y="587" width="199" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <accessibility key="accessibilityConfiguration" label="Second Auditor">
-                                            <accessibilityTraits key="traits" notEnabled="YES"/>
-                                        </accessibility>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="magnify:" destination="stP-UK-UvA" eventType="editingDidBegin" id="kPa-y0-7Ex"/>
-                                        </connections>
-                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dr3-uF-KUd">
                                         <rect key="frame" x="36" y="463" width="115" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -347,6 +216,106 @@
                                             <action selector="btnPressed:" destination="stP-UK-UvA" eventType="touchUpInside" id="qYi-8w-Cb1"/>
                                         </connections>
                                     </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" id="NoZ-3U-NJf" userLabel="TimeStamp">
+                                        <rect key="frame" x="103" y="124" width="265" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="ff9-vP-Z0o" appends="YES" id="Iaa-nS-vsm"/>
+                                        </connections>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" id="Pt6-Av-vV0" userLabel="AuditNum">
+                                        <rect key="frame" x="103" y="8" width="265" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="rCb-3O-QMd" appends="YES" id="Mlu-YO-mNy"/>
+                                        </connections>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" id="hEQ-OB-Nxl" userLabel="PosterID">
+                                        <rect key="frame" x="103" y="48" width="265" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="cvI-wh-LbS" appends="YES" id="DGK-xM-agq"/>
+                                        </connections>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" id="jGV-s6-nJr" userLabel="IPFS">
+                                        <rect key="frame" x="103" y="86" width="265" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="FQ5-ub-0ux" appends="YES" id="TYg-uD-JcU"/>
+                                        </connections>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" id="Ps1-CJ-pxB" userLabel="Location">
+                                        <rect key="frame" x="103" y="162" width="265" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="xvO-vZ-pPa" appends="YES" id="bDi-dK-iOa"/>
+                                        </connections>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" id="fG1-RJ-gXj" userLabel="Name">
+                                        <rect key="frame" x="103" y="200" width="265" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="dDN-Gh-2Q5" appends="YES" id="Ybo-Kz-Txt"/>
+                                        </connections>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" id="0g7-WW-VFh" userLabel="Status">
+                                        <rect key="frame" x="103" y="326" width="265" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="psv-kB-SGV" appends="YES" id="vbz-tv-HSK"/>
+                                        </connections>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" id="tN1-27-9E9" userLabel="VerificationStatus">
+                                        <rect key="frame" x="187" y="513" width="219" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="QcK-0S-skG" appends="YES" id="4Wf-D1-WX4"/>
+                                        </connections>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" id="d3Y-LZ-nFe" userLabel="FirstAuditor">
+                                        <rect key="frame" x="187" y="551" width="219" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="uOm-Ku-GbF" appends="YES" id="Pyj-rt-ZY4"/>
+                                        </connections>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" id="Bxe-n8-fAG" userLabel="SecondAuditor">
+                                        <rect key="frame" x="187" y="589" width="219" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="i9b-iB-oSn" appends="YES" id="7rC-6h-uVJ"/>
+                                        </connections>
+                                    </textView>
                                 </subviews>
                                 <gestureRecognizers/>
                             </scrollView>
@@ -369,35 +338,85 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="IPFS" destination="ejR-DY-8dj" id="lMH-Ml-uLN"/>
+                        <outlet property="IPFS" destination="jGV-s6-nJr" id="CfY-qq-3nY"/>
                         <outlet property="accountField" destination="4i3-7g-HVv" id="h0V-z6-hN7"/>
-                        <outlet property="auditNo" destination="KBc-Gc-9JU" id="GOl-IE-Wgq"/>
-                        <outlet property="comments" destination="eJt-42-G67" id="VAr-T3-blI"/>
+                        <outlet property="auditNo" destination="Pt6-Av-vV0" id="s5g-qc-gB8"/>
+                        <outlet property="comments" destination="eJt-42-G67" id="5G5-Jg-12I"/>
                         <outlet property="correctButton" destination="VnV-w7-Zqy" id="0Sw-AS-YIh"/>
                         <outlet property="desc" destination="eas-40-7Cn" id="tT7-EP-D5v"/>
-                        <outlet property="firstAudit" destination="Adm-ta-13I" id="J62-y0-Klk"/>
+                        <outlet property="firstAudit" destination="d3Y-LZ-nFe" id="FBM-Wo-UJ3"/>
                         <outlet property="incorrectButton" destination="dr3-uF-KUd" id="Fga-OO-bcy"/>
-                        <outlet property="location" destination="X98-Er-BfP" id="jB6-R7-4fy"/>
-                        <outlet property="name" destination="ZO5-wR-5eA" id="AH5-7U-jAf"/>
-                        <outlet property="posterID" destination="95U-Cf-zPk" id="HlR-cN-23U"/>
+                        <outlet property="location" destination="Ps1-CJ-pxB" id="28u-ED-1Xs"/>
+                        <outlet property="name" destination="fG1-RJ-gXj" id="qZm-y5-rmJ"/>
+                        <outlet property="posterID" destination="hEQ-OB-Nxl" id="hqz-G0-K3Q"/>
                         <outlet property="scroller" destination="ibD-Fu-iuv" id="aAV-XH-zUN"/>
-                        <outlet property="secondAudit" destination="ny5-oQ-a8r" id="QWu-E2-4KF"/>
-                        <outlet property="status" destination="4a5-fc-Bfg" id="TZN-Fz-dtr"/>
-                        <outlet property="timeStamp" destination="7SO-bO-phO" id="YR4-tt-mei"/>
-                        <outlet property="verStatus" destination="qJv-Od-4IX" id="Yzb-mf-ifN"/>
+                        <outlet property="secondAudit" destination="Bxe-n8-fAG" id="HTe-hA-aGw"/>
+                        <outlet property="status" destination="0g7-WW-VFh" id="BkK-0k-ILV"/>
+                        <outlet property="timeStamp" destination="NoZ-3U-NJf" id="fiM-bY-cum"/>
+                        <outlet property="verStatus" destination="tN1-27-9E9" id="yGd-bR-bYi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="km8-v0-Pie" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="pk9-dq-Aoo" userLabel="TapDescription">
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.25" id="rCb-3O-QMd" userLabel="TouchAuditNum">
                     <connections>
-                        <action selector="touchDescription:" destination="stP-UK-UvA" id="jg7-QE-drC"/>
+                        <action selector="touchAuditNo:" destination="stP-UK-UvA" id="EMy-fp-T1s"/>
                     </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="5Qg-d7-gYN" userLabel="TapComments">
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.25" id="cvI-wh-LbS" userLabel="TouchPosterID">
                     <connections>
-                        <action selector="touchComments:" destination="stP-UK-UvA" id="U18-rQ-GRO"/>
+                        <action selector="touchPosterID:" destination="stP-UK-UvA" id="eXU-4h-kxf"/>
                     </connections>
-                </tapGestureRecognizer>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.25" id="FQ5-ub-0ux" userLabel="TouchIPFS">
+                    <connections>
+                        <action selector="touchIPFS:" destination="stP-UK-UvA" id="EOr-ND-hrh"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.25" id="ff9-vP-Z0o" userLabel="TouchTimeStamp">
+                    <connections>
+                        <action selector="touchTimeStamp:" destination="stP-UK-UvA" id="aNh-WK-q5A"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.25" id="xvO-vZ-pPa" userLabel="TouchLocation">
+                    <connections>
+                        <action selector="touchLocation:" destination="stP-UK-UvA" id="ItF-sn-TI9"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.25" id="dDN-Gh-2Q5" userLabel="TouchName">
+                    <connections>
+                        <action selector="touchName:" destination="stP-UK-UvA" id="P2P-as-jEf"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.25" id="pkW-1l-XkB" userLabel="TouchDescription">
+                    <connections>
+                        <action selector="touchDescription:" destination="stP-UK-UvA" id="Dle-ry-YCA"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.25" id="psv-kB-SGV" userLabel="TouchStatus">
+                    <connections>
+                        <action selector="touchStatus:" destination="stP-UK-UvA" id="EqK-xt-GKy"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.25" id="ZBs-Qj-Yzj" userLabel="TouchComments">
+                    <connections>
+                        <action selector="touchComments:" destination="stP-UK-UvA" id="QTx-9U-O78"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.25" id="QcK-0S-skG" userLabel="TouchVerStatus">
+                    <connections>
+                        <action selector="touchVerStatus:" destination="stP-UK-UvA" id="mrS-24-aNu"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.25" id="uOm-Ku-GbF" userLabel="TouchFirstAudit">
+                    <connections>
+                        <action selector="touchFirstAudit:" destination="stP-UK-UvA" id="Qfw-Ji-2Dj"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.25" id="i9b-iB-oSn" userLabel="TouchSecondAudit">
+                    <connections>
+                        <action selector="touchSecondAudit:" destination="stP-UK-UvA" id="VKr-C1-Vkw"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="325" y="99"/>
         </scene>
@@ -548,7 +567,7 @@
                                             </connections>
                                         </barButtonItem>
                                         <textField key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="5bm-V0-Ast">
-                                            <rect key="frame" x="108" y="7" width="198" height="30"/>
+                                            <rect key="frame" x="194.66666666666666" y="7" width="25" height="30"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
