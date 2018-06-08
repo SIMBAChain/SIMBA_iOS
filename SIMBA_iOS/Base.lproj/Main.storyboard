@@ -566,9 +566,9 @@
                                                 <action selector="cancelViewController" destination="Xl8-tU-fe0" id="jGj-bK-QpM"/>
                                             </connections>
                                         </barButtonItem>
-                                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="5bm-V0-Ast">
-                                            <rect key="frame" x="194.66666666666666" y="7" width="25" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="uyP-cs-Son">
+                                            <rect key="frame" x="105" y="7" width="204" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
@@ -674,7 +674,7 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
-                        <outlet property="account" destination="5bm-V0-Ast" id="Urj-pW-5ox"/>
+                        <outlet property="account" destination="uyP-cs-Son" id="IT1-SV-bIR"/>
                         <outlet property="comments" destination="qTI-WU-R3X" id="61C-hd-WhA"/>
                         <outlet property="desc" destination="5HK-yf-uyt" id="vdU-XW-8g0"/>
                         <outlet property="location" destination="5wq-wl-DJk" id="79G-vb-jdR"/>
