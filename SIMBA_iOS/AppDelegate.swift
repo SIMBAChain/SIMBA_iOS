@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 {
     var window: UIWindow?
     var auditNo : Int32 = 0
-  
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
@@ -63,11 +63,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate
                 //print(SIMBAVerifyData.first!.encodeToJSON())
             }
             print("\nHERE\n")
-
+            if SIMBAVerifiactionData != nil
+            {
             print(SIMBAVerifiactionData!)
+            }
         }
     }
     
+   
 
 }
 

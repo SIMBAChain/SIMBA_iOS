@@ -10,10 +10,12 @@ import Alamofire
 import UIKit
 
 open class PostTranscationAPI: APIBase {
-
+    
     /*
      - parameter completion: completion handler to receive the data and the error objects
      */
+    
+    //get data
     open class func getSIMBAData(completion: @escaping ((_ data: [SIMBADataPost]?,_ error: Error?) -> Void)) {
         getSIMBADataWithRequestBuilder().execute { (response, error) -> Void in
             completion(response?.body, error);
@@ -38,16 +40,15 @@ open class PostTranscationAPI: APIBase {
         return requestBuilder.init(method: "GET", URLString: URLString, parameters: convertedParameters, isBody: true)
     }
     
-    /**
-     Post a transaction
-     - parameter payload: (body) A single JSON object containing the dwarf definition
-     - parameter completion: completion handler to receive the data and the error objects
-     */
-    open class func postSIMBAData(payload: SIMBADataPost, completion: @escaping ((_ statusCode: Int?) -> Void)) {
+   //post data
+    open class func postSIMBAData(payload: SIMBADataPost, completion: @escaping ((_ statusCode: Int?) -> Void)) -> Int {
+        var code : Int! = 404
         postSIMBADataWithRequestBuilder(payload: payload).execute { (response, error) -> Void in
             //completion(error)
             completion(response?.statusCode)
+             code = response?.statusCode
         }
+            return code
     }
     
     open class func postSIMBADataWithRequestBuilder(payload: SIMBADataPost) -> RequestBuilder<Void> {

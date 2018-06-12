@@ -256,17 +256,8 @@
 				C9E6122C20C9CCCB0085FD6E /* altitude-clouds-cold-417173.jpg */,
 				C9E6122B20C9CCC80085FD6E /* backlit-dark-dark-clouds-213803.jpg */,
 				C9E6122920C9CCBB0085FD6E /* SIMBA_logo-h-w2.png */,
-				C9E6120E20C99D140085FD6E /* SimbaBackgrounds */,
 			);
 			path = Assets;
-			sourceTree = "<group>";
-		};
-		C9E6120E20C99D140085FD6E /* SimbaBackgrounds */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = SimbaBackgrounds;
-			path = ../../../../SimbaBackgrounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

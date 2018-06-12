@@ -55,10 +55,10 @@ class DetailViewController: UIViewController
         }
     }
     
+  
+    
     override func viewDidAppear(_ animated: Bool)
     {
-        
-        
         self.correctButton.isEnabled = true
         self.incorrectButton.isEnabled = true
         accountField.text = accountName
@@ -75,16 +75,31 @@ class DetailViewController: UIViewController
         }
         
         
-        DefaultAPI.getSIMBAData { (SIMBAData, error) in
+        DefaultAPI.getSIMBAData { (SIMBAData, statusCode) in
             if let SIMBAData = SIMBAData{
                 print("\n\n\n SIMBA DATA !!!!!!!!")
                 print(SIMBAData.first!.encodeToJSON())
                 print("\n\n\n")
-            }
+            }  
+            if SIMBAData != nil
+            {
             self.SIMBADataArray = SIMBAData!
-            //print("Array num = \(self.SIMBADataArray.count)")
+            //print("Array num = \(self.SIMBADataArray.count)")]
+                print("-----Passed back status code----")
+                print(statusCode as Any)
             self.getData()
-            
+            }
+            else
+            {
+                let alert = UIAlertController(title: "Could not contact server", message: "check connection and try again.", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                    self.dismiss(animated: true)
+                }))
+                
+                self.present(alert, animated: true)
+                return
+            }
         }
         VerificationAPI.getSIMBAVerifiactionData { (SIMBAVerificationData, error) in
             if let SIMBAVerificationData = SIMBAVerificationData{
@@ -97,12 +112,26 @@ class DetailViewController: UIViewController
                     print("\n\n\n")
                 }
             }
-            
+            if SIMBAVerificationData != nil
+            {
             self.SIMBAVerificationDataArray = SIMBAVerificationData!
             //print("Array num = \(self.SIMBADataArray.count)")
             self.getVerificationData()
-            
+            }
+            else
+            {
+                let alert = UIAlertController(title: "Could not contact server", message: "check connection and try again.", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                    self.dismiss(animated: true)
+                }))
+                
+                self.present(alert, animated: true)
+                return
+            }
         }
+        
+
     }
     override func viewDidLoad()
     {
@@ -212,6 +241,7 @@ class DetailViewController: UIViewController
         }
     }
     //magnify
+    
     //touch AuditNo
     @IBAction  func touchAuditNo(_ gestureRecognizer : UILongPressGestureRecognizer)
     {
@@ -468,5 +498,7 @@ class DetailViewController: UIViewController
             self.present(accountAlert, animated: true)
         }
     }
+    
+   
 }
 

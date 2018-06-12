@@ -18,36 +18,14 @@ class PostViewController: UIViewController
     @IBOutlet var comments: UITextView!
     @IBOutlet  var scroller: UIScrollView!
     @IBOutlet var account: UITextField!
+    @IBOutlet var postIndicator: UIActivityIndicatorView!
     
     var accountSelected: String! = ""
     var accountName: String! = ""
     let daysInWeek = ["","Sun","Mon","Tues","Wed","Thurs","Fri","Sat"]
     let monthsInYear = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
     var timeStamp = "Nan"
-
-    //MARK: check internet
-    func checkInternetConnection()
-    {
-        if isConnectedToInternet()
-        {
-            print("connected to internet")
-        }
-        else
-        {
-            let alert = UIAlertController(title: "ERROR:", message: "Check internet connection.", preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
-                self.dismiss(animated: true)
-            }))
-            
-            self.present(alert, animated: true)
-            
-        }
-    }
-    func isConnectedToInternet() ->Bool {
-        return NetworkReachabilityManager()!.isReachable
-    }
-   
+    var SIMBACode: Int!
     //MARK: Checking Orientation
     
     override func viewDidAppear(_ animated: Bool) {
@@ -58,11 +36,10 @@ class PostViewController: UIViewController
         comments.text = ""
         account.text = ""
      
+        self.postIndicator.stopAnimating()
+        
         super.viewDidAppear(animated)
-        checkInternetConnection()
-        if !isConnectedToInternet()
-        {print("not connected to internet")
-            return}
+        
         if accountName == ""
         {
             let accountAlert = UIAlertController(title: "ERROR:", message: "Please Select an Account", preferredStyle: .alert)
@@ -154,7 +131,7 @@ class PostViewController: UIViewController
         
         postAlert.addAction(UIAlertAction(title: "Post", style: .default, handler: { action in
             print("post it")
-            self.checkInternetConnection()
+           self.postIndicator.startAnimating()
             self.postData()
         }))
         postAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -209,6 +186,27 @@ class PostViewController: UIViewController
 
         SIMBAPostData.accountId = accountSelected!
         //SIMBAPostData.asset = assets
-        PostTranscationAPI.postSIMBAData(payload: SIMBAPostData, completion: {_ in})
+      //  PostTranscationAPI.postSIMBAData(payload: SIMBAPostData, completion: {_ in})
+        PostTranscationAPI.postSIMBAData(payload: SIMBAPostData) { (statusCode) in
+            print(statusCode as Any)
+            if statusCode == 200
+            {
+                self.postIndicator.stopAnimating()
+            let responseAlert = UIAlertController(title: "It has been posted!", message: "", preferredStyle: .alert)
+            
+            responseAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                self.viewDidAppear(false)
+            }))
+            self.present(responseAlert, animated: true)
+            }
+            else
+            {
+                self.postIndicator.stopAnimating()
+            let responseAlert = UIAlertController(title: "Post Failed", message: "check connection and try again.", preferredStyle: .alert)
+            responseAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(responseAlert, animated: true)
+        }
+        }
+        
     }
 }

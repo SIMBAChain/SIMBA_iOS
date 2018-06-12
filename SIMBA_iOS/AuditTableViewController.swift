@@ -15,37 +15,14 @@ class AuditTableViewController: UITableViewController {
     
     var accountSelected: String! = ""
     var accountName: String! = ""
+    var SIMBACode : Int!
+    
+    
     
    
-    //check internet
-    func checkInternetConnection()
-    {
-        if isConnectedToInternet()
-        {
-            print("connected to internet")
-        }
-        else
-        {
-            let alert = UIAlertController(title: "ERROR:", message: "Check internet connection.", preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
-                self.dismiss(animated: true)
-            }))
-            
-            self.present(alert, animated: true)
-            
-        }
-    }
-    func isConnectedToInternet() ->Bool {
-        return NetworkReachabilityManager()!.isReachable
-    }
+    
     override func viewDidAppear(_ animated: Bool) {
-         print("view did appear")
         super.viewDidAppear(animated)
-         checkInternetConnection()
-        if !isConnectedToInternet()
-        {print("not connected to internet")
-            return}
         if accountName == ""
         {
             let accountAlert = UIAlertController(title: "ERROR:", message: "Please Select an Account", preferredStyle: .alert)
@@ -56,25 +33,39 @@ class AuditTableViewController: UITableViewController {
             
             self.present(accountAlert, animated: true)
         }
-        print("========Account========" + accountSelected)
         
         DefaultAPI.getSIMBAData { (SIMBAData, error) in
             if let SIMBAData = SIMBAData{
                 print(SIMBAData.first!.encodeToJSON())
             }
-            
+            if SIMBAData != nil
+            {
             self.SIMBADataArray = SIMBAData!
             self.hashLastTen = SIMBAData!.suffix(10)
             self.tableView.reloadData()
+               
+            }
+            else
+            {
+                let alert = UIAlertController(title: "Could not contact server", message: "check connection and try again.", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                    self.dismiss(animated: true)
+                }))
+                
+                self.present(alert, animated: true)
+                return
+            }
         }
+       
+        
+      
+        
+        
     }
 
     // MARK: Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        checkInternetConnection()
-        if !isConnectedToInternet()
-        {print("not connected to internet")
-            return}
         
         if segue.destination is DetailViewController
         {

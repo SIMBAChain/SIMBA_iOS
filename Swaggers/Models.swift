@@ -32,28 +32,7 @@ open class Response<T>  {
         for (key, value) in rawHeader {
             header[key as! String] = value as? String
         }
-        //posted alert
-        func topViewController() -> UIViewController? {
-            guard var topViewController = UIApplication.shared.keyWindow?.rootViewController else { return nil }
-            while topViewController.presentedViewController != nil {
-                topViewController = topViewController.presentedViewController!
-            }
-            return topViewController
-        }
-        
-        let responseAlert = UIAlertController(title: "It has been posted!", message: "", preferredStyle: .alert)
-        
-        responseAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
-            topViewController()?.viewDidAppear(false)
-        }))
-        print(topViewController()!)
-        print(PostViewController() as UIViewController)
-        if response.statusCode == 200 && !(topViewController() is UINavigationController)
-        {
-            topViewController()?.present(responseAlert, animated: true)
-           
-        }
-      
+       
         self.init(statusCode: response.statusCode, header: header, body: body)
     }
   
@@ -69,8 +48,6 @@ class Decoders {
     }
     
     static func decode<T>(clazz: [T].Type, source: AnyObject) -> [T] {
-        print("\n\n---DECODE SOURCE---\n")
-        print(source)
          print(type(of: source))
         let array = source as! [AnyObject]
         return array.map { Decoders.decode(clazz: T.self, source: $0) }
@@ -199,8 +176,7 @@ class Decoders {
         // Decoder for [SIMBADataPost]
         Decoders.addDecoder(clazz: [SIMBADataPost].self) { (source: AnyObject) -> [SIMBADataPost] in
             print("\n\n----------- FIRST SIMBA DATA POST DECODER--------\n")
-            print(type(of: SIMBADataPost.self))
-            print("\n---------------------------------\n\n\n\n\n\n")
+           //crashes here when using proper audit[ID]
             return Decoders.decode(clazz: [SIMBADataPost].self, source: source)
         }
  

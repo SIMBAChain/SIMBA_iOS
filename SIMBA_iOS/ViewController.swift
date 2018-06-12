@@ -26,36 +26,13 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
 
 
-  
-     override func viewDidAppear(_ animated: Bool)
-    {
-        checkInternetConnection()
-    }
-    //check internet
-    func checkInternetConnection()
-    {
-        if isConnectedToInternet()
-        {
-            print("connected to internet")
-        }
-        else
-        {
-            let alert = UIAlertController(title: "ERROR:", message: "Check internet connection.", preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
-                self.checkInternetConnection()
-            }))
-            
-            self.present(alert, animated: true)
-            print("not connected to internet")
-        }
-    }
-    func isConnectedToInternet() ->Bool {
-        return NetworkReachabilityManager()!.isReachable
-    }
-    
+   
+
     override func viewDidLoad()
     {
+        postButton.setTitleColor(UIColor.gray, for: .disabled)
+        auditButton.setTitleColor(UIColor.gray, for: .disabled)
+ 
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.accountPicker.dataSource = self
@@ -93,10 +70,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     //triggered when select account button is pressed
     @IBAction func selectaccount() {
-        checkInternetConnection()
-        if !isConnectedToInternet()
-        {print("not connected to internet")
-            return}
         if accountTextField.text == ""
         {
             accountTextField.text = accountPickerData[0]
@@ -112,12 +85,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
  
     @IBAction func showAccountPicker(){
-        checkInternetConnection()
-        if !isConnectedToInternet()
-        {
-            print("not connected to internet")
-            return
-        }
+      
      accountPicker.isHidden = false
      selectButton.isHidden = false
         postButton.isEnabled = false
@@ -153,5 +121,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     {
         accountTextField.resignFirstResponder()
     }
+    
+   
 }
 
