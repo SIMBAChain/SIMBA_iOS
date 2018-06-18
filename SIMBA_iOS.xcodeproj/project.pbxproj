@@ -32,6 +32,7 @@
 		C9540D7E20851C3C001D77AF /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9540D4A20851C3C001D77AF /* Configuration.swift */; };
 		C9540DBD208527B6001D77AF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9540DB02085279E001D77AF /* Alamofire.framework */; };
 		C9540DBE208527B6001D77AF /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C9540DB02085279E001D77AF /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C965429C20D1B56500999E1F /* SIMBA-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C965429B20D1B56400999E1F /* SIMBA-logo.png */; };
 		C9A80A86208E0AC90036BC43 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A80A85208E0AC90036BC43 /* PostViewController.swift */; };
 		C9A80A90208E1BB10036BC43 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A80A8F208E1BB10036BC43 /* DetailViewController.swift */; };
 		C9E6122A20C9CCBC0085FD6E /* SIMBA_logo-h-w2.png in Resources */ = {isa = PBXBuildFile; fileRef = C9E6122920C9CCBB0085FD6E /* SIMBA_logo-h-w2.png */; };
@@ -140,6 +141,7 @@
 		C9540D4920851C3C001D77AF /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		C9540D4A20851C3C001D77AF /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		C9540DA42085279E001D77AF /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
+		C965429B20D1B56400999E1F /* SIMBA-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SIMBA-logo.png"; sourceTree = SOURCE_ROOT; };
 		C9A80A85208E0AC90036BC43 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		C9A80A8F208E1BB10036BC43 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C9E6122920C9CCBB0085FD6E /* SIMBA_logo-h-w2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SIMBA_logo-h-w2.png"; sourceTree = SOURCE_ROOT; };
@@ -256,6 +258,7 @@
 				C9E6122C20C9CCCB0085FD6E /* altitude-clouds-cold-417173.jpg */,
 				C9E6122B20C9CCC80085FD6E /* backlit-dark-dark-clouds-213803.jpg */,
 				C9E6122920C9CCBB0085FD6E /* SIMBA_logo-h-w2.png */,
+				C965429B20D1B56400999E1F /* SIMBA-logo.png */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				9BB836E7208B740D00F4FCED /* ToDoFile in Resources */,
 				50815451207BB9BE0001B7BC /* Main.storyboard in Resources */,
 				C9E6122D20C9CCCE0085FD6E /* backlit-dark-dark-clouds-213803.jpg in Resources */,
+				C965429C20D1B56500999E1F /* SIMBA-logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
