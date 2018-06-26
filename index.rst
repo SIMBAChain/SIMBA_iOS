@@ -13,7 +13,7 @@ Installation
 Prerequisites
 =============
 .. note::
-   These are already packaged in the app when you clone it.
+  These are already packaged in the app when you clone it.
 
   * AlamoFire
   * Swagger
