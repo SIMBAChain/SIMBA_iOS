@@ -4,11 +4,14 @@ SIMBA_iOS
 *********
 Installation
 ============
-* Hit the "Clone or download" button in upper right corner of the github page
-* Hit the "Open in Xcode" button.
-* Hit the "Open Xcode" button on the popup.
-* Choose where you want to save the project and hit clone.
-* Xcode should open the project.
+
+
+
+* Hit the "`Clone or Download <https://github.com/SIMBAChain/SIMBA_iOS/blob/master/ScreenShots/Install%201.png>`_" button in upper right corner of the github page
+* Hit the "`Open in Xcode <https://github.com/SIMBAChain/SIMBA_iOS/blob/master/ScreenShots/Install2.png>`_" button.
+* Hit the "`Open Xcode <https://github.com/SIMBAChain/SIMBA_iOS/blob/master/ScreenShots/Install3.png>`_" button on the popup.
+* Choose where you want to `save the project <https://github.com/SIMBAChain/SIMBA_iOS/blob/master/ScreenShots/Install4.png>`_ and hit clone.
+* Xcode should `open the project <https://github.com/SIMBAChain/SIMBA_iOS/blob/master/ScreenShots/Install5.png>`_.
 
 Prerequisites
 =============
