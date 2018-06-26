@@ -12,6 +12,8 @@ Installation
 
 Prerequisites
 =============
+.. note::
+   stuff
 These are already packaged in the app when you clone it.
 --------------------------------------------------------
   * AlamoFire
@@ -37,5 +39,6 @@ Modifying/Setting up getting
 
 Links
 *****
-  * [Swagger](https://swagger.io/)
-  * [AlamoFire](https://github.com/Alamofire/Alamofire)
+  `Swagger <https://swagger.io/>`_
+  
+  `AlamoFire <https://github.com/Alamofire/Alamofire>`_
