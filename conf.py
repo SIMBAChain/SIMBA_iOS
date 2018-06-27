@@ -69,6 +69,7 @@ html_static_path.append('/home/docs/checkouts/readthedocs.org/readthedocs/templa
 
 # Add RTD Theme only if they aren't overriding it already
 using_rtd_theme = False
+import sphinx_rtd_theme
 if 'html_theme' in globals():
     if html_theme in ['default']:
         # Allow people to bail with a hack of having an html_style
