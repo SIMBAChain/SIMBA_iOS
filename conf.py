@@ -105,7 +105,7 @@ html_theme_options = {
     # 'navigation_depth': 4,  # Depth of the headers shown in the navigation bar
 }
 
-    if 'html_theme_path' in globals():
+if 'html_theme_path' in globals():
         html_theme_path.append(sphinx_rtd_theme.get_html_theme_path())
     else:
         html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
