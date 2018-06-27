@@ -104,6 +104,7 @@ html_theme_options = {
     # 'display_version': True,  # Display the docs version
     # 'navigation_depth': 4,  # Depth of the headers shown in the navigation bar
 }
+
     if 'html_theme_path' in globals():
         html_theme_path.append(sphinx_rtd_theme.get_html_theme_path())
     else:
