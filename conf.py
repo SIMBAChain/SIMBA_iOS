@@ -93,6 +93,8 @@ else:
     else:
         html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
     using_rtd_theme = True
+            
+html_logo = 'SIMBA-logo.png'
 
 if globals().get('websupport2_base_url', False):
     websupport2_base_url = 'https://readthedocs.org/websupport'
