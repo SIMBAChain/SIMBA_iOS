@@ -87,7 +87,10 @@ else:
     import sphinx_rtd_theme
     html_theme = 'sphinx_rtd_theme'
     html_style = None
-    html_theme_options = {}
+    html_theme_options = 
+            {
+            'logo_only': True
+            }
     if 'html_theme_path' in globals():
         html_theme_path.append(sphinx_rtd_theme.get_html_theme_path())
     else:
