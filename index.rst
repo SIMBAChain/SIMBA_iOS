@@ -24,6 +24,7 @@ Prerequisites
 
 Usage
 =====
+
 There are several views in the app
 ----------------------------------
     * `View Controller <https://github.com/SIMBAChain/SIMBA_iOS/blob/master/ScreenShots/View%20Controller.png>`_ | This is the main view of the app here you can go to the other views as well as select an account.
