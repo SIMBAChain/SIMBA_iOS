@@ -107,7 +107,7 @@ html_theme_options = {
 
 if 'html_theme_path' in globals():
         html_theme_path.append(sphinx_rtd_theme.get_html_theme_path())
-    else:
+else:
         html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
     using_rtd_theme = True
             
