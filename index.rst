@@ -1,5 +1,8 @@
 .. figure:: Simba-NS.png
    :align:   center
+   
+SIMBA_iOS
+*********
 
 Installation
 ************
