@@ -109,7 +109,7 @@ if 'html_theme_path' in globals():
         html_theme_path.append(sphinx_rtd_theme.get_html_theme_path())
 else:
         html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-    using_rtd_theme = True
+        using_rtd_theme = True
             
 html_logo = 'SIMBA-logo.png'
 
