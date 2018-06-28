@@ -158,22 +158,26 @@ class DetailViewController: UIViewController
     }
     func portraitMode()
     {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { // change 2 to desired number of seconds
+            // Your code with delay
+        
         //568,736,832
         if self.view.frame.height < 736
         {
             if self.view.frame.height > 568
             {
-                scroller.contentSize = CGSize(width: 0, height: 750)
+                self.scroller.contentSize = CGSize(width: 0, height: 750)
             }
             else
             {
                 //5s
-                scroller.contentSize = CGSize(width: 0, height: 850)
+                self.scroller.contentSize = CGSize(width: 0, height: 850)
             }
         }
         else
         {
-            scroller.contentSize = CGSize(width: 0, height: 0)
+            self.scroller.contentSize = CGSize(width: 0, height: 0)
+        }
         }
     }
     func landscapeMode()
