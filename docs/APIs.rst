@@ -9,7 +9,7 @@
 * Change the URL in “APIs.Swift”
 
 
-.. figure::  /docs/ScreenShots/APIs.png
+.. figure::  ScreenShots/APIs.png
    :align:   center
 
 
