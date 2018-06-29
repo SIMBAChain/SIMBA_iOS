@@ -9,7 +9,7 @@
 * Setup the decoder in “Models.Swift”
 
 
-.. figure::  /docs/ScreenShots/Models.png
+.. figure::  ScreenShots/Models.png
    :align:   center
 
 
