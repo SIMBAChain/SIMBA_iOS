@@ -9,7 +9,7 @@
 * Setup the model in “Model.Swift” under the folder “Models”
 
 
-.. figure::  /docs/ScreenShots/Model.png
+.. figure::  ScreenShots/Model.png
    :align:   center
 
 
