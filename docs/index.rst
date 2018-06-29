@@ -7,11 +7,11 @@ SIMBA_iOS
 Installation
 ************
 
-* Hit the "`Clone or Download <Install1.html>`_" button in upper right corner of the github page
-* Hit the "`Open in Xcode <Install2.html>`_" button.
-* Hit the "`Open Xcode <Install3.html>`_" button on the popup.
-* Choose where you want to `save the project <Install4.html>`_ and hit clone.
-* Xcode should `open the project <Install5.html>`_.
+* Hit the "`Clone or Download <install1.html>`_" button in upper right corner of the github page
+* Hit the "`Open in Xcode <install2.html>`_" button.
+* Hit the "`Open Xcode <install3.html>`_" button on the popup.
+* Choose where you want to `save the project <install4.html>`_ and hit clone.
+* Xcode should `open the project <install5.html>`_.
 
 Prerequisites
 *************
