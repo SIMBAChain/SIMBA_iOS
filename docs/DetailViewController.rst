@@ -9,7 +9,7 @@
 * This is the view that pops up whenever you click on one of the last 10 audits
 
 
-.. figure::  /docs/ScreenShots/DetailViewController.png
+.. figure::  ScreenShots/DetailViewController.png
    :align:   center
 
 
