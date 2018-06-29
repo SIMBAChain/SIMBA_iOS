@@ -9,7 +9,7 @@
 * Change the path in “DefaultAPI.Swift” under the folder “APIs”
 
 
-.. figure::  /docs/ScreenShots/DefaultAPI.png
+.. figure::  ScreenShots/DefaultAPI.png
    :align:   center
 
 
