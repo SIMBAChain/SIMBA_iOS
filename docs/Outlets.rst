@@ -9,7 +9,7 @@
 * Change the view layout and outlets to fit the new model
 
 
-.. figure::  /docs/ScreenShots/Outlets.png
+.. figure::  ScreenShots/Outlets.png
    :align:   center
 
 
