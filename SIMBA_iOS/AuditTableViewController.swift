@@ -16,10 +16,10 @@ class AuditTableViewController: UITableViewController {
     var accountSelected: String! = ""
     var accountName: String! = ""
     var SIMBACode : Int!
+    var reversed: Bool! = false
+    var ten: Int!
     
     
-    
-   
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -40,10 +40,11 @@ class AuditTableViewController: UITableViewController {
             }
             if SIMBAData != nil
             {
-            self.SIMBADataArray = SIMBAData!
-            self.hashLastTen = SIMBAData!.suffix(10)
-            self.tableView.reloadData()
-               
+                self.SIMBADataArray = SIMBAData!
+                self.hashLastTen = SIMBAData!.suffix(10)
+                self.ten = self.SIMBADataArray.count - 10
+                self.tableView.reloadData()
+                
             }
             else
             {
@@ -57,13 +58,13 @@ class AuditTableViewController: UITableViewController {
                 return
             }
         }
-       
         
-      
+        
+        
         
         
     }
-
+    
     // MARK: Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -87,9 +88,9 @@ class AuditTableViewController: UITableViewController {
         }
     }
     
-//---------------------
-//-----TABLEVIEW
-//---------------------
+    //---------------------
+    //-----TABLEVIEW
+    //---------------------
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return hashLastTen.count
     }
@@ -99,13 +100,25 @@ class AuditTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let ten = SIMBADataArray.count - 10
-        let currentSIMBAData = hashLastTen[indexPath.row + ten]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SIMBADataCell") as! SIMBADataCell
-        cell.auditNoLabel.text  = " Audit No. \(String(describing: currentSIMBAData.hashId!))"
-        cell.posterIDLabel.text = "Poster No. \(currentSIMBAData.accountId!)"
+        var cell = tableView.dequeueReusableCell(withIdentifier: "SIMBADataCell") as! SIMBADataCell
         
+        if reversed == false
+        {
+            
+            let currentSIMBAData = hashLastTen[indexPath.row + ten]
+            cell = tableView.dequeueReusableCell(withIdentifier: "SIMBADataCell") as! SIMBADataCell
+            cell.auditNoLabel.text  = " Audit No. \(String(describing: currentSIMBAData.hashId!))"
+            cell.posterIDLabel.text = "Poster No. \(currentSIMBAData.accountId!)"
+        }
+        else
+        {
+            // let ten = SIMBADataArray.count + 10
+            let currentSIMBAData = hashLastTen[indexPath.row]
+            cell = tableView.dequeueReusableCell(withIdentifier: "SIMBADataCell") as! SIMBADataCell
+            cell.auditNoLabel.text  = " Audit No. \(String(describing: currentSIMBAData.hashId!))"
+            cell.posterIDLabel.text = "Poster No. \(currentSIMBAData.accountId!)"
+        }
         return cell
         
     }
@@ -117,6 +130,22 @@ class AuditTableViewController: UITableViewController {
     {
         dismiss(animated: true)
     }
+    
+    @IBAction func reverseOrder()
+    {
+        if reversed == false
+        {
+            hashLastTen = ArraySlice(hashLastTen.reversed())
+            reversed = !reversed
+            tableView.reloadData()
+        }
+        else
+        {
+            reversed = !reversed
+            viewDidAppear(false)
+        }
+        
+    }
 }
 
 class SIMBADataCell: UITableViewCell {
@@ -124,4 +153,5 @@ class SIMBADataCell: UITableViewCell {
     @IBOutlet weak var auditNoLabel: UILabel!
     @IBOutlet weak var posterIDLabel: UILabel!
 }
+
 

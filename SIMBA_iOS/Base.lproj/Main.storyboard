@@ -58,6 +58,16 @@
                                 <action selector="cancelViewController" destination="X3i-yB-WQX" id="ZcG-Ao-wgg"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="CSe-K7-FWO">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wVs-Bh-bJS">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reverse"/>
+                                <connections>
+                                    <action selector="reverseOrder" destination="X3i-yB-WQX" eventType="touchUpInside" id="tm9-PW-bcx"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kVL-8z-3YM" userLabel="First Responder" sceneMemberID="firstResponder"/>
