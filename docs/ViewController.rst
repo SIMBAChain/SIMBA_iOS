@@ -8,7 +8,7 @@
 
 * This is the main view of the app here you can go to the other views as well as select an account
 
-.. figure::  /docs/ScreenShots/ViewController.png
+.. figure::  ScreenShots/ViewController.png
    :align:   center
 
 
