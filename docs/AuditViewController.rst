@@ -9,7 +9,7 @@
 * Change the view controller to use the right data for the model
 
 
-.. figure::  /docs/ScreenShots/AuditViewController.png
+.. figure::  ScreenShots/AuditViewController.png
    :align:   center
 
 
