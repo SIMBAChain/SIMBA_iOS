@@ -28,20 +28,20 @@ Usage
 There are several views in the app
 ==================================
 
-    * `View Controller <https://github.com/SIMBAChain/SIMBA_iOS/blob/master/ScreenShots/View%20Controller.png>`_ | This is the main view of the app here you can go to the other views as well as select an account.
-    * `Most Recent Audits Scene <https://github.com/SIMBAChain/SIMBA_iOS/blob/master/ScreenShots/Most%20Recent%20Audits%20Scene.png>`_ | This is the view that displays the last 10 audits you can click on any of them.
-    * `Detail View Controller <https://github.com/SIMBAChain/SIMBA_iOS/blob/master/ScreenShots/Detail%20View%20Controller.png>`_  | This is the view that pops up whenever you click on one of the last 10 audits.
-    * `Post View Controller <https://github.com/SIMBAChain/SIMBA_iOS/blob/master/ScreenShots/Post%20View%20Controller.png>`_ | This is the view where you can post items. Fields can be left empty or populated when posting.
+    * `View Controller <ViewController.html>`_ | This is the main view of the app here you can go to the other views as well as select an account.
+    * `Most Recent Audits Scene <MostRecentAuditScene.html>`_ | This is the view that displays the last 10 audits you can click on any of them.
+    * `Detail View Controller <DetailViewController.html>`_  | This is the view that pops up whenever you click on one of the last 10 audits.
+    * `Post View Controller <PostViewController.html>`_ | This is the view where you can post items. Fields can be left empty or populated when posting.
 
 Modifying/Setting up "getting"
 ============================
 
-      * Change the URL in "`APIs.Swift <https://github.com/SIMBAChain/SIMBA_iOS/blob/master/ScreenShots/APIs.png>`_"
-      * Setup the model in "`Model.Swift <https://github.com/SIMBAChain/SIMBA_iOS/blob/master/ScreenShots/Model.png>`_" under the folder "Models"
-      * Change the path in "`DefaultAPI.Swift <https://github.com/SIMBAChain/SIMBA_iOS/blob/master/ScreenShots/DefaultAPI.png>`_" under the folder "APIs"
-      * Setup the decoder in "`Models.Swift <https://github.com/SIMBAChain/SIMBA_iOS/blob/master/ScreenShots/Models.png>`_"
-      * Change the `view controller <https://github.com/SIMBAChain/SIMBA_iOS/blob/master/ScreenShots/AuditViewController.png>`_ to use the right data for the model
-      * Change the `view layout and outlets <https://github.com/SIMBAChain/SIMBA_iOS/blob/master/ScreenShots/Outlets.png>`_ to fit the new model
+      * Change the URL in "`APIs.Swift <APIs.html>`_"
+      * Setup the model in "`Model.Swift <Model.html>`_" under the folder "Models"
+      * Change the path in "`DefaultAPI.Swift <DefaultAPI.html>`_" under the folder "APIs"
+      * Setup the decoder in "`Models.Swift <Models.html>`_"
+      * Change the `view controller <AuditViewController.html>`_ to use the right data for the model
+      * Change the `view layout and outlets <Outlets.html>`_ to fit the new model
 
 Links
 *****
