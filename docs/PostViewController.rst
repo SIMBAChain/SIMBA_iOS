@@ -9,7 +9,7 @@
 * This is the view where you can post items. Fields can be left empty or populated when posting
 
 
-.. figure::  /docs/ScreenShots/PostViewController.png
+.. figure::  ScreenShots/PostViewController.png
    :align:   center
 
 
