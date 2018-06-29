@@ -8,7 +8,7 @@
 
 * Hit the “Clone or Download” button in upper right corner of the github page   
 
-.. figure::  /docs/ScreenShots/Install1.png
+.. figure::  ScreenShots/Install1.png
    :align:   center
 
 
