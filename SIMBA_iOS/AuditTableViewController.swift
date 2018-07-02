@@ -10,6 +10,8 @@ import UIKit
 import Alamofire
 class AuditTableViewController: UITableViewController {
     
+    @IBOutlet var reverse: UIButton!
+    
     var SIMBADataArray = [SIMBAData]()
     var hashLastTen = [SIMBAData]().suffix(10)
     
@@ -18,7 +20,6 @@ class AuditTableViewController: UITableViewController {
     var SIMBACode : Int!
     var reversed: Bool! = false
     var ten: Int!
-    
     
     
     override func viewDidAppear(_ animated: Bool) {
@@ -113,12 +114,16 @@ class AuditTableViewController: UITableViewController {
         }
         else
         {
+            
+            
             // let ten = SIMBADataArray.count + 10
-            let currentSIMBAData = hashLastTen[indexPath.row]
+                let currentSIMBAData = self.hashLastTen[indexPath.row]
             cell = tableView.dequeueReusableCell(withIdentifier: "SIMBADataCell") as! SIMBADataCell
             cell.auditNoLabel.text  = " Audit No. \(String(describing: currentSIMBAData.hashId!))"
             cell.posterIDLabel.text = "Poster No. \(currentSIMBAData.accountId!)"
-        }
+                
+        
+    }
         return cell
         
     }
@@ -133,18 +138,26 @@ class AuditTableViewController: UITableViewController {
     
     @IBAction func reverseOrder()
     {
-        if reversed == false
+        reverse.isEnabled = false
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+        self.reverse.isEnabled = true
+            if self.reversed == false
         {
-            hashLastTen = ArraySlice(hashLastTen.reversed())
-            reversed = !reversed
-            tableView.reloadData()
+            self.hashLastTen = ArraySlice(self.hashLastTen.reversed())
+            self.reversed = !self.reversed
+            self.tableView.reloadData()
         }
         else
         {
-            reversed = !reversed
-            viewDidAppear(false)
-        }
+           
+                self.reversed = !self.reversed
+                self.viewDidAppear(false)
+            
+            
+            }
         
+        
+        }
     }
 }
 

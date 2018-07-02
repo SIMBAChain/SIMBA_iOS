@@ -158,8 +158,8 @@ class DetailViewController: UIViewController
     }
     func portraitMode()
     {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { // change 2 to desired number of seconds
-            // Your code with delay
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+           
         
         //568,736,832
         if self.view.frame.height < 736

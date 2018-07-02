@@ -69,6 +69,9 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="reverse" destination="wVs-Bh-bJS" id="Z68-Bg-2R0"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kVL-8z-3YM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
